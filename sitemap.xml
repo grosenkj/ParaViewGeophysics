@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>/</loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics//</loc>
      <lastmod>2017-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>/Getting-Started/</loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics//Getting-Started/</loc>
      <lastmod>2017-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -20,47 +20,25 @@
     
         
     <url>
-     <loc>/Plugins/Plugins/</loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics//Plugins/Plugins/</loc>
      <lastmod>2017-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/Plugins/Build-Your-Own-Plugins/</loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics//Plugins/Build-Your-Own-Plugins/</loc>
      <lastmod>2017-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/PVGPpy/About-PVGPpy/</loc>
-     <lastmod>2017-11-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc></loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc></loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -70,19 +48,41 @@
     
         
     <url>
-     <loc>/Examples/Exporting-Visualizations/</loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics//PVGPpy/About-PVGPpy/</loc>
      <lastmod>2017-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics//Examples/Exporting-Visualizations/</loc>
+     <lastmod>2017-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
