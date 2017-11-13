@@ -343,6 +343,9 @@
     
         <li class="first-level "><a href="#about-the-project">About the Project</a></li>
         
+            <li class="second-level"><a href="#about-the-author">About the Author</a></li>
+            
+        
             <li class="second-level"><a href="#recent-abstract-submission">Recent Abstract Submission</a></li>
             
         
@@ -350,13 +353,7 @@
             
         
     
-        <li class="first-level "><a href="#about-the-author">About the Author</a></li>
-        
-    
         <li class="first-level "><a href="#features-to-come">Features to Come</a></li>
-        
-            <li class="second-level"><a href="#general-features">General Features</a></li>
-            
         
             <li class="second-level"><a href="#readers">Readers</a></li>
             
@@ -367,7 +364,7 @@
             <li class="second-level"><a href="#macros-and-scripts">Macros and Scripts</a></li>
             
         
-            <li class="second-level"><a href="#examples">Examples</a></li>
+            <li class="second-level"><a href="#examples-and-other-docs">Examples and Other Docs</a></li>
             
         
     
@@ -393,8 +390,10 @@
 <li>User/Stakeholder engagement with geophysical findings</li>
 <li>Communicating uncertainty in an useable way</li>
 </ul>
-<p>My specific goal is to develop a heavily documented library of plugins, macros, and examples of how to view standard formats of geoscientific and geophysical data on the ParaView software platform. These plugins will provide tools to perform post-processing visual analysis and interpretation of geoscientific data and models.</p>
+<p>Our specific goal is to develop a heavily documented library of plugins, macros, and examples of how to view standard formats of geoscientific and geophysical data on the ParaView software platform. These plugins will provide tools to perform post-processing visual analysis and interpretation of geoscientific data and models.</p>
 <p>Through the deployment of this software, geophysicists will gain an ability to represent their 3D spatially referenced data intuitively to interested parties and stakeholders. By integrating the visualization of various data, interested parties will gain insight into the value of the information in the models. A spatially defined 3D model yields minimal value to an outside party unless they can relate that model to other spatial features. For example, a 3D model of faults in the subsurface is unhelpful unless the location of known features to interested parties can be displayed simultaneously. To give a value of information, we must be able to show where the spatially referenced data is in relation to intuitive features like topography, well locations, survey points, or other known features. Through visual integration, we try to mimic the reality of the space in which data was acquired so that it will hold meaning to anyone that immerses into the visualization regardless of background.</p>
+<h2 id="about-the-author">About the Author</h2>
+<p>Unless otherwise specified, all code and documentation distributed here were produced by <a href="https://github.com/banesullivan/">Bane Sullivan</a>, undergraduate research assistant in the Geophysics Department at the Colorado School of Mines under Dr. Whitney J. Trainor-Guitton. Feel free to contact Bane for questions or for custom filters/readers to visualize geoscience data through the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">Issues page</a></p>
 <h2 id="recent-abstract-submission">Recent Abstract Submission</h2>
 <p>The results of geophysical imaging techniques often hold high significance to stakeholders in the problems addressed yet the effective perception of those results remains a dynamic challenge for all. To illuminate the value of geophysical imaging techniques, we are developing a framework to visually integrate geophysical data and models in 3D which extends into Virtual Reality (VR) as well as statistically analyzing interpretation advantages in VR. The motivation for this effort comes from a desire to directly engage stakeholders with geophysical data gaining Value of Information (VOI) and de-risking decision making in project planning. This framework is a code base that extends the functionality of the open-source visualization platform ParaView by Kitware. These extensions make it possible to visually integrate geophysical data in a multidimensional rendering space so that the end product is interpretable to non-geoscientists and that all parties can gain insight and VOI from geophysical imaging techniques. To show value in the VR presentation of multi-dimensional visualizations, we aim to develop metrics that will analyze the effectiveness of visual analysis in VR compared to traditional methods. We will evaluate these metrics through statistical gaming type protocol, where we will task subjects with making spatial decisions and finding features of interest in complex geoscientific scenes. We hypothesize that VR will bring the needed perception to most efficiently make spatial decisions and detect features of interest as well as convey information such as uncertainty in a usable manner. We will have preliminary results of the gaming protocol by March 2018 as well as share our visual framework along that journey in the form of a GitHub repository titled “ParaViewGeophysics.” Our goal in sharing the repository is to deliver a toolset that enables geophysicists to rapidly visualize their data and models as well as effectively communicate their findings to interested stakeholders.</p>
 <h2 id="outline-of-goals">Outline of Goals</h2>
@@ -433,18 +432,10 @@
 </li>
 </ul>
 <hr />
-<h1 id="about-the-author">About the Author</h1>
-<p>Unless otherwise specified, all code and documentation distributed here were produced by <a href="https://github.com/banesullivan/">Bane Sullivan</a>, undergraduate research assistant in the Geophysics Department at the Colorado School of Mines under Dr. Whitney J. Trainor-Guitton. Feel free to contact Bane for questions or for custom filters/readers to visualize geoscience data through the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">Issues page</a></p>
-<hr />
 <h1 id="features-to-come">Features to Come</h1>
 <p>Here is a list of features that are shortly coming to this repo. This list will be regularly updated</p>
-<p>Documentation is soon to come. We want to do it right: with tutorials, examples, and detailed justification for need and use of each reader and filter.</p>
+<p>More documentation is soon to come. We want to do it right: with tutorials, example data, and detailed justification for need and use of each reader, filter, and macro.</p>
 <p>Suggestions? Post on the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">Issues page</a> as a feature request.</p>
-<h2 id="general-features">General Features</h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to send data scenes made using the Readers, Filters, and Macros in this repository over to the Virtual Reality build of ParaView</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to build your own plugins using this project&rsquo;s framework and build scripts</li>
-</ul>
 <h2 id="readers">Readers</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>UBC Mesh:</strong> both 2D and 3D. Details <a href="https://www.eoas.ubc.ca/ubcgif/iag/sftwrdocs/technotes/faq.htm#mesh">here</a> and <a href="https://gif.eos.ubc.ca/software/utility_programs#3DmodelsMeshes">here</a>. We&rsquo;re almost done with this!</li>
@@ -471,8 +462,10 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="PVGPpy/vis/Many-Slices-Along-Points/">Many Slices Along Points:</a> Export slices of dataset along polyline at every point on that line (normal is the vector from that point to the next)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="PVGPpy/export/exportVTKjs/">Export a scene</a> to a shareable 3D format</li>
 </ul>
-<h2 id="examples">Examples</h2>
+<h2 id="examples-and-other-docs">Examples and Other Docs</h2>
 <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to send data scenes made using the Readers, Filters, and Macros in this repository over to the Virtual Reality build of ParaView</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to build your own plugins using this project&rsquo;s framework and build scripts</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Tutorials for each filter/reader/macro will be in their respective documentation.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Importing DEM topography (with/without satellite imagery)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slicing/cropping a data scene through all components/datasets (managing links)</li>
@@ -530,5 +523,5 @@
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-11-13 06:36:26
+Build Date UTC : 2017-11-13 06:40:17
 -->
