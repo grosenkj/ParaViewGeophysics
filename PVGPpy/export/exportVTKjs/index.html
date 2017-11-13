@@ -245,12 +245,6 @@
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="../../../Examples/Exporting-Visualizations/">Exporting Visualizations</a>
-</li>
-
-                        
-                            
   <li class="dropdown-submenu">
     <a tabindex="-1" href="">Scripts</a>
     <ul class="dropdown-menu">
@@ -355,6 +349,27 @@
             
         
     
+        <li class="first-level "><a href="#motivation">Motivation</a></li>
+        
+    
+        <li class="first-level "><a href="#vtkjs">VTK.js</a></li>
+        
+            <li class="second-level"><a href="#test-it-out">Test It Out</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#make-your-own">Make Your Own</a></li>
+        
+    
+        <li class="first-level "><a href="#how-to-share">How to Share</a></li>
+        
+            <li class="second-level"><a href="#quick-and-easy">Quick and Easy</a></li>
+            
+        
+            <li class="second-level"><a href="#a-bit-more-robust">A Bit More Robust</a></li>
+            
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -383,7 +398,98 @@
 <ul>
 <li>To view, open the file in the VTKjs standalone web viewer found here: https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html</li>
 <li>Use the get_vtkjs_url.py script in the PVGP repository to get a shareable link for the exported file.</li>
-</ul></div>
+</ul>
+<hr />
+<h1 id="motivation">Motivation</h1>
+<p>In order to effectively communicate our geoscientific findings, we often need to share our 3D visualizations with interested stakeholders. These interested parties are likely not going to have ParaView or other visualization software at hand. Thus we desire to have a means to export our complex visualizations in ParaView to a simple, shareable format that anyone can view. To accomplish this, we will take advantage of vtk.js and its standalone web viewer for vtk.js formats.</p>
+<p>Would not it be great to send your client or interested parties an interactive 3D scene of your Geophysical findings like the example below?</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/ftcmvc74qsr4hbl/tunnels.vtkjs?dl=0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<hr />
+<h1 id="vtkjs">VTK.js</h1>
+<p><a href="https://kitware.github.io/vtk-js/">vtk.js</a> is a rendering library made for scientific visualization on the web. This code base brings high performance rendering into anyone&rsquo;s web browser. This library allows us to export complex scenes from ParaView and share them with anyone that has a web browser like Safari or Google Chrome.</p>
+<p>The vtk.js library has an open-source <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html">standalone scene viewer</a> which they have a nice demo for <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader.html">here</a>. The first link can either be downloaded as an HTML file to be ran locally, or you can go to that link and run from the vtk.js server. vtk.js also published a scene export macro for ParaView that compresses a data scene in ParaView to a shareable format for viewing on the web. The macro from the vtk.js library can be found <a href="https://raw.githubusercontent.com/Kitware/vtk-js/master/Utilities/ParaView/export-scene-macro.py">here</a> but we also deploy an updated (we think more robust) version of this export macro in the sub-module <code>export</code> of our Python module <code>PVGPpy</code>.</p>
+<h2 id="test-it-out">Test It Out</h2>
+<p>Here are some samples to demonstrate the web viewer. We have included a few of our scenes and one of the vtk.js sample scenes for you to demo:</p>
+<ul>
+<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/6gxax6fp9muk65e/volc.vtkjs?dl=0">Volcano</a></li>
+<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/0xxviidrh66smmg/volc_clip.vtkjs?dl=0">Volcano Clipped</a></li>
+<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0">Ripple</a></li>
+<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/ftcmvc74qsr4hbl/tunnels.vtkjs?dl=0">Tunnels</a></li>
+<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://data.kitware.com/api/v1/file/587003c38d777f05f44a5c93/download">vtk.js Sample Scene</a></li>
+</ul>
+<hr />
+<h1 id="make-your-own">Make Your Own</h1>
+<p>First, make a complex scene in ParaView that you might like to share with someone. <!--For a simple example, download [this] folder and load the state file *(be sure to use relative file paths)*.--> Now that you have your scene loaded, open the python shell from Tools-&gt;Python Shell within ParaView. From here, import our Python module delivered in the repository called <code>PVGPpy</code>. From the <code>export</code> sub-module, there is a function called <code>exportVTKjs()</code> which takes two optional arguments (<code>FileName</code> string and <code>compress</code> boolean). Execute this function and note the output text as it will describe where the exported scene was saved.</p>
+<pre><code class="py"># Import our Python module:
+from PVGPpy import *
+
+# Now run the exportVTKjs script from the export sub-module
+export.exportVTKjs(FileName='test_export')
+</code></pre>
+
+<p><em>If you have trouble post on our <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">issues page</a> or read the vtk.js documentation <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader.html">here</a></em></p>
+<p>Now open the standalone web viewer by opening <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html">this link</a>.</p>
+<p>Select the exported scene as the input file for the web viewer from where you saved it (should be under <code>~/Dropbox/PVGP_vtkjs/</code>). The export macro should have printed out the location of the saved scene in the Python Shell.</p>
+<hr />
+<h1 id="how-to-share">How to Share</h1>
+<h2 id="quick-and-easy">Quick and Easy</h2>
+<p>To share these exported scenes with non-technical stakeholders, we recommend the following process:</p>
+<ul>
+<li>Create your scene and export to the vtk.js format (follow process above)</li>
+<li>Quality control your visualization by viewing in web browser yourself (follow process above)</li>
+<li>Send an email with your visualization (<code>.vtkjs</code> file) and something along the lines of:</li>
+</ul>
+<pre><code class="txt">Check out the data scene/model by downloading the attached file. Then go to the link below and open that downloaded file.
+
+https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html
+</code></pre>
+
+<h2 id="a-bit-more-robust">A Bit More Robust</h2>
+<p>Sometimes we might want to give someone a direct link to the web visualization so all they have to do is open the link on any device and they can see our visualization. Here is a method to share scenes that have a slightly easier process of viewing the file for the end user and will handle the case for mobile platforms.</p>
+<p>Unfortunately, making the experience for the end user simple means making your experience a bit more complicated. You will need to host your file on a web service like GitHub or Dropbox <em>(we have been unsuccessful in getting Google Drive to work)</em>. Then get a public link to the <code>.vtkjs</code> file on that web service and append it to the web viewer URL.</p>
+<p>We have created a Python script to generate these links for you if you are sharing your data file on either Dropbox or GitHub. The script is delivered in the repository and can also be found <a href="https://github.com/banesullivan/ParaViewGeophysics/blob/master/get_vtkjs_url.py">here</a>.</p>
+<p>The easiest way that we have found is to share the files on Dropbox. Use the desktop client for Dropbox and right-click your exported <code>.vtkjs</code> file and select &ldquo;Copy Dropbox Link.&rdquo;</p>
+<p>Once you have that link, use the this script on your URLs in this manner:</p>
+<pre><code class="bash"># Usage:
+$ python get_vtkjs_url.py &lt;web file host&gt; &lt;file link&gt;
+
+# Dropbox example:
+$ python get_vtkjs_url.py dropbox &quot;https://www.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0&quot;
+
+</code></pre>
+
+<!-- Hidden
+### Process to Generate Links on Your Own
+
+- Copy the url to the web browser which we have cloned and host on on of our repos: `https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html`
+- Now appended `?fileURL=`
+- Then append that with the shareable link to your visualization file from your web file service:
+    - For Dropbox, we will follow this method to get direct download file links
+    - Shared links for Dropbox files will have this format:
+
+    ```txt
+    https://www.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0
+    ```
+
+    - Change the 'www' to 'dl' in the link such that it looks like:
+
+    ```txt
+    https://dl.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0
+    ```
+
+    - Now append the link for the web viewer hosted on our GitHub repo with the direct download link in the following manner:
+
+    ```txt
+    https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0
+    ```
+
+
+- This link can then be shared with anyone (on a computer, phone, or tablet)
+- Be sure to check the link yourself before sending to make sure everything worked
+--></div>
         
     </div>
 
