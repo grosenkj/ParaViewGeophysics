@@ -113,7 +113,7 @@
         
             
 <li >
-    <a href="../../Plugins/Readers/Read-UBC-Mesh-Two-File-Format/">Read UBC Mesh Two File FormatRe</a>
+    <a href="../../Plugins/Readers/Read-UBC-Mesh-Two-File-Format/">Read UBC Mesh Two File Format</a>
 </li>
 
         
@@ -366,23 +366,23 @@
 <p>PVGPpy is a python module we are developing for direct use of our macros in the ParaView shell. This module will contain the bulk of our macros for your use. We are publishing our macros in this manner to:</p>
 <ol>
 <li>Streamline their use by allowing users to call the macros like python functions directly from the ParaView shell.</li>
-<li>Easily update/change the macros without constant merge conflictions as users will need to input certain parameters for their use. This is much easily done through function calls than overwriting the macro files.</li>
+<li>Easily update/change the macros without constant merge conflictions as users will need to input specific parameters for their use. This is much easier to do with function calls than overwriting the macro files.</li>
 </ol>
 <hr />
 <h1 id="macros-vs-scripts">Macros vs. Scripts</h1>
 <p><!--- TODO: we need more info here --->
-We will from now on refer to macros as a set of common codes that can be used regardless of data sets or scenes in ParaView. ParaView&rsquo;s sense of macro is not robust enough for us, so we will be referring to traditional macros in ParaView as &lsquo;scripts&rsquo; from here on. Scripts will be used on specific sets of data where as macros can be used on any set of data.</p>
+We will from now on refer to macros as a set of standard codes that can be used regardless of data sets or scenes in ParaView. ParaView&rsquo;s sense of macro is not robust enough for us so that we will be referring to traditional macros in ParaView as &lsquo;scripts&rsquo; from here on. Scripts will be used on specific sets of data whereas macros can be used on any set of data.</p>
 <h2 id="macros">Macros</h2>
-<p>Macros are Python codes that complete tedious or recurring tasks either in ParaView&rsquo;s gui or in ParaView&rsquo;s batch processing environment. We will use macros to complete common tasks like saving screenshots of isometric views of a data scene or tedious tasks like making numerous slices of a single data set along a line.</p>
+<p>Macros are Python codes that complete tedious or recurring tasks either in ParaView&rsquo;s GUI or ParaView&rsquo;s batch processing environment. We will use macros to complete everyday tasks like saving screenshots of isometric views of a data scene or tedious tasks like making many slices of a single data set along a line.</p>
 <h2 id="scripts">Scripts</h2>
-<p>Scripts are Python codes we will use for tasks like loading scenes and for applying several macros at once. It is often helpful to set up a script for a project so that you can easily run all the visualization processing at once each time you update your model files or create new versions of your data.</p>
+<p>Scripts are Python codes we will use for tasks like loading scenes and for applying several macros at once. It is often helpful to set up a script for a project so that you can quickly run all the visualization processing at once each time you update your model files or create new versions of your data.</p>
 <hr />
 <h1 id="how-to-run-scripts">How to Run Scripts</h1>
 <p>Use the Python Shell from &lsquo;Tools-&gt;Python Shell&rsquo; in the ParaView GUI. Do not import scripts as macros in ParaView as they become static in the ParaView GUI and make managing/changing quite difficult. To use scripts in the batch processing environment, use the <code>pvpython</code> program delivered in ParaView. On my OS X operating system it is under the <code>Applications/ParaView/Contents/bin/pvpython</code>. More info on all of this to come! <!-- TODO --></p>
 <p>To simply run the scripts in this repo, edit the script files under the <code>scripts/</code> directory for your use, then run them in ParaView by selecting &lsquo;Tools-&gt;Python Shell&rsquo; then click &lsquo;Run Script&rsquo;. Navigate to the <code>scripts/</code> directory in this repo and select the script you desire to use.</p>
 <hr />
 <h1 id="make-your-own-scripts">Make Your Own Scripts</h1>
-<p>Description to come! There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page
+<p>Description to come! There are a lot of pages in the documentation, and we are trying to fill all content as soon as possible. Stay tuned for updates to this page
 <!--- TODO ---></p>
 <h2 id="using-the-trace-tool">Using the Trace Tool</h2>
 <p><!--- TODO: how to make meaning of the trace output --->
