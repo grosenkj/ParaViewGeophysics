@@ -419,25 +419,17 @@ Take a look at Section 2.1 of &lsquo;The ParaView Tutorial&rsquo; for details of
 <p>Download and use <a href="https://devtidbits.com/2011/07/01/cygwin-walkthrough-and-beginners-guide-is-it-linux-for-windows-or-a-posix-compatible-alternative-to-powershell/">Cygwin</a> for the command line operation of the scripts in this repo. When installing Cygwin, <em>make sure to install the <code>bash</code>, <code>dos2unix</code>, <code>git</code>, and <code>python2-setuptools</code> packages</em>. Now you can use the Cygwin terminal as the command line just like you are on a Unix based operating system! <strong>Make sure the line endings for all of the shell scripts are LF and not CRLF after cloning.</strong></p>
 <p>Also, be sure to place/install ParaView and this repository to a location that has general read/write privileges for all users such as on your <code>D:\\</code> drive. You will encounter all types of issues running the scripts and simply accessing the code via Cygwin if you need admin privileges to access where it is all saved. <em>Note: the install scripts will need access to the directory where ParaView is installed</em></p>
 <h2 id="before-you-do-anything">Before You Do Anything!</h2>
-<p>You <em>MUST</em> add a <code>PVPATH</code> variable in your bash profile! This variable will describe the path to ParaView&rsquo;s installation. It is likely different depending on your OS and your version of ParaView. On MacOS, simply just replace <code>/ParaView-5.4.0.app</code> with the name of your version of ParaView under <code>/Applications/</code>.</p>
-<p>Add the <code>PVPATH</code> variable to your environment through your <code>~/.bash_profile</code> by adding this expression:</p>
-<pre><code class="bash"># edit your ~/.bash_profile with vim or some text editor
-$ vi ~/.bash_profile
-
-# Be sure to check that this path matches yours... Odds are it's different!
+<p>You <em>MUST</em> add a <code>PVPATH</code> variable in your bash environment! This variable will describe the path to ParaView&rsquo;s installation. It is likely different depending on your OS and your version of ParaView. On MacOS, simply just replace <code>/ParaView-5.4.0.app</code> with the name of your version of ParaView under <code>/Applications/</code>.</p>
+<p>Add the <code>PVPATH</code> variable to your environment through this export expression:</p>
+<pre><code class="bash"># Be sure to check that this path matches yours... Odds are it's different!
 # Path to the ParaView installation:
 export PVPATH=&quot;/Applications/ParaView-5.4.0.app&quot;
 </code></pre>
 
-<p>Windows users, open Cygwin and edit your <code>~/.bash_profile</code> through <code>vim</code> to place a <code>PVPATH</code> variable in your environment. Be sure to replace the path to ParaView with your path to ParaView (e.g. <code>/cygdrive/d/ParaView...</code> to <code>/cygdrive/d/ParaView-5.4.0...</code>)</p>
+<p>Windows users, open Cygwin and add a <code>PVPATH</code> variable in your environment in the same manner. Its a bit trickier for you because we need the path on cygwin&rsquo;s map of your drive. Be sure to replace the path to ParaView with your path to ParaView (e.g. <code>/cygdrive/d/ParaView...</code> to <code>/cygdrive/d/ParaView-5.4.0...</code>)</p>
 <pre><code class="bash">## Be sure to check that this path matches yours... Odds are it's different!
 # Path to the ParaView installation:
-export PVPATH=&quot;/cygdrive/d/ParaView&quot;
-</code></pre>
-
-<p>Remember to source your edited <code>~/.bash_profile</code>:</p>
-<pre><code class="bash"># Resource your profile to export the new variable
-$ source ~/.bash_profile
+export PVPATH=&quot;/cygdrive/d/ParaView-version-something&quot;
 </code></pre>
 
 <h2 id="cloning-the-repository">Cloning the Repository</h2>
@@ -459,7 +451,7 @@ $ cd ParaViewGeophysics
 #- Note: There are two install scripts. One for Mac/Linux and one for Windows
 #- Mac:
 $ sh ./installMac.sh
-#- Windows:
+#- Windows via Cygwin:
 $ sh ./installWin.sh
 </code></pre>
 
@@ -471,7 +463,7 @@ To simply install the distributed filters from this repo, run the `src/install_p
 To run these scripts on a Unix like system us the `sh` command: `sh src/install_plugins.sh`
 
 
-wzxhzdk:5
+wzxhzdk:4
 
 
 ### Building the Plugins
@@ -479,13 +471,14 @@ To rebuild the plugins after you made changes or made your own plugins, run the 
 
 
 
-wzxhzdk:6
+wzxhzdk:5
 
 -->
 
 <h2 id="how-to-update">How to Update</h2>
-<p>We have included a script that will update the repository from GitHub and re-install everything. This script is simply executed by:</p>
-<pre><code class="bash">$ sh ./updatePVGP.sh
+<p>We have included a script that will update the repository from GitHub and since the repo is already linked to ParaView, all changes to the repo will be directory reflected in ParaView. This script is simply executed by:</p>
+<pre><code class="bash"># Run this to update ParaViewGeophysics in the future:
+$ sh ./updatePVGP.sh
 </code></pre>
 
 <hr />
