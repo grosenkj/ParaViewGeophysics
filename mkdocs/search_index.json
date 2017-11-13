@@ -361,11 +361,6 @@
             "title": "Using PVPython"
         },
         {
-            "location": "/Scripts/Example-Script/",
-            "text": "Description to come! There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page",
-            "title": "Example Script"
-        },
-        {
             "location": "/PVGPpy/export/exportVTKjs/",
             "text": "PVGPpy.export.exportVTKjs\n\n\nPVGPpy.export.exportVTKjs(FileName='', compress=False)\n\n\n\n\nDescription\n\n\nThis function will execute a script to export the current scene from your rendering into the VTKjs shareable file format.\n\n\nParameters\n\n\nFileName\n : string, optional\n\n\n\n\nUse to specify the basename of the output file. Extension will always be \u2018.vtkjs\u2019\n\n\n\n\ncompress\n : boolean, optional\n\n\n\n\nDeclares a preference to compress the data arrays.\n\n\nDefault False\n\n\n\n\nReturns\n\n\n\n\nNo return type, but it will print the path to the saved \u2018.vtkjs\u2019 file.\n\n\n\n\nNotes\n\n\n\n\nTo view, open the file in the VTKjs standalone web viewer found here: https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html\n\n\nUse the get_vtkjs_url.py script in the PVGP repository to get a shareable link for the exported file.",
             "title": "Export as VTKjs"
@@ -509,6 +504,11 @@
             "location": "/Examples/Exporting-Visualizations/#a-bit-more-robust",
             "text": "Sometimes we might want to give someone a direct link to the web visualization so all they have to do is open the link on any device and they can see our visualization. Here is a method to share scenes that have a slightly easier process of viewing the file for the end user and will handle the case for mobile platforms.  Unfortunately, making the experience for the end user simple means making your experience a bit more complicated. You will need to host your file on a web service like GitHub or Dropbox  (we have been unsuccessful in getting Google Drive to work) . Then get a public link to the  .vtkjs  file on that web service and append it to the web viewer URL.  We have created a Python script to generate these links for you if you are sharing your data file on either Dropbox or GitHub. The script is delivered in the repository and can also be found  here .  The easiest way that we have found is to share the files on Dropbox. Use the desktop client for Dropbox and right-click your exported  .vtkjs  file and select \u201cCopy Dropbox Link.\u201d  Once you have that link, use the this script on your URLs in this manner:  # Usage:\n$ python get_vtkjs_url.py <web file host> <file link>\n\n# Dropbox example:\n$ python get_vtkjs_url.py dropbox \"https://www.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0\"",
             "title": "A Bit More Robust"
+        },
+        {
+            "location": "/Scripts/Example-Script/",
+            "text": "Description to come! There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page",
+            "title": "Example Script"
         },
         {
             "location": "/Examples/Slice-Model-Along-PolyLine/",
