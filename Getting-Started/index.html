@@ -348,6 +348,9 @@
             <li class="second-level"><a href="#windows-users">Windows Users</a></li>
             
         
+            <li class="second-level"><a href="#upgrading-from-the-alpha-to-beta-version">Upgrading from the Alpha to Beta Version?</a></li>
+            
+        
             <li class="second-level"><a href="#before-you-do-anything">Before You Do Anything!</a></li>
             
         
@@ -403,6 +406,35 @@ Take a look at Section 2.1 of &lsquo;The ParaView Tutorial&rsquo; for details of
 <p>If you&rsquo;re on Windows, see <a href="https://git-for-windows.github.io">this</a> for GitHub and <a href="https://devtidbits.com/2011/07/01/cygwin-walkthrough-and-beginners-guide-is-it-linux-for-windows-or-a-posix-compatible-alternative-to-powershell/">this</a> guide for using the Unix command line on windows.</p>
 <p>Download and use <a href="https://devtidbits.com/2011/07/01/cygwin-walkthrough-and-beginners-guide-is-it-linux-for-windows-or-a-posix-compatible-alternative-to-powershell/">Cygwin</a> for the command line operation of the scripts in this repo. When installing Cygwin, <em>make sure to install the <code>bash</code>, <code>dos2unix</code>, <code>git</code>, and <code>python2-setuptools</code> packages</em>. Now you can use the Cygwin terminal as the command line just like you are on a Unix based operating system! <strong>Make sure the line endings for all of the shell scripts are LF and not CRLF after cloning.</strong></p>
 <p>Also, be sure to place/install ParaView and this repository to a location that has general read/write privileges for all users such as on your <code>D:\\</code> drive. You will encounter all types of issues running the scripts and simply accessing the code via Cygwin if you need admin privileges to access where it is all saved. <em>Note: the install scripts will need access to the directory where ParaView is installed</em></p>
+<h2 id="upgrading-from-the-alpha-to-beta-version">Upgrading from the Alpha to Beta Version?</h2>
+<p>If you previously installed the repository during the Alpha release stage, please follow this process to reinstall the project&rsquo;s framework. Moving forward, there will no longer be changes to the file structure and updates will be streamlined and simple.</p>
+<pre><code class="bash"># How to update from the Alpha version to the Beta versions
+# This is a more robust installation that will be much easier to manage and updated
+
+# First, remove the plugins directory from your ParaView installation
+#- This should be the PVPLUGINPATH you declared in the previous installation
+$ rm -r $PVPLUGINPATH
+
+# Now complete the following installation instructions in the next sections
+
+#- Be sure to check that this path matches yours... Odds are it's different!
+#- Path to the ParaView installation:
+export PVPATH=&quot;/Applications/ParaView-5.4.0.app&quot;
+#- Or windows via Cygwin
+#-- If ParaView were installed at D:\\ParaView-version-something then you export looks like this:
+export PVPATH=&quot;/cygdrive/d/ParaView-version-something&quot;
+
+#- Pull the updates: make sure you are in the ParaViewGeophysics directory!
+$ git pull origin master
+
+#- Run the new installation
+#-- Note: There are two install scripts. One for Mac/Linux and one for Windows
+#-- Mac:
+$ sh ./installMac.sh
+#-- Windows via Cygwin:
+$ sh ./installWin.sh
+</code></pre>
+
 <h2 id="before-you-do-anything">Before You Do Anything!</h2>
 <p>You <em>MUST</em> add a <code>PVPATH</code> variable in your bash environment! This variable will describe the path to ParaView&rsquo;s installation. It is likely different depending on your OS and your version of ParaView. On MacOS, simply just replace <code>/ParaView-5.4.0.app</code> with the name of your version of ParaView under <code>/Applications/</code>.</p>
 <p>Add the <code>PVPATH</code> variable to your environment through this export expression:</p>
@@ -450,7 +482,7 @@ To simply install the distributed filters from this repo, run the `src/install_p
 To run these scripts on a Unix like system us the `sh` command: `sh src/install_plugins.sh`
 
 
-wzxhzdk:4
+wzxhzdk:5
 
 
 ### Building the Plugins
@@ -458,7 +490,7 @@ To rebuild the plugins after you made changes or made your own plugins, run the 
 
 
 
-wzxhzdk:5
+wzxhzdk:6
 
 -->
 
