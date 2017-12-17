@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome\n\n\nWelcome to the ParaView for Geophysics Documentation! This website documents the code base we are making for data visualization in geophysics on the application ParaView by Kitware. Through visualization, we can bring value to data and hold the products of geoscience in a new light to interested parties.\n\n\nThis repository was produced from the work of an undergraduate research project at the Colorado School of Mines titled: Illuminating the Value of Geophysical Imaging through Visualization and Virtual Reality. Checkout \nthis PDF\n standalone presentation to learn more about the project.\n\n\nUse the Sidebar (to the left) to explore the contents of the current page and use the menu bar at the top to find all the different pages (readers & filters for ParaView are under \u2018Plugins\u2019 while macros and code documentation for the PVGPpy module are under the \u2018PVGPpy\u2019 category). Explore around!\n\n\nAll code is published on the GitHub repository \u2018ParaViewGeophysics\u2019 linked to this page. Click the \u2018GitHub\u2019 link on the right side of the menu bar at the top to find all of the code.\n\n\nDemo\n\n\nCheck out the data scene below. This is an example of three data sets visually integrated using our framework and exported to a shareable format. Go ahead, click it and move it around!\n\n\n\n        \n\n\n\n\n\n\n\nAbout the Project\n\n\nThe primary goal of this project is to build plugins for the open-source, multi-platform, data analysis, and visualization application \nParaView\n by Kitware. These plugins are tailored to the visualization of spatially referenced data in the geosciences. The overarching  goal of this project is to develop a framework to funnel geophysical data/models into virtual reality for the purpose of:\n\n\n\n\nExtracting Value of Information (VOI)\n\n\nUser/Stakeholder engagement with geophysical findings\n\n\nCommunicating uncertainty in an useable way\n\n\n\n\nOur specific goal is to develop a heavily documented library of plugins, macros, and examples of how to view standard formats of geoscientific and geophysical data on the ParaView software platform. These plugins will provide tools to perform post-processing visual analysis and interpretation of geoscientific data and models.\n\n\nThrough the deployment of this software, geophysicists will gain an ability to represent their 3D spatially referenced data intuitively to interested parties and stakeholders. By integrating the visualization of various data, interested parties will gain insight into the value of the information in the models. A spatially defined 3D model yields minimal value to an outside party unless they can relate that model to other spatial features. For example, a 3D model of faults in the subsurface is unhelpful unless the location of known features to interested parties can be displayed simultaneously. To give a value of information, we must be able to show where the spatially referenced data is in relation to intuitive features like topography, well locations, survey points, or other known features. Through visual integration, we try to mimic the reality of the space in which data was acquired so that it will hold meaning to anyone that immerses into the visualization regardless of background.\n\n\nAbout the Author\n\n\nUnless otherwise specified, all code and documentation distributed here were produced by \nBane Sullivan\n, undergraduate research assistant in the Geophysics Department at the Colorado School of Mines under Dr. Whitney J. Trainor-Guitton. Feel free to contact Bane for questions or for custom filters/readers to visualize geoscience data through the \nIssues page\n\n\nRecent Abstract Submission\n\n\nThe results of geophysical imaging techniques often hold high significance to stakeholders in the problems addressed yet the effective perception of those results remains a dynamic challenge for all. To illuminate the value of geophysical imaging techniques, we are developing a framework to visually integrate geophysical data and models in 3D which extends into Virtual Reality (VR) as well as statistically analyzing interpretation advantages in VR. The motivation for this effort comes from a desire to directly engage stakeholders with geophysical data gaining Value of Information (VOI) and de-risking decision making in project planning. This framework is a code base that extends the functionality of the open-source visualization platform ParaView by Kitware. These extensions make it possible to visually integrate geophysical data in a multidimensional rendering space so that the end product is interpretable to non-geoscientists and that all parties can gain insight and VOI from geophysical imaging techniques. To show value in the VR presentation of multi-dimensional visualizations, we aim to develop metrics that will analyze the effectiveness of visual analysis in VR compared to traditional methods. We will evaluate these metrics through statistical gaming type protocol, where we will task subjects with making spatial decisions and finding features of interest in complex geoscientific scenes. We hypothesize that VR will bring the needed perception to most efficiently make spatial decisions and detect features of interest as well as convey information such as uncertainty in a usable manner. We will have preliminary results of the gaming protocol by March 2018 as well as share our visual framework along that journey in the form of a GitHub repository titled \u201cParaViewGeophysics.\u201d Our goal in sharing the repository is to deliver a toolset that enables geophysicists to rapidly visualize their data and models as well as effectively communicate their findings to interested stakeholders.\n\n\nOutline of Goals\n\n\nThese are the goals to achieve through publishing this repository but not necessarily the goals of the research project from which this repository was developed.\n\n\n\n\n\n\nDevelop and document geoscientific plugins for ParaView. These plugins will take advantage of ParaView and VTK\u2019s Python wrapping and use the Python Programmable Filter in ParaView. The advantage to using Python Programmable filters is that they are easily modified by the end user and can be wrapped in XML to create a GUI for its use in ParaView while having the option to directly edit the source code live in ParaView.\n\n\n\n\n\n\nReaders:\n Plugins that read common geoscientific and geophysical spatial data files (GSLIB, UBC mesh, ESRI grid, etc.). Also make readers that read common raw data files (packed binary floats, delimited ASCII, etc.)\n\n\n\n\n\n\nFilters:\n Plugins that perform post-processing analysis of geoscientific data for visualization. For example, filters that build tubes from a series of points that represent a tunnel or filters that take a 1D array, reshape it to 2D or 3D, and make a volumetric model ready for visualization all while adding spatial reference for visual integration.  \n\n\n\n\n\n\nSources:\n Plugins that create simple synthetic data sources such as a sphere or cube with a specified attribute like a spatially varying density or electrical conductivity. Other sources might include using that synthetic sphere or cube to make a volumetric field of some response.\n\n\n\n\n\n\n\n\n\n\nDevelop and document the \nPVGPpy\n Python module for use in ParaView\u2019s Python Shell. This module will contain all of the macros, batch processing tasks, and common codes to apply to 3D data scenes.\n\n\n\n\n\n\nMake tutorials on the use of ParaView\u2019s native features and the plugins distributed in this repository on open source data (for example):\n\n\n\n\n\n\nDocument explanations of how to get sophisticated geoscientific data formats like topography DEMs into a format ParaView can read.\n\n\n\n\n\n\nDocument how to use ParaView\u2019s native filters to complete common tasks in the visualization of geoscientific data. For example, applying satellite imagery to a surface that represents topography.\n\n\n\n\n\n\n\n\n\n\nDevelop customizable scripts for the visualization of common data formats. This will include developing scripts on an individual basis to help others quickly visualize their data and models for quality assessment and unique research needs.\n\n\n\n\n\n\n\n\nFeatures to Come\n\n\nHere is a list of features that are shortly coming to this repo. This list will be regularly updated\n\n\nMore documentation is soon to come. We want to do it right: with tutorials, example data, and detailed justification for need and use of each reader, filter, and macro.\n\n\nSuggestions? Post on the \nIssues page\n as a feature request.\n\n\nReaders\n\n\n\n\n \nUBC Mesh:\n both 2D and 3D. Details \nhere\n and \nhere\n. We\u2019re almost done with this!\n\n\n \nESRI Grid:\n Details \nhere\n and \nhere\n\n\n \nESRI shape files:\n Details \nhere\n and \nhere\n\n\n \nWell logs:\n Readers for common formats and easy ways to project well logs in XYZ space\n\n\n\n\nFilters\n\n\n\n\n \nAppend Model to UBC Mesh:\n This will load a model file and tag it on to vtkStructuredGrid loaded from a UBC Mesh reader. Think of it as appending models as attributes to the 3D mesh.\n\n\n \nExtract Array:\n This will allow you to extract any array from any data structure as vtkPolyData.\n\n\n \nTranspose Grid:\n Transpose or swap axii of grid data sets (vtkImageData and vtkRectilinearGrid)\n\n\n \nReshape Table:\n Adding ability to reshape using Fortran ordering on the currently available filter.\n\n\n \nMake Cubes from Point Set:\n This will take a point set and generate cube of some specified size at every point\n\n\n\n\n\n\n\nMacros and Scripts\n\n\n\n\n How to start making your own scripts (tips, tricks, and general advice)\n\n\n Save screenshots in isometric views, side, top, etc. in an automated fashion\n\n\n \nMany Slices Along Points:\n Export slices of dataset along polyline at every point on that line (normal is the vector from that point to the next)\n\n\n \nExport a scene\n to a shareable 3D format\n\n\n\n\nExamples and Other Docs\n\n\n\n\nTutorials for each filter/reader/macro will be in their respective documentation.\n\n\n How to send data scenes made using the Readers, Filters, and Macros in this repository over to the Virtual Reality build of ParaView\n\n\n How to build your own plugins using this project\u2019s framework and build scripts\n\n\n Importing DEM topography (with/without satellite imagery)\n\n\n Slicing/cropping a data scene through all components/datasets (managing links)\n\n\n \nSlice Model Along PolyLine:\n How to export a slice of a dataset projected on a vtkPolyLine (capabilities are currently present in ParaView)",
+            "text": "Welcome\n\n\nWelcome to the ParaView for Geophysics Documentation! This website documents the code base we are making for data visualization in geophysics on the application ParaView by Kitware. Through visualization, we can bring value to data and hold the products of geoscience in a new light to interested parties.\n\n\nThis repository was produced from the work of an undergraduate research project at the Colorado School of Mines titled: Illuminating the Value of Geophysical Imaging through Visualization and Virtual Reality. Checkout \nthis PDF\n standalone presentation to learn more about the project.\n\n\nUse the Sidebar (to the left) to explore the contents of the current page and use the menu bar at the top to find all the different pages (readers & filters for ParaView are under \u2018Plugins\u2019 while macros and code documentation for the PVGPpy module are under the \u2018PVGPpy\u2019 category). Explore around!\n\n\nAll code is published on the GitHub repository \u2018ParaViewGeophysics\u2019 linked to this page. Click the \u2018GitHub\u2019 link on the right side of the menu bar at the top to find all of the code.\n\n\nDemo\n\n\nCheck out the data scene below. This is an example of three data sets visually integrated using our framework and exported to a shareable format. Go ahead, click it and move it around!\n\n\n\n        \n\n\n\n\n\n\n\nAbout the Project\n\n\nThe primary goal of this project is to build plugins for the open-source, multi-platform, data analysis, and visualization application \nParaView\n by Kitware. These plugins are tailored to the visualization of spatially referenced data in the geosciences. The overarching  goal of this project is to develop a framework to funnel geophysical data/models into virtual reality for the purpose of:\n\n\n\n\nExtracting Value of Information (VOI)\n\n\nUser/Stakeholder engagement with geophysical findings\n\n\nCommunicating uncertainty in an useable way\n\n\n\n\nOur specific goal is to develop a heavily documented library of plugins, macros, and examples of how to view standard formats of geoscientific and geophysical data on the ParaView software platform. These plugins will provide tools to perform post-processing visual analysis and interpretation of geoscientific data and models.\n\n\nThrough the deployment of this software, geophysicists will gain an ability to represent their 3D spatially referenced data intuitively to interested parties and stakeholders. By integrating the visualization of various data, interested parties will gain insight into the value of the information in the models. A spatially defined 3D model yields minimal value to an outside party unless they can relate that model to other spatial features. For example, a 3D model of faults in the subsurface is unhelpful unless the location of known features to interested parties can be displayed simultaneously. To give a value of information, we must be able to show where the spatially referenced data is in relation to intuitive features like topography, well locations, survey points, or other known features. Through visual integration, we try to mimic the reality of the space in which data was acquired so that it will hold meaning to anyone that immerses into the visualization regardless of background.\n\n\nAbout the Author\n\n\nUnless otherwise specified, all code and documentation distributed here were produced by \nBane Sullivan\n, undergraduate research assistant in the Geophysics Department at the Colorado School of Mines under Dr. Whitney J. Trainor-Guitton. Feel free to contact Bane for questions or for custom filters/readers to visualize geoscience data through the \nIssues page\n\n\nSAGEEP 2018 Abstract\n\n\nThe results of geophysical imaging techniques often hold high significance to stakeholders in the problems addressed yet the effective perception of those results remains a dynamic challenge for all. To illuminate the value of geophysical imaging techniques, we are developing a framework to visually integrate geophysical data and models in 3D which extends into Virtual Reality (VR) as well as statistically analyzing interpretation advantages in VR. The motivation for this effort comes from a desire to directly engage stakeholders with geophysical data gaining Value of Information (VOI) and de-risking decision making in project planning. This framework is a code base that extends the functionality of the open-source visualization platform ParaView by Kitware. These extensions make it possible to visually integrate geophysical data in a multidimensional rendering space so that the end product is interpretable to non-geoscientists and that all parties can gain insight and VOI from geophysical imaging techniques. To show value in the VR presentation of multi-dimensional visualizations, we aim to develop metrics that will analyze the effectiveness of visual analysis in VR compared to traditional methods. We will evaluate these metrics through statistical gaming type protocol, where we will task subjects with making spatial decisions and finding features of interest in complex geoscientific scenes. We hypothesize that VR will bring the needed perception to most efficiently make spatial decisions and detect features of interest as well as convey information such as uncertainty in a usable manner. We will have preliminary results of the gaming protocol by March 2018 as well as share our visual framework along that journey in the form of a GitHub repository titled \u201cParaViewGeophysics.\u201d Our goal in sharing the repository is to deliver a toolset that enables geophysicists to rapidly visualize their data and models as well as effectively communicate their findings to interested stakeholders.\n\n\nOutline of Goals\n\n\nThese are the goals to achieve through publishing this repository but not necessarily the goals of the research project from which this repository was developed.\n\n\n\n\n\n\nDevelop and document geoscientific plugins for ParaView. These plugins will take advantage of ParaView and VTK\u2019s Python wrapping and use the Python Programmable Filter in ParaView. The advantage to using Python Programmable filters is that they are easily modified by the end user and can be wrapped in XML to create a GUI for its use in ParaView while having the option to directly edit the source code live in ParaView.\n\n\n\n\n\n\nReaders:\n Plugins that read common geoscientific and geophysical spatial data files (GSLIB, UBC mesh, ESRI grid, etc.). Also make readers that read common raw data files (packed binary floats, delimited ASCII, etc.)\n\n\n\n\n\n\nFilters:\n Plugins that perform post-processing analysis of geoscientific data for visualization. For example, filters that build tubes from a series of points that represent a tunnel or filters that take a 1D array, reshape it to 2D or 3D, and make a volumetric model ready for visualization all while adding spatial reference for visual integration.  \n\n\n\n\n\n\nSources:\n Plugins that create simple synthetic data sources such as a sphere or cube with a specified attribute like a spatially varying density or electrical conductivity. Other sources might include using that synthetic sphere or cube to make a volumetric field of some response.\n\n\n\n\n\n\n\n\n\n\nDevelop and document the \nPVGPpy\n Python module for use in ParaView\u2019s Python Shell. This module will contain all of the macros, batch processing tasks, and common codes to apply to 3D data scenes.\n\n\n\n\n\n\nMake tutorials on the use of ParaView\u2019s native features and the plugins distributed in this repository on open source data (for example):\n\n\n\n\n\n\nDocument explanations of how to get sophisticated geoscientific data formats like topography DEMs into a format ParaView can read.\n\n\n\n\n\n\nDocument how to use ParaView\u2019s native filters to complete common tasks in the visualization of geoscientific data. For example, applying satellite imagery to a surface that represents topography.\n\n\n\n\n\n\n\n\n\n\nDevelop customizable scripts for the visualization of common data formats. This will include developing scripts on an individual basis to help others quickly visualize their data and models for quality assessment and unique research needs.\n\n\n\n\n\n\n\n\nFeatures to Come\n\n\nHere is a list of features that are shortly coming to this repo. This list will be regularly updated\n\n\nMore documentation is soon to come. We want to do it right: with tutorials, example data, and detailed justification for need and use of each reader, filter, and macro.\n\n\nSuggestions? Post on the \nIssues page\n as a feature request.\n\n\nReaders\n\n\n\n\n \nUBC Mesh:\n both 2D and 3D. Details \nhere\n and \nhere\n. We\u2019re almost done with this!\n\n\n \nESRI Grid:\n Details \nhere\n and \nhere\n\n\n \nESRI shape files:\n Details \nhere\n and \nhere\n\n\n \nWell logs:\n Readers for common formats and easy ways to project well logs in XYZ space\n\n\n\n\nFilters\n\n\n\n\n \nAppend Model to UBC Mesh:\n This will load a model file and tag it on to vtkStructuredGrid loaded from a UBC Mesh reader. Think of it as appending models as attributes to the 3D mesh.\n\n\n \nExtract Array:\n This will allow you to extract any array from any data structure as vtkPolyData.\n\n\n \nTranspose Grid:\n Transpose or swap axii of grid data sets (vtkImageData and vtkRectilinearGrid)\n\n\n \nReshape Table:\n Adding ability to reshape using Fortran ordering on the currently available filter.\n\n\n \nMake Cubes from Point Set:\n This will take a point set and generate cube of some specified size at every point\n\n\n\n\n\n\n\nMacros and Scripts\n\n\n\n\n How to start making your own scripts (tips, tricks, and general advice)\n\n\n Save screenshots in isometric views, side, top, etc. in an automated fashion\n\n\n \nMany Slices Along Points:\n Export slices of dataset along polyline at every point on that line (normal is the vector from that point to the next)\n\n\n \nExport a scene\n to a shareable 3D format\n\n\n\n\nExamples and Other Docs\n\n\n\n\nTutorials for each filter/reader/macro will be in their respective documentation.\n\n\n How to send data scenes made using the Readers, Filters, and Macros in this repository over to the Virtual Reality build of ParaView\n\n\n How to build your own plugins using this project\u2019s framework and build scripts\n\n\n Importing DEM topography (with/without satellite imagery)\n\n\n Slicing/cropping a data scene through all components/datasets (managing links)\n\n\n \nSlice Model Along PolyLine:\n How to export a slice of a dataset projected on a vtkPolyLine (capabilities are currently present in ParaView)",
             "title": "Home"
         },
         {
@@ -26,9 +26,9 @@
             "title": "About the Author"
         },
         {
-            "location": "/#recent-abstract-submission",
+            "location": "/#sageep-2018-abstract",
             "text": "The results of geophysical imaging techniques often hold high significance to stakeholders in the problems addressed yet the effective perception of those results remains a dynamic challenge for all. To illuminate the value of geophysical imaging techniques, we are developing a framework to visually integrate geophysical data and models in 3D which extends into Virtual Reality (VR) as well as statistically analyzing interpretation advantages in VR. The motivation for this effort comes from a desire to directly engage stakeholders with geophysical data gaining Value of Information (VOI) and de-risking decision making in project planning. This framework is a code base that extends the functionality of the open-source visualization platform ParaView by Kitware. These extensions make it possible to visually integrate geophysical data in a multidimensional rendering space so that the end product is interpretable to non-geoscientists and that all parties can gain insight and VOI from geophysical imaging techniques. To show value in the VR presentation of multi-dimensional visualizations, we aim to develop metrics that will analyze the effectiveness of visual analysis in VR compared to traditional methods. We will evaluate these metrics through statistical gaming type protocol, where we will task subjects with making spatial decisions and finding features of interest in complex geoscientific scenes. We hypothesize that VR will bring the needed perception to most efficiently make spatial decisions and detect features of interest as well as convey information such as uncertainty in a usable manner. We will have preliminary results of the gaming protocol by March 2018 as well as share our visual framework along that journey in the form of a GitHub repository titled \u201cParaViewGeophysics.\u201d Our goal in sharing the repository is to deliver a toolset that enables geophysicists to rapidly visualize their data and models as well as effectively communicate their findings to interested stakeholders.",
-            "title": "Recent Abstract Submission"
+            "title": "SAGEEP 2018 Abstract"
         },
         {
             "location": "/#outline-of-goals",
@@ -499,6 +499,231 @@
             "location": "/PVGPpy/vis/Many-Slices-Along-Points/#batch-processing",
             "text": "If you want to make tons of slices of a model, the outputs of this macro WILL get messy if used in the ParaView GUI. We recommend using the  pvpython  module on the command line to perform large batch processing like this. More details to come\u2026 stay tuned.",
             "title": "Batch Processing"
+        },
+        {
+            "location": "/PVGPpy/read/Binary-Packed-Data/",
+            "text": "PVGPpy.read.packedBinaries\n\n\nPVGPpy.read.packedBinaries(FileName, dblVals=False, dataNm='')\n\n\n\n\nDescription\n\n\nThis filter reads in float or double data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. The reader uses big endian and defaults to import as floats. Use the Table to Uniform Grid or the Reshape Table filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.\n\n\nParameters\n\n\nFileName\n : str\n\n\n\n\nThe absolute file name with path to read.\n\n\n\n\ndblVals\n : boolean, optional\n\n\n\n\nA boolean flag to chose to treat the binary packed data as doubles instead of the default floats.\n\n\n\n\ndataNm\n : str, optional\n\n\n\n\nA string name to use for the constructed vtkDataArray\n\n\n\n\nReturns\n\n\nReturns a vtkTable of the input data file with a single column being the data read.",
+            "title": "Binary Packed Data"
+        },
+        {
+            "location": "/PVGPpy/read/Binary-Packed-Data/#pvgppyreadpackedbinaries",
+            "text": "PVGPpy.read.packedBinaries(FileName, dblVals=False, dataNm='')",
+            "title": "PVGPpy.read.packedBinaries"
+        },
+        {
+            "location": "/PVGPpy/read/Binary-Packed-Data/#description",
+            "text": "This filter reads in float or double data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. The reader uses big endian and defaults to import as floats. Use the Table to Uniform Grid or the Reshape Table filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/Binary-Packed-Data/#parameters",
+            "text": "FileName  : str   The absolute file name with path to read.   dblVals  : boolean, optional   A boolean flag to chose to treat the binary packed data as doubles instead of the default floats.   dataNm  : str, optional   A string name to use for the constructed vtkDataArray",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/Binary-Packed-Data/#returns",
+            "text": "Returns a vtkTable of the input data file with a single column being the data read.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/Delimited-Text/",
+            "text": "PVGPpy.read.delimitedText\n\n\nPVGPpy.read.delimitedText(FileName, deli=' ', useTab=False, hasTits=True, numIgLns=0)\n\n\n\n\nDescription\n\n\nThis reader will take in any delimited text file and make a vtkTable from it. This is not much different than the default .txt or .csv reader in ParaView, however it gives us room to use our own extensions and a little more flexibility in the structure of the files we import.\n\n\nParameters\n\n\nFileName\n : str\n\n\n\n\nThe absolute file name with path to read.\n\n\n\n\ndeli\n : str\n\n\n\n\nThe input files delimiter. To use a tab delimiter please set the \nuseTab\n.\n\n\n\n\nuseTab\n : boolean\n\n\n\n\nA boolean that describes whether to use a tab delimiter\n\n\n\n\nnumIgLns\n : int\n\n\n\n\nThe integer number of lines to ignore\n\n\n\n\nReturns\n\n\nReturns a vtkTable of the input data file.",
+            "title": "Delimited Text"
+        },
+        {
+            "location": "/PVGPpy/read/Delimited-Text/#pvgppyreaddelimitedtext",
+            "text": "PVGPpy.read.delimitedText(FileName, deli=' ', useTab=False, hasTits=True, numIgLns=0)",
+            "title": "PVGPpy.read.delimitedText"
+        },
+        {
+            "location": "/PVGPpy/read/Delimited-Text/#description",
+            "text": "This reader will take in any delimited text file and make a vtkTable from it. This is not much different than the default .txt or .csv reader in ParaView, however it gives us room to use our own extensions and a little more flexibility in the structure of the files we import.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/Delimited-Text/#parameters",
+            "text": "FileName  : str   The absolute file name with path to read.   deli  : str   The input files delimiter. To use a tab delimiter please set the  useTab .   useTab  : boolean   A boolean that describes whether to use a tab delimiter   numIgLns  : int   The integer number of lines to ignore",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/Delimited-Text/#returns",
+            "text": "Returns a vtkTable of the input data file.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/GSLIB/",
+            "text": "PVGPpy.read.gslib\n\n\nPVGPpy.read.gslib(FileName, deli=' ', useTab=False, numIgLns=0)\n\n\n\n\nDescription\n\n\nReads a GSLIB file format to a vtkTable. The GSLIB file format has headers lines followed by the data as a space delimited ASCI file (this filter is set up to allow you to choose any single character delimiter). The first header line is the title and will be printed to the console. This line may have the dimensions for a grid to be made of the data. The second line is the number (n) of columns of data. The next n lines are the variable names for the data in each column. You are allowed up to ten characters for the variable name. The data follow with a space between each field (column).\n\n\nParameters\n\n\nFileName\n : str\n\n\n\n\nThe absolute file name with path to read.\n\n\n\n\ndeli\n : str\n\n\n\n\nThe input files delimiter. To use a tab delimiter please set the \nuseTab\n.\n\n\n\n\nuseTab\n : boolean\n\n\n\n\nA boolean that describes whether to use a tab delimiter\n\n\n\n\nnumIgLns\n : int\n\n\n\n\nThe integer number of lines to ignore\n\n\n\n\nReturns\n\n\nReturns a vtkTable of the input data file.",
+            "title": "GSLIB"
+        },
+        {
+            "location": "/PVGPpy/read/GSLIB/#pvgppyreadgslib",
+            "text": "PVGPpy.read.gslib(FileName, deli=' ', useTab=False, numIgLns=0)",
+            "title": "PVGPpy.read.gslib"
+        },
+        {
+            "location": "/PVGPpy/read/GSLIB/#description",
+            "text": "Reads a GSLIB file format to a vtkTable. The GSLIB file format has headers lines followed by the data as a space delimited ASCI file (this filter is set up to allow you to choose any single character delimiter). The first header line is the title and will be printed to the console. This line may have the dimensions for a grid to be made of the data. The second line is the number (n) of columns of data. The next n lines are the variable names for the data in each column. You are allowed up to ten characters for the variable name. The data follow with a space between each field (column).",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/GSLIB/#parameters",
+            "text": "FileName  : str   The absolute file name with path to read.   deli  : str   The input files delimiter. To use a tab delimiter please set the  useTab .   useTab  : boolean   A boolean that describes whether to use a tab delimiter   numIgLns  : int   The integer number of lines to ignore",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/GSLIB/#returns",
+            "text": "Returns a vtkTable of the input data file.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/",
+            "text": "PVGPpy.read.sgemsGrid\n\n\nPVGPpy.read.sgemsGrid(FileName, deli=' ', useTab=False)\n\n\n\n\nDescription\n\n\nGenerates vtkImageData from the uniform grid defined in the inout file in the SGeMS grid format. This format is simply the GSLIB format where the header line defines the dimensions of the uniform grid.\n\n\nParameters\n\n\nFileName\n : str\n\n\n\n\nThe file name / absolute path for the input file in SGeMS grid format.\n\n\n\n\ndeli\n : str, optional\n\n\n\n\nThe input files delimiter. To use a tab delimiter please set the \nuseTab\n.\n\n\n\n\nuseTab\n : boolean, optional\n\n\n\n\nA boolean that describes whether to use a tab delimiter.\n\n\n\n\nReturns\n\n\nReturns vtkImageData\n\n\nPVGPpy.read.sgemsExtent\n\n\nPVGPpy.read.sgemsExtent(FileName, deli=' ', useTab=False)\n\n\n\n\nDescription\n\n\nReads the input file for the SGeMS format to get output extents. Computationally inexpensive method to discover whole output extent.\n\n\nParameters\n\n\nFileName\n : str\n\n\n\n\nThe file name / absolute path for the input file in SGeMS grid format.\n\n\n\n\ndeli\n : str, optional\n\n\n\n\nThe input files delimiter. To use a tab delimiter please set the \nuseTab\n.\n\n\n\n\nuseTab\n : boolean, optional\n\n\n\n\nA boolean that describes whether to use a tab delimiter.\n\n\n\n\nReturns\n\n\nThis returns a tuple of the whole extent for the uniform grid to be made of the input file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.",
+            "title": "SGeMS Grid"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#pvgppyreadsgemsgrid",
+            "text": "PVGPpy.read.sgemsGrid(FileName, deli=' ', useTab=False)",
+            "title": "PVGPpy.read.sgemsGrid"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#description",
+            "text": "Generates vtkImageData from the uniform grid defined in the inout file in the SGeMS grid format. This format is simply the GSLIB format where the header line defines the dimensions of the uniform grid.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#parameters",
+            "text": "FileName  : str   The file name / absolute path for the input file in SGeMS grid format.   deli  : str, optional   The input files delimiter. To use a tab delimiter please set the  useTab .   useTab  : boolean, optional   A boolean that describes whether to use a tab delimiter.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#returns",
+            "text": "Returns vtkImageData",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#pvgppyreadsgemsextent",
+            "text": "PVGPpy.read.sgemsExtent(FileName, deli=' ', useTab=False)",
+            "title": "PVGPpy.read.sgemsExtent"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#description_1",
+            "text": "Reads the input file for the SGeMS format to get output extents. Computationally inexpensive method to discover whole output extent.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#parameters_1",
+            "text": "FileName  : str   The file name / absolute path for the input file in SGeMS grid format.   deli  : str, optional   The input files delimiter. To use a tab delimiter please set the  useTab .   useTab  : boolean, optional   A boolean that describes whether to use a tab delimiter.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/SGeMS-Grid/#returns_1",
+            "text": "This returns a tuple of the whole extent for the uniform grid to be made of the input file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/",
+            "text": "PVGPpy.read.ubcGridData\n\n\nPVGPpy.read.ubcGridData(FileName_Mesh, FileName_Model, deli=' ', useTab=False, dataNm='')\n\n\n\n\nDescription\n\n\nUBC Mesh 3D models are defined using a 2-file format. The \u201cmesh\u201d file describes how the data is descritized. The \u201cmodel\u201d file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file. Default file delimiter is a space character.\n\n\nParameters\n\n\nFileName_Mesh\n : str\n\n\n\n\nThe mesh filename as an absolute path for the input mesh file in UBCMesh Format\n\n\n\n\nFileName_Model\n : str\n\n\n\n\nThe model filename as an absolute path for the input model file in UBCMesh Format.\n\n\n\n\ndeli\n : str, optional\n\n\n\n\nThe delimiter field used in the input file. Default is a space character.\n\n\n\n\nuseTab\n : boolean, optional\n\n\n\n\nAn optional flag to use a tab delimiter in the input file.\n\n\n\n\ndataNm\n : str, optional\n\n\n\n\nThe name of the model data array once placed on the vtkRectilinearGrid.\n\n\n\n\nReturns\n\n\nReturns a vtkRectilinearGrid generated from the UBCMesh grid. Mesh is defined by the input mesh file. Cell data is defined by the input model file.\n\n\nPVGPpy.read.ubcMeshExtnet\n\n\nPVGPpy.read.ubcMeshExtnet(FileName_Mesh, deli=' ', useTab=False)\n\n\n\n\nDescription\n\n\nReads the mesh file for the UBCMesh format to get output extents. Computationally inexpensive method to discover whole output extent.\n\n\nParameters\n\n\nFileName_Mesh\n : str\n\n\n\n\nThe mesh filename as an absolute path for the input mesh file in UBCMesh Format.\n\n\n\n\ndeli\n : str, optional\n\n\n\n\nThe delimiter field used in the input file. Default is a space character.\n\n\n\n\nuseTab\n : boolean, optional\n\n\n\n\nAn optional flag to use a tab delimiter in the input file.\n\n\n\n\nReturns\n\n\nThis returns a tuple of the whole extent for the rectilinear grid to be made of the input mesh file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.\n\n\nPVGPpy.read.placeModelOnMesh\n\n\nPVGPpy.read.placeModelOnMesh(mesh, model, dataNm='Data')\n\n\n\n\nDescription\n\n\nPlaces model data onto a mesh. This is for the UBC Grid data reaers to associate model data with the mesh grid.\n\n\nParameters\n\n\nmesh\n : vtkRectilinearGrid\n\n\n\n\nThe vtkRectilinearGrid that is the mesh to place the model data upon.\n\n\n\n\nmodel\n : NumPy float array\n\n\n\n\nA NumPy float array that holds all of the data to place inside of the mesh\u2019s cells.\n\n\n\n\ndataNm\n : str, optional\n\n\n\n\nThe name of the model data array once placed on the vtkRectilinearGrid.\n\n\n\n\nReturns\n\n\nReturns the input vtkRectilinearGrid with model data appended.\n\n\nPVGPpy.read.ubcMesh\n\n\nPVGPpy.read.ubcMesh(FileName_Mesh, deli=' ', useTab=False)\n\n\n\n\nDescription\n\n\nThis method reads a UBC Mesh file and builds an empty vrtkRectilinearGrid for data to be inserted into. Default file delimiter is a space character.\n\n\nParameters\n\n\nFileName_Mesh\n : str\n\n\n\n\nThe mesh filename as an absolute path for the input mesh file in UBCMesh Format.\n\n\n\n\ndeli\n : str, optional\n\n\n\n\nThe delimiter field used in the input file. Default is a space character.\n\n\n\n\nuseTab\n : boolean, optional\n\n\n\n\nAn optional flag to use a tab delimiter in the input file.\n\n\n\n\nReturns\n\n\nReturns a vtkRectilinearGrid generated from the UBCMesh grid. Mesh is defined by the input mesh file. No data attributes here, simply an empty mesh. Use the placeModelOnMesh() method to associate with model data.\n\n\nPVGPpy.read.ubcModel\n\n\nPVGPpy.read.ubcModel(FileName_Model, deli=' ', useTab=False)\n\n\n\n\nDescription\n\n\nReads the model file and returns a 1D NumPy float array. Use the placeModelOnMesh() method to associate with a grid.\n\n\nParameters\n\n\nFileName_Model\n : str\n\n\n\n\nThe model filename as an absolute path for the input model file in UBCMesh Format.\n\n\n\n\ndeli\n : str, optional\n\n\n\n\nThe delimiter field used in the input file. Default is a space character.\n\n\n\n\nuseTab\n : boolean, optional\n\n\n\n\nAn optional flag to use a tab delimiter in the input file.\n\n\n\n\nReturns\n\n\nReturns a NumPy float array that holds the model data read from the file. Use the placeModelOnMesh() method to associate with a grid.",
+            "title": "UBC Mesh Grid"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#pvgppyreadubcgriddata",
+            "text": "PVGPpy.read.ubcGridData(FileName_Mesh, FileName_Model, deli=' ', useTab=False, dataNm='')",
+            "title": "PVGPpy.read.ubcGridData"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#description",
+            "text": "UBC Mesh 3D models are defined using a 2-file format. The \u201cmesh\u201d file describes how the data is descritized. The \u201cmodel\u201d file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file. Default file delimiter is a space character.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#parameters",
+            "text": "FileName_Mesh  : str   The mesh filename as an absolute path for the input mesh file in UBCMesh Format   FileName_Model  : str   The model filename as an absolute path for the input model file in UBCMesh Format.   deli  : str, optional   The delimiter field used in the input file. Default is a space character.   useTab  : boolean, optional   An optional flag to use a tab delimiter in the input file.   dataNm  : str, optional   The name of the model data array once placed on the vtkRectilinearGrid.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#returns",
+            "text": "Returns a vtkRectilinearGrid generated from the UBCMesh grid. Mesh is defined by the input mesh file. Cell data is defined by the input model file.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#pvgppyreadubcmeshextnet",
+            "text": "PVGPpy.read.ubcMeshExtnet(FileName_Mesh, deli=' ', useTab=False)",
+            "title": "PVGPpy.read.ubcMeshExtnet"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#description_1",
+            "text": "Reads the mesh file for the UBCMesh format to get output extents. Computationally inexpensive method to discover whole output extent.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#parameters_1",
+            "text": "FileName_Mesh  : str   The mesh filename as an absolute path for the input mesh file in UBCMesh Format.   deli  : str, optional   The delimiter field used in the input file. Default is a space character.   useTab  : boolean, optional   An optional flag to use a tab delimiter in the input file.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#returns_1",
+            "text": "This returns a tuple of the whole extent for the rectilinear grid to be made of the input mesh file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#pvgppyreadplacemodelonmesh",
+            "text": "PVGPpy.read.placeModelOnMesh(mesh, model, dataNm='Data')",
+            "title": "PVGPpy.read.placeModelOnMesh"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#description_2",
+            "text": "Places model data onto a mesh. This is for the UBC Grid data reaers to associate model data with the mesh grid.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#parameters_2",
+            "text": "mesh  : vtkRectilinearGrid   The vtkRectilinearGrid that is the mesh to place the model data upon.   model  : NumPy float array   A NumPy float array that holds all of the data to place inside of the mesh\u2019s cells.   dataNm  : str, optional   The name of the model data array once placed on the vtkRectilinearGrid.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#returns_2",
+            "text": "Returns the input vtkRectilinearGrid with model data appended.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#pvgppyreadubcmesh",
+            "text": "PVGPpy.read.ubcMesh(FileName_Mesh, deli=' ', useTab=False)",
+            "title": "PVGPpy.read.ubcMesh"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#description_3",
+            "text": "This method reads a UBC Mesh file and builds an empty vrtkRectilinearGrid for data to be inserted into. Default file delimiter is a space character.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#parameters_3",
+            "text": "FileName_Mesh  : str   The mesh filename as an absolute path for the input mesh file in UBCMesh Format.   deli  : str, optional   The delimiter field used in the input file. Default is a space character.   useTab  : boolean, optional   An optional flag to use a tab delimiter in the input file.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#returns_3",
+            "text": "Returns a vtkRectilinearGrid generated from the UBCMesh grid. Mesh is defined by the input mesh file. No data attributes here, simply an empty mesh. Use the placeModelOnMesh() method to associate with model data.",
+            "title": "Returns"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#pvgppyreadubcmodel",
+            "text": "PVGPpy.read.ubcModel(FileName_Model, deli=' ', useTab=False)",
+            "title": "PVGPpy.read.ubcModel"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#description_4",
+            "text": "Reads the model file and returns a 1D NumPy float array. Use the placeModelOnMesh() method to associate with a grid.",
+            "title": "Description"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#parameters_4",
+            "text": "FileName_Model  : str   The model filename as an absolute path for the input model file in UBCMesh Format.   deli  : str, optional   The delimiter field used in the input file. Default is a space character.   useTab  : boolean, optional   An optional flag to use a tab delimiter in the input file.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/PVGPpy/read/UBC-Mesh/#returns_4",
+            "text": "Returns a NumPy float array that holds the model data read from the file. Use the placeModelOnMesh() method to associate with a grid.",
+            "title": "Returns"
         },
         {
             "location": "/Scripts/Example-Script/",
