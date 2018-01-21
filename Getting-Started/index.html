@@ -454,8 +454,8 @@ $ cd ParaViewGeophysics
 <h2 id="installing-the-pvgp-repository">Installing the PVGP Repository</h2>
 <p>Now to get started using the plugins and python modules included in this repository, we need to set up some environmental variables. For Mac users this is a breeze but for windows users this is a bit more involved. Be sure to never move the directory containing ParaViewGeophysics code (if it is not in a convenient location then you must move it before continuing the install).</p>
 <h3 id="macos-x-paths">MacOS X Paths</h3>
-<p>If you are on MacOS X, then your life is easy! Simply run the script <code>installMac.sh</code> with root privileges.</p>
-<pre><code class="bash">$ sudo ./installMac.sh
+<p>If you are on MacOS X, then your life is easy! Simply run the script <code>installMac.sh</code>.</p>
+<pre><code class="bash">$ sh ./installMac.sh
 </code></pre>
 
 <p>Now test that the install worked by opening ParaView (close it and reopen if needed). Check that the category <strong>CSM Geophysics Filters</strong> is in the <strong>Filters</strong> menu. Then open the <strong>Python Shell</strong> and import the <code>PVGPpy</code> module by executing <code>import PVGPpy</code>. Errors should not arise but if they do, post to the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">issues page</a> and the errors will be <em>immediately</em> addressed.</p>
