@@ -397,13 +397,13 @@
                 <li class="third-level"><a href="#windows-paths">Windows Paths</a></li>
             
         
-            <li class="second-level"><a href="#how-to-update-the-pvgp-repository">How to Update the PVGP Repository</a></li>
+            <li class="second-level"><a href="#update-the-pvgp-repository">Update the PVGP Repository</a></li>
             
         
     
         <li class="first-level "><a href="#using-outside-modules">Using Outside Modules</a></li>
         
-            <li class="second-level"><a href="#modules-currently-needed-for-this-repo">Modules Currently Needed for this Repo</a></li>
+            <li class="second-level"><a href="#required-modules">Required Modules</a></li>
             
         
     
@@ -482,7 +482,7 @@ $ cd ParaViewGeophysics
 <p>Now test that the install worked by opening ParaView (close it and reopen if needed). Check that the category <strong>CSM Geophysics Filters</strong> is in the <strong>Filters</strong> menu. Then open the <strong>Python Shell</strong> and import the <code>PVGPpy</code> module by executing <code>import PVGPpy</code>. If an error arises please double check your paths.</p>
 </li>
 </ol>
-<h2 id="how-to-update-the-pvgp-repository">How to Update the PVGP Repository</h2>
+<h2 id="update-the-pvgp-repository">Update the PVGP Repository</h2>
 <p>We have included a script that will update the repository from GitHub, and since the repo is already linked to ParaView, all changes to the repo will be directory reflected in ParaView. This script is simply executed by:</p>
 <pre><code class="bash"># Run this to update ParaViewGeophysics in the future:
 $ sh ./updatePVGP.sh
@@ -492,7 +492,7 @@ $ sh ./updatePVGP.sh
 <hr />
 <h1 id="using-outside-modules">Using Outside Modules</h1>
 <p>ParaView&rsquo;s Python environment, <code>pvpython</code>, can be a bit tricky to start using outside Python modules like SciPy or SimPEG. On Mac OS X, using Python modules installed via pip or anaconda should work simply with an <code>import ...</code> statement if you have your Python paths set up well. (Mac users: if you have trouble importing SciPy or other modules used in this repo let me know and I will develop a solution). Windows users: this should have been resolved if you followed the install instructions outlined <a href="#windows-paths">above</a>.</p>
-<h2 id="modules-currently-needed-for-this-repo">Modules Currently Needed for this Repo</h2>
+<h2 id="required-modules">Required Modules</h2>
 <p>These are all of the modules that filters, readers, and macros might use in this repo. We recommend opening the Python Shell from ParaView (Tools-&gt;Python Shell) and testing the import of each of these modules.</p>
 <ul>
 <li><a href="http://www.numpy.org">NumPy</a> (you may need to update ParaView&rsquo;s version to the latest version for SciPy to be happy)</li>
