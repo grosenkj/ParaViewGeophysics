@@ -493,7 +493,7 @@ $ sh ./updatePVGP.sh
 <h1 id="using-outside-modules">Using Outside Modules</h1>
 <p>ParaView&rsquo;s Python environment, <code>pvpython</code>, can be a bit tricky to start using outside Python modules like SciPy or SimPEG. On Mac OS X, using Python modules installed via pip or anaconda should work simply with an <code>import ...</code> statement if you have your Python paths set up well. (Mac users: if you have trouble importing SciPy or other modules used in this repo let me know and I will develop a solution). Windows users: this should have been resolved if you followed the install instructions outlined <a href="#windows-paths">above</a>.</p>
 <h2 id="modules-currently-needed-for-this-repo">Modules Currently Needed for this Repo</h2>
-<p>These are all of the modules that filters, readers, and macros might use in this repo. We recommend opening the Python Shell from ParaView (Tools-&gt;Python Shell) and testing the import of each of these modules. Copy/Paste the modules that failed to import from wherever you have them installed into <code>.../ParaView/bin/site-packages/</code>:</p>
+<p>These are all of the modules that filters, readers, and macros might use in this repo. We recommend opening the Python Shell from ParaView (Tools-&gt;Python Shell) and testing the import of each of these modules.</p>
 <ul>
 <li><a href="http://www.numpy.org">NumPy</a> (you may need to update ParaView&rsquo;s version to the latest version for SciPy to be happy)</li>
 <li><a href="https://www.scipy.org/install.html">SciPy</a></li>
