@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#about-this-reader" tabindex="1" class="md-skip">
+      <a href="#pvgppyreadubcgriddata" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -401,13 +401,6 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-this-reader" title="About this Reader" class="md-nav__link">
-    About this Reader
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#pvgppyreadubcgriddata" title="PVGPpy.read.ubcGridData" class="md-nav__link">
@@ -1039,13 +1032,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-reader" title="About this Reader" class="md-nav__link">
-    About this Reader
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pvgppyreadubcgriddata" title="PVGPpy.read.ubcGridData" class="md-nav__link">
     PVGPpy.read.ubcGridData
   </a>
@@ -1234,21 +1220,21 @@
                 
                   <h1>UBC Mesh Grid</h1>
                 
-                <h2 id="about-this-reader">About this Reader</h2>
+                <h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
 <p>More to come!</p>
 <!--- TODO --->
 
 <p>UBC Mesh 3D models are defined using a 2-file format. The &ldquo;mesh&rdquo; file describes how the data is descritized. The &ldquo;model&rdquo; file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file. Default file delimiter is a space character.</p>
 <p>Currently 3D mesh files work. We are implementing 2D compatibility currently.</p>
 <hr />
-<h2 id="pvgppyreadubcgriddata">PVGPpy.read.ubcGridData</h2>
-<div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcGridData</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">FileName_Model</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<h2 id="pvgppyreadubcgriddata">PVGPpy.read.ubcGridData<a class="headerlink" href="#pvgppyreadubcgriddata" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcGridData</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">FileName_Model</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
+</td></tr></table>
 
-
-<h3 id="description">Description</h3>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>UBC Mesh 3D models are defined using a 2-file format. The &ldquo;mesh&rdquo; file describes how the data is descritized. The &ldquo;model&rdquo; file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file. Default file delimiter is a space character.</p>
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <p><code>FileName_Mesh</code> : str</p>
 <ul>
 <li>The mesh filename as an absolute path for the input mesh file in UBCMesh Format</li>
@@ -1269,16 +1255,16 @@
 <ul>
 <li>The name of the model data array once placed on the vtkRectilinearGrid.</li>
 </ul>
-<h3 id="returns">Returns</h3>
+<h3 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h3>
 <p>Returns a vtkRectilinearGrid generated from the UBCMesh grid. Mesh is defined by the input mesh file. Cell data is defined by the input model file.</p>
-<h2 id="pvgppyreadubcmeshextnet">PVGPpy.read.ubcMeshExtnet</h2>
-<div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMeshExtnet</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<h2 id="pvgppyreadubcmeshextnet">PVGPpy.read.ubcMeshExtnet<a class="headerlink" href="#pvgppyreadubcmeshextnet" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMeshExtnet</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
+</td></tr></table>
 
-
-<h3 id="description_1">Description</h3>
+<h3 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h3>
 <p>Reads the mesh file for the UBCMesh format to get output extents. Computationally inexpensive method to discover whole output extent.</p>
-<h3 id="parameters_1">Parameters</h3>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
 <p><code>FileName_Mesh</code> : str</p>
 <ul>
 <li>The mesh filename as an absolute path for the input mesh file in UBCMesh Format.</li>
@@ -1291,16 +1277,16 @@
 <ul>
 <li>An optional flag to use a tab delimiter in the input file.</li>
 </ul>
-<h3 id="returns_1">Returns</h3>
+<h3 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h3>
 <p>This returns a tuple of the whole extent for the rectilinear grid to be made of the input mesh file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.</p>
-<h2 id="pvgppyreadplacemodelonmesh">PVGPpy.read.placeModelOnMesh</h2>
-<div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">placeModelOnMesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+<h2 id="pvgppyreadplacemodelonmesh">PVGPpy.read.placeModelOnMesh<a class="headerlink" href="#pvgppyreadplacemodelonmesh" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">placeModelOnMesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
 </pre></div>
+</td></tr></table>
 
-
-<h3 id="description_2">Description</h3>
+<h3 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h3>
 <p>Places model data onto a mesh. This is for the UBC Grid data reaers to associate model data with the mesh grid.</p>
-<h3 id="parameters_2">Parameters</h3>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
 <p><code>mesh</code> : vtkRectilinearGrid</p>
 <ul>
 <li>The vtkRectilinearGrid that is the mesh to place the model data upon.</li>
@@ -1313,16 +1299,16 @@
 <ul>
 <li>The name of the model data array once placed on the vtkRectilinearGrid.</li>
 </ul>
-<h2 id="returns_2">Returns</h2>
+<h2 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h2>
 <p>Returns the input vtkRectilinearGrid with model data appended.</p>
-<h2 id="pvgppyreadubcmesh">PVGPpy.read.ubcMesh</h2>
-<div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMesh</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<h2 id="pvgppyreadubcmesh">PVGPpy.read.ubcMesh<a class="headerlink" href="#pvgppyreadubcmesh" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMesh</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
+</td></tr></table>
 
-
-<h3 id="description_3">Description</h3>
+<h3 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h3>
 <p>This method reads a UBC Mesh file and builds an empty vrtkRectilinearGrid for data to be inserted into. Default file delimiter is a space character.</p>
-<h3 id="parameters_3">Parameters</h3>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
 <p><code>FileName_Mesh</code> : str</p>
 <ul>
 <li>The mesh filename as an absolute path for the input mesh file in UBCMesh Format.</li>
@@ -1335,16 +1321,16 @@
 <ul>
 <li>An optional flag to use a tab delimiter in the input file.</li>
 </ul>
-<h3 id="returns_3">Returns</h3>
+<h3 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h3>
 <p>Returns a vtkRectilinearGrid generated from the UBCMesh grid. Mesh is defined by the input mesh file. No data attributes here, simply an empty mesh. Use the placeModelOnMesh() method to associate with model data.</p>
-<h2 id="pvgppyreadubcmodel">PVGPpy.read.ubcModel</h2>
-<div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcModel</span><span class="p">(</span><span class="n">FileName_Model</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<h2 id="pvgppyreadubcmodel">PVGPpy.read.ubcModel<a class="headerlink" href="#pvgppyreadubcmodel" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcModel</span><span class="p">(</span><span class="n">FileName_Model</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
+</td></tr></table>
 
-
-<h3 id="description_4">Description</h3>
+<h3 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h3>
 <p>Reads the model file and returns a 1D NumPy float array. Use the placeModelOnMesh() method to associate with a grid.</p>
-<h3 id="parameters_4">Parameters</h3>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
 <p><code>FileName_Model</code> : str</p>
 <ul>
 <li>The model filename as an absolute path for the input model file in UBCMesh Format.</li>
@@ -1357,7 +1343,7 @@
 <ul>
 <li>An optional flag to use a tab delimiter in the input file.</li>
 </ul>
-<h3 id="returns_4">Returns</h3>
+<h3 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h3>
 <p>Returns a NumPy float array that holds the model data read from the file. Use the placeModelOnMesh() method to associate with a grid.</p>
                 
                   

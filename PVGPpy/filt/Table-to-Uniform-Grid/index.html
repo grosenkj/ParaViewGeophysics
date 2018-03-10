@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#about-this-filter" tabindex="1" class="md-skip">
+      <a href="#parameters" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -437,13 +437,6 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-this-filter" title="About this Filter" class="md-nav__link">
-    About this Filter
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#parameters" title="Parameters" class="md-nav__link">
@@ -890,13 +883,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-filter" title="About this Filter" class="md-nav__link">
-    About this Filter
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" title="Parameters" class="md-nav__link">
     Parameters
   </a>
@@ -936,9 +922,9 @@
                 
                   <h1>Table to Uniform Grid</h1>
                 
-                <h2 id="about-this-filter">About this Filter</h2>
+                <h2 id="about-this-filter">About this Filter<a class="headerlink" href="#about-this-filter" title="Permanent link">&para;</a></h2>
 <p>This filter takes a vtkTable object with columns that represent data to be translated (reshaped) into a 3D grid (2D also works, just set the third dimensions extent to 1). The grid will be a n1 by n2 by n3 vtkImageData structure and an origin (south-west bottom corner) can be set at any xyz point. Each column of the vtkTable will represent a data attribute of the vtkImageData formed (essentially a uniform mesh). The SEPlib option allows you to unfold data that was packed in the SEPlib format where the most important dimension is z and thus the z data is d1 (d1=z, d2=y, d3=x). When using SEPlib, specify n1 as the number of elements in the Z-direction, n2 as the number of elements in the X-direction, and n3 as the number of elements in the Y-direction (and so on for other parameters).</p>
-<h2 id="parameters">Parameters</h2>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Order: The contiguity or indexing of the data array stored in memory. Default is Fortran like.</li>
 <li>Extent: The number of elements in each of the three axial directions (element 0 (n1) corresponds to x, element 1 (n2) corresponds to y, and element 2 (n3) corresponds to z)</li>
@@ -946,7 +932,7 @@
 <li>Spacing: the spacing along each axial direction. Usually we specify a consistent spacing across all axial directions, but you can specify to have unique spacings along each axial direction.</li>
 <li>Origin: the d1, d2, and d3 (x,y,z) coordinates for the south-west bottom corner of the data set. This is the corner from which we build the volume out. Note that you can translate this specification using the <a href="../Translate-Origin-of-Grid/">Translate Origin of Grid</a> filter.</li>
 </ul>
-<h2 id="down-the-pipeline">Down the Pipeline</h2>
+<h2 id="down-the-pipeline">Down the Pipeline<a class="headerlink" href="#down-the-pipeline" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../Translate-Origin-of-Grid/">Translate Origin of Grid</a></li>
 <li><a href="../Flip-Grid-Axii/">Flip Grid Axii</a></li>
@@ -954,7 +940,7 @@
 <li><a href="https://www.paraview.org/Wiki/ParaView/Users_Guide/List_of_filters#Contour">Contour</a></li>
 <li><a href="https://www.paraview.org/Wiki/ParaView/Users_Guide/List_of_filters#Threshold">Threshold</a></li>
 </ul>
-<h2 id="example-use">Example Use</h2>
+<h2 id="example-use">Example Use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
 <p>Say we have some data in 1D format or a series of 1D data sets, like a vtkTable where we have columns of data which we know can be restructured into a 2D or 3D volume. One great example is the the table made in the example for using the <a href="../../read/Binary-Packed-Data/">Read Binary Packed Data</a> reader. Follow the instructions to read in that data to a vtkTable. Once you have sample data in a vtkTable, we can apply a the &lsquo;Table to Uniform Grid&rsquo; Filter and specify the shape of our volumetric data (for 2D data like this example, specify n1 and n2 accordingly and leave n3 as 1). The script provided in the example will output the extent, origin, and spacing parameters for you to use (best to copy/paste from that output into the parameter fields). This example will produce the 2D grid depicted on the <a href="../../read/Binary-Packed-Data/">Read Binary Packed Data</a> page (that image adds the &lsquo;Warp by Scalar&rsquo; filter).</p>
 <p>Another example is to use one of the data files from <a href="http://www.trainingimages.org/training-images-library.html">this website</a> and load it in using the <a href="../../read/GSLIB/">GSLIB File to Table</a> reader. These files are in the SGeMS file format but can also be read by the GSLIB file reader. Through loading this data into a table and then applying a Table to Uniform Grid Filter, we are effectively mimicking what the <a href="../../read/SGeMS-Grid/">SGeMS Grid</a> reader is doing behind the scenes. These SGeMS files make great example because they outline how we can transfer any data with any number of data arrays to a uniform grid (each data array in the input table will represent a different attribute of the space made up by the vtkImageData grid). The GSLIB reader will print out the dimensions of the grid to the Output Messages console (to see this, select View-&gt;Output Messages). Use those dimensions for the n1, n2, and n3 parameters. Play around with the other parameters to get a feel for how this filter behaves.</p>
                 

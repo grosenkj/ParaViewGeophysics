@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#about-this-reader" tabindex="1" class="md-skip">
+      <a href="#file-format" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -389,13 +389,6 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-this-reader" title="About this Reader" class="md-nav__link">
-    About this Reader
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#file-format" title="File Format" class="md-nav__link">
@@ -958,13 +951,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-reader" title="About this Reader" class="md-nav__link">
-    About this Reader
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#file-format" title="File Format" class="md-nav__link">
     File Format
   </a>
@@ -1072,11 +1058,21 @@
                 
                   <h1>SGeMS Grid</h1>
                 
-                <h2 id="about-this-reader">About this Reader</h2>
+                <h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
 <p>The Stanford Geostatistical Modeling Software (SGeMS) ASCII format is much like the <a href="../GSLIB/">GSLIB</a>) file format. The reader we have developed for this format assumes the data to be defined on a regularly spaced grid and that the first line of the file will specify the dimensions of that grid. The output of this file reader is a vtkImageData object which is essentially a regularly spaced grid with varying dimensionality along each axis. The reader will only work if the format of the file strictly follows what is below. If your SGeMS file does not strictly follow the uniform grid format below then we recommend use the <a href="../GSLIB/">GSLIB</a> file reader.</p>
-<h2 id="file-format">File Format</h2>
+<h2 id="file-format">File Format<a class="headerlink" href="#file-format" title="Permanent link">&para;</a></h2>
 <p>The general format is as follows:</p>
-<div class="codehilite"><pre><span></span>n1 n2 n3
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>n1 n2 n3
 numberOfColumns
 Col1_name
 Col2_name
@@ -1088,10 +1084,22 @@ dataCol1 dataCol2 dataCol3
 dataCol1 dataCol2 dataCol3
 ...
 </pre></div>
-
+</td></tr></table>
 
 <p>An example file might look something like this, where we have a 400 by 150 by 40 (x by y by z) grid with uniform spacing along each axis with three data arrays:</p>
-<div class="codehilite"><pre><span></span>400 150 40
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>400 150 40
 3
 Variable1
 Variable2
@@ -1105,9 +1113,9 @@ Variable3
 0.856096029282 0.0719339996576 0.928031027317
 ...
 </pre></div>
+</td></tr></table>
 
-
-<h2 id="down-the-pipeline">Down the Pipeline</h2>
+<h2 id="down-the-pipeline">Down the Pipeline<a class="headerlink" href="#down-the-pipeline" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../filt/Translate-Origin-of-Grid/">Translate Origin of Grid</a></li>
 <li><a href="../../filt/Flip-Grid-Axii/">Flip Grid Axii</a></li>
@@ -1115,7 +1123,7 @@ Variable3
 <li><a href="https://www.paraview.org/Wiki/ParaView/Users_Guide/List_of_filters#Contour">Contour</a></li>
 <li><a href="https://www.paraview.org/Wiki/ParaView/Users_Guide/List_of_filters#Threshold">Threshold</a></li>
 </ul>
-<h2 id="example-use">Example Use</h2>
+<h2 id="example-use">Example Use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
 <p>For example files to use with this reader, download any of the 2D or 3D files from <a href="http://www.trainingimages.org/training-images-library.html">this website</a> and load them into ParaView using the &lsquo;Read SGeMS File to Uniform Grid&rsquo; file reader. A 2D or 3D block of data should automatically be built and visualized.</p>
 <p>Here is the <a href="http://www.trainingimages.org/uploads/3/4/0/5/3405352/a_wlreferencecat.zip">Walker Lake Exhaustive DEM Categorized</a> with a categorized color scale and the surface warped by categorization to give it an interesting 3D representation:</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
@@ -1127,8 +1135,19 @@ Variable3
         <iframe src="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/qnahdwedjwndo7t/fluvsim_channels.vtkjs?dl=0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>We will later add in the ability to specify the spacing and origin of the produced vtkImageData as advanced properties of this reader, however you can easily do this by adding a Python Programmable Filter that copies the data and changes these properties with a script like this one:</p>
-<div class="codehilite"><pre><span></span><span class="c1">## Note: Set the output type to vtkImageData</span>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Note: Set the output type to vtkImageData</span>
 <span class="n">pdi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetInput</span><span class="p">()</span> <span class="c1">## vtkImageData</span>
 <span class="n">pdo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">()</span> <span class="c1">#vtkImageData</span>
 <span class="c1">## DeepCopy so that we do not disturb the input data</span>
@@ -1138,17 +1157,14 @@ Variable3
 <span class="c1">## spacing for each axial direction</span>
 <span class="n">pdo</span><span class="o">.</span><span class="n">SetSpacing</span><span class="p">(</span><span class="n">x_spacing</span><span class="p">,</span> <span class="n">y_spacing</span><span class="p">,</span> <span class="n">z_spacing</span><span class="p">)</span>
 </pre></div>
-
+</td></tr></table>
 
 <hr />
-<h2 id="pvgppyreadsgemsgrid">PVGPpy.read.sgemsGrid</h2>
-<div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">sgemsGrid</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-</pre></div>
-
-
-<h3 id="description">Description</h3>
+<h2 id="pvgppyreadsgemsgrid">PVGPpy.read.sgemsGrid<a class="headerlink" href="#pvgppyreadsgemsgrid" title="Permanent link">&para;</a></h2>
+<p><code>PVGPpy.read.sgemsGrid(FileName, deli=' ', useTab=False)</code></p>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>Generates vtkImageData from the uniform grid defined in the inout file in the SGeMS grid format. This format is simply the GSLIB format where the header line defines the dimensions of the uniform grid.</p>
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <p><code>FileName</code> : str</p>
 <ul>
 <li>The file name / absolute path for the input file in SGeMS grid format.</li>
@@ -1161,16 +1177,13 @@ Variable3
 <ul>
 <li>A boolean that describes whether to use a tab delimiter.</li>
 </ul>
-<h3 id="returns">Returns</h3>
+<h3 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h3>
 <p>Returns vtkImageData</p>
-<h2 id="pvgppyreadsgemsextent">PVGPpy.read.sgemsExtent</h2>
-<div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">sgemsExtent</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-</pre></div>
-
-
-<h3 id="description_1">Description</h3>
+<h2 id="pvgppyreadsgemsextent">PVGPpy.read.sgemsExtent<a class="headerlink" href="#pvgppyreadsgemsextent" title="Permanent link">&para;</a></h2>
+<p><code>PVGPpy.read.sgemsExtent(FileName, deli=' ', useTab=False)</code></p>
+<h3 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h3>
 <p>Reads the input file for the SGeMS format to get output extents. Computationally inexpensive method to discover whole output extent.</p>
-<h3 id="parameters_1">Parameters</h3>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
 <p><code>FileName</code> : str</p>
 <ul>
 <li>The file name / absolute path for the input file in SGeMS grid format.</li>
@@ -1183,7 +1196,7 @@ Variable3
 <ul>
 <li>A boolean that describes whether to use a tab delimiter.</li>
 </ul>
-<h3 id="returns_1">Returns</h3>
+<h3 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h3>
 <p>This returns a tuple of the whole extent for the uniform grid to be made of the input file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.</p>
                 
                   

@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#a-brief-introduction-to-paraview" tabindex="1" class="md-skip">
+      <a href="#install-paraview" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -277,22 +277,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-brief-introduction-to-paraview" title="A Brief Introduction to ParaView" class="md-nav__link">
-    A Brief Introduction to ParaView
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#install-paraview" title="Install ParaView" class="md-nav__link">
     Install ParaView
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -973,22 +960,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-brief-introduction-to-paraview" title="A Brief Introduction to ParaView" class="md-nav__link">
-    A Brief Introduction to ParaView
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#install-paraview" title="Install ParaView" class="md-nav__link">
     Install ParaView
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1106,11 +1080,11 @@
                 
                   <h1>Getting Started</h1>
                 
-                <h2 id="a-brief-introduction-to-paraview">A Brief Introduction to ParaView</h2>
+                <h2 id="a-brief-introduction-to-paraview">A Brief Introduction to ParaView<a class="headerlink" href="#a-brief-introduction-to-paraview" title="Permanent link">&para;</a></h2>
 <p>ParaView is an open-source platform that can visualize 2D, 3D, and 4D (time-varying) datasets. ParaView can process multiple very large data sets in parallel then later collect the results to yield a responsive graphics environment with which a user can interact. The better the processor and graphics hardware the machine or machines hosting the software, the faster and better ParaView will run. However, it can run quite well on a laptop with a standard graphics card such as a MacBook Pro.</p>
 <p>Since ParaView is an open source application, anyone can download the program and its source code for modifications. The easiest way to get started with ParaView is to download the compiled binary installers for your operating system from <a href="https://www.paraview.org/download/">here</a>.</p>
 <p>For further help, check out the <a href="https://www.paraview.org/documentation/">documentation</a> provided by Kitware. In particular, the two worth looking through for a quick tour of ParaView are the <strong>The ParaView Guide</strong> and <strong>The ParaView Tutorial.</strong> One is a tutorial of the ParaView software and shows the user how to create sources, apply filters, and more. The other is a guide on how to do scripting, macros, and more intense use of the application.</p>
-<h3 id="install-paraview">Install ParaView</h3>
+<h3 id="install-paraview">Install ParaView<a class="headerlink" href="#install-paraview" title="Permanent link">&para;</a></h3>
 <p>Open the downloaded installer and follow the prompts then drag the application into your applications folder.</p>
 <p>Tour around software:
 Take a look at Section 2.1 of <strong>The ParaView Tutorial</strong> for details of the application’s GUI environment. Chapter 2 of the tutorial as a whole does an excellent job touring the software and its workflow for those unfamiliar with the software and its general capabilities.</p>
@@ -1123,34 +1097,41 @@ Take a look at Section 2.1 of <strong>The ParaView Tutorial</strong> for details
 <p>One convenient feature is to save the state of the ParaView environment. This saves all the options you selected for all the filters you applied to visualize some data. Select File-&gt;Save State… (<em>Note:</em> this saves the absolute path of the files loaded into ParaView, so be sure to select <strong>Search for Files Under Directory&hellip;</strong> when opening these state files)</p>
 </div>
 <hr />
-<h2 id="install-paraviewgeophysics">Install ParaViewGeophysics</h2>
+<h2 id="install-paraviewgeophysics">Install ParaViewGeophysics<a class="headerlink" href="#install-paraviewgeophysics" title="Permanent link">&para;</a></h2>
 <p>To clone and use the plugins distributed in the repo for ParaView, you&rsquo;ll need <a href="https://www.python.org/downloads/">Python 2</a> with the SciPy and NumPy modules <a href="https://docs.python.org/2/installing/index.html">installed</a>, and <a href="https://www.paraview.org/download/">ParaView</a> installed on your computer. Note that this repository will only work with builds of ParaView that have Python.</p>
-<h3 id="windows-users">Windows Users</h3>
+<h3 id="windows-users">Windows Users<a class="headerlink" href="#windows-users" title="Permanent link">&para;</a></h3>
 <p>If you&rsquo;re on Windows, see <a href="https://git-for-windows.github.io">this</a> for GitHub and <a href="https://devtidbits.com/2011/07/01/cygwin-walkthrough-and-beginners-guide-is-it-linux-for-windows-or-a-posix-compatible-alternative-to-powershell/">this</a> guide for using the Unix command line on windows.</p>
 <p>Download and use <a href="https://devtidbits.com/2011/07/01/cygwin-walkthrough-and-beginners-guide-is-it-linux-for-windows-or-a-posix-compatible-alternative-to-powershell/">Cygwin</a> for the command line operation of the scripts in this repo. When installing Cygwin, <em>make sure to install the <code>bash</code>, <code>dos2unix</code>, <code>git</code>, and <code>python2-setuptools</code> packages</em>. Now you can use the Cygwin terminal as the command line just like you are on a Unix based operating system! <strong>Make sure the line endings for all of the shell scripts are LF and not CRLF after cloning.</strong></p>
 <p>Also, be sure to place/install ParaView and this repository to a location that has general read/write privileges for all users such as on your <code>D:\\</code> drive. You will encounter all types of issues running the scripts and simply accessing the code via Cygwin if you need admin privileges to access where it is all saved. <em>Note: the install scripts will need access to the directory where ParaView is installed</em></p>
-<h3 id="cloning-the-repository">Cloning the Repository</h3>
+<h3 id="cloning-the-repository">Cloning the Repository<a class="headerlink" href="#cloning-the-repository" title="Permanent link">&para;</a></h3>
 <p>Clone the repository from your command line by navigating to the directory you would like to save all of the code from this repo.</p>
-<p><strong>NOTE:</strong> Windows users, you are going to want to clone to a folder/drive that has general read/write privileges such as your <code>D:\\</code> drive</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Windows users, you are going to want to clone to a folder that has general read/write privileges such as your <code>D:\\</code> drive</p>
+</div>
 <p>From your command line:</p>
-<div class="codehilite"><pre><span></span><span class="c1">## Clone this repository</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Clone this repository</span>
 $ git clone https://github.com/banesullivan/ParaViewGeophysics
 
 <span class="c1">## Go in the cloned repository</span>
 $ <span class="nb">cd</span> ParaViewGeophysics
 </pre></div>
+</td></tr></table>
 
-
-<h3 id="installing-the-pvgp-repository">Installing the PVGP Repository</h3>
+<h3 id="installing-the-pvgp-repository">Installing the PVGP Repository<a class="headerlink" href="#installing-the-pvgp-repository" title="Permanent link">&para;</a></h3>
 <p>Now to get started using the plugins and python modules included in this repository, we need to set up some environmental variables. For Mac users this is a breeze but for windows users this is a bit more involved. Be sure to never move the directory containing ParaViewGeophysics code (if it is not in a convenient location then you must move it before continuing the install).</p>
-<h4 id="macos-x-paths">MacOS X Paths</h4>
+<h4 id="macos-x-paths">MacOS X Paths<a class="headerlink" href="#macos-x-paths" title="Permanent link">&para;</a></h4>
 <p>If you are on MacOS X, then your life is easy! Simply run the script <code>installMac.sh</code>.</p>
-<div class="codehilite"><pre><span></span>$ sh ./installMac.sh
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sh ./installMac.sh
 </pre></div>
-
+</td></tr></table>
 
 <p>Now test that the install worked by opening ParaView (close it and reopen if needed). Check that the category <strong>CSM Geophysics Filters</strong> is in the <strong>Filters</strong> menu. Then open the <strong>Python Shell</strong> and import the <code>PVGPpy</code> module by executing <code>import PVGPpy</code>. Errors should not arise but if they do, post to the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">issues page</a> and the errors will be <em>immediately</em> addressed.</p>
-<h4 id="windows-paths">Windows Paths</h4>
+<h4 id="windows-paths">Windows Paths<a class="headerlink" href="#windows-paths" title="Permanent link">&para;</a></h4>
 <p>Setting up environmental variables is a bit more involved for Windows. First you need to open <strong>Control Center</strong> and search for <strong>Advanced system settings</strong>. Click <strong>Environment variables</strong>. In the section <strong>User variables for Name</strong> add the following variable by clicking <strong>New&hellip;</strong>:</p>
 <ul>
 <li>Variable Name: <code>PV_PLUGIN_PATH</code> then select <strong>Browse Directory&hellip;</strong> and navigate to the directory where you cloned ParaViewGeophysics and select the <code>plugins</code> directory.</li>
@@ -1173,19 +1154,20 @@ $ <span class="nb">cd</span> ParaViewGeophysics
 <p>Now test that the install worked by opening ParaView (close it and reopen if needed). Check that the category <strong>CSM Geophysics Filters</strong> is in the <strong>Filters</strong> menu. Then open the <strong>Python Shell</strong> and import the <code>PVGPpy</code> module by executing <code>import PVGPpy</code>. If an error arises please double check your paths.</p>
 </li>
 </ol>
-<h3 id="update-the-pvgp-repository">Update the PVGP Repository</h3>
+<h3 id="update-the-pvgp-repository">Update the PVGP Repository<a class="headerlink" href="#update-the-pvgp-repository" title="Permanent link">&para;</a></h3>
 <p>We have included a script that will update the repository from GitHub, and since the repo is already linked to ParaView, all changes to the repo will be directory reflected in ParaView. This script is simply executed by:</p>
-<div class="codehilite"><pre><span></span><span class="c1">## Run this to update ParaViewGeophysics in the future:</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Run this to update ParaViewGeophysics in the future:</span>
 $ sh ./updatePVGP.sh
 </pre></div>
-
+</td></tr></table>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Windows users, be sure to run this in cygwin or a bash environment of your choice.</p>
 </div>
 <hr />
-<h2 id="using-outside-modules">Using Outside Modules</h2>
+<h2 id="using-outside-modules">Using Outside Modules<a class="headerlink" href="#using-outside-modules" title="Permanent link">&para;</a></h2>
 <p>ParaView&rsquo;s Python environment, <code>pvpython</code>, can be a bit tricky to start using outside Python modules like SciPy or SimPEG. On Mac OS X, using Python modules installed via pip or anaconda should work simply with an <code>import ...</code> statement if you have your Python paths set up well. (Mac users: if you have trouble importing SciPy or other modules used in this repo let me know and I will develop a solution). Windows users: this should have been resolved if you followed the install instructions outlined <a href="#windows-paths">above</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Required Modules</p>
@@ -1197,16 +1179,19 @@ $ sh ./updatePVGP.sh
 </ul>
 </div>
 <hr />
-<h2 id="documentation">Documentation</h2>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <p>All documentation for the code produced from this project will be included on this website. The documentation will contain an explanation of all of the produced plugins (filters and readers) and macros. Use the Sidebar to explore the documentation content and to find all documentation for readers, filters, macros, and more as you need. There are also details on how to <a href="../PVGPpy/Build-Your-Own-Plugins/">build your own plugins</a>, how to <a href="../pvmacros/export/exportVTKjs/">export data scenes</a>, and transferring your complex data scenes into <a href="../Virtual-Reality/Entering-Virtual-Reality/">virtual reality</a>.</p>
 <p>The purpose of including all this extra documentation is to provide a convenient location for geoscientists to learn how to tailor ParaView to their needs because data representation and communication are an integral part of success in science. To efficiently represent our spatial data is the first step to becoming successful and productive geoscientists. This is the principle behind why we are publishing this documentation along with the code in the repository. Not only do we want to communicate the effort and motivation for this project efficiently, but we want to empower others to communicate their scientific endeavors through spatial visualizations effectively.</p>
-<h3 id="plugin-documentation">Plugin Documentation</h3>
+<h3 id="plugin-documentation">Plugin Documentation<a class="headerlink" href="#plugin-documentation" title="Permanent link">&para;</a></h3>
 <p>There is a page dedicated to every plugin in the respective readers and filters categories. On these pages, you will find implementation details, parameters, code quirks, and general usage information. As the project continues, we will also try to have an example for every reader and filter so that users can get a feel for what is going on and how they might apply these plugins to address their needs. Since almost all geoscientific data is proprietary, these tutorials will likely come late so that we can find good open data sets and models that users can find outside of this repo for free.</p>
-<h3 id="macro-documentation">Macro documentation</h3>
+<h3 id="macro-documentation">Macro documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">&para;</a></h3>
 <p><!-- TODO: is this section consistent with PVGPpy? -->
 Each macro produced for this repository will have a distinct purpose, be it to export isometric screenshots of any data scene or to batch load / convert specific data sets. The macros will have broad applications and be formatted to work with generally any data scene or data of specific formats so that they can be easily expanded upon to complete specific tasks. For the macros, we will try to immediately have sample data and a tutorial upon publishing with documentation of what we are doing and why. The Python scripts themselves will be heavily commented so that every user can tailor the scripts to their individual needs.</p>
 <p>There is also a detailed page on how to easily start making your own macros/scripts. From the people that I have talked to, there tends to be quite a steep learning curve with ParaView scripting, so we want to compile our knowledge into one place for others to gain tips, tricks, and advice to start making their own macros.</p>
-<p>Remember, if you have an idea for a macro, plugin, or would like to see how we would address a geoscientific visualization problem with ParaView, please post your thoughts on the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">issues page</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you have an idea for a macro, plugin, or would like to see how we would address a geoscientific visualization problem with ParaView, please post your thoughts on the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">issues page</a>.</p>
+</div>
                 
                   
                 
