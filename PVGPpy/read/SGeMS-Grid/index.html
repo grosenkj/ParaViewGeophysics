@@ -1073,7 +1073,7 @@
                   <h1>SGeMS Grid</h1>
                 
                 <h2 id="about-this-reader">About this Reader</h2>
-<p>The Stanford Geostatistical Modeling Software (SGeMS) ASCII format is much like the <a href="Read-GSLIB-File-to-Table.md">GSLIB</a> file format. The reader we have developed for this format assumes the data to be defined on a regularly spaced grid and that the first line of the file will specify the dimensions of that grid. The output of this file reader is a vtkImageData object which is essentially a regularly spaced grid with varying dimensionality along each axis. The reader will only work if the format of the file strictly follows what is below. If your SGeMS file does not strictly follow the uniform grid format below then we recommend use the <a href="Read-GSLIB-File-to-Table.md">GSLIB</a> file reader.</p>
+<p>The Stanford Geostatistical Modeling Software (SGeMS) ASCII format is much like the <a href="../GSLIB/">GSLIB</a>) file format. The reader we have developed for this format assumes the data to be defined on a regularly spaced grid and that the first line of the file will specify the dimensions of that grid. The output of this file reader is a vtkImageData object which is essentially a regularly spaced grid with varying dimensionality along each axis. The reader will only work if the format of the file strictly follows what is below. If your SGeMS file does not strictly follow the uniform grid format below then we recommend use the <a href="../GSLIB/">GSLIB</a> file reader.</p>
 <h2 id="file-format">File Format</h2>
 <p>The general format is as follows:</p>
 <div class="codehilite"><pre><span></span>n1 n2 n3
@@ -1109,9 +1109,9 @@ Variable3
 
 <h2 id="down-the-pipeline">Down the Pipeline</h2>
 <ul>
-<li><a href="../Filters/Translate-Origin-of-Grid.md">Translate Origin of Grid</a></li>
-<li><a href="../Filters/Flip-Grid-Axii.md">Flip Grid Axii</a></li>
-<li><a href="../Filters/Normalize-Array.md">Normalize Array</a></li>
+<li><a href="../../filt/Translate-Origin-of-Grid/">Translate Origin of Grid</a></li>
+<li><a href="../../filt/Flip-Grid-Axii/">Flip Grid Axii</a></li>
+<li><a href="../../filt/Normalize-Array/">Normalize Array</a></li>
 <li><a href="https://www.paraview.org/Wiki/ParaView/Users_Guide/List_of_filters#Contour">Contour</a></li>
 <li><a href="https://www.paraview.org/Wiki/ParaView/Users_Guide/List_of_filters#Threshold">Threshold</a></li>
 </ul>

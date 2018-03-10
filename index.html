@@ -1110,22 +1110,28 @@
 </ul>
 <hr />
 <h2 id="features-to-come">Features to Come</h2>
-<p>Here is a list of features that are shortly coming to this repo. This list will be regularly updated</p>
-<p>More documentation is soon to come. We want to do it right: with tutorials, example data, and detailed justification for need and use of each reader, filter, and macro.</p>
-<p>Suggestions? Post on the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">Issues page</a> as a feature request.</p>
+<p>Here is a list of features that are shortly coming to this repo. This list will be regularly updated. More documentation is soon to come. We want to do it right: with tutorials, example data, and detailed justification for need and use of each reader, filter, and macro.</p>
+<div class="admonition help">
+<p class="admonition-title">Suggestions?</p>
+<p>Post on the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">Issues page</a> as a feature request.</p>
+</div>
 <h3 id="readers">Readers</h3>
 <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Open Mining Format:</strong> All file types and data types found <a href="https://github.com/GMSGDataExchange/omf">here</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>UBC Mesh:</strong> both 2D and 3D. Details <a href="https://www.eoas.ubc.ca/ubcgif/iag/sftwrdocs/technotes/faq.htm#mesh">here</a> and <a href="https://gif.eos.ubc.ca/software/utility_programs#3DmodelsMeshes">here</a>. We&rsquo;re almost done with this!</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>ESRI Grid:</strong> Details <a href="https://en.wikipedia.org/wiki/Esri_grid">here</a> and <a href="http://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/esri-grid-format.htm">here</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>ESRI shape files:</strong> Details <a href="https://www.esri.com/library/whitepapers/pdfs/shapefile.pdf">here</a> and <a href="https://en.wikipedia.org/wiki/Shapefile">here</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Well logs:</strong> Readers for common formats and easy ways to project well logs in XYZ space</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Well logs:</strong> Readers for common formats (LAS) and easy ways to project well logs in XYZ space</li>
 </ul>
+<!---
+- [ ] **ESRI Grid:** Details [here](https://en.wikipedia.org/wiki/Esri_grid) and [here](http://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/esri-grid-format.htm)
+- [ ] **ESRI shape files:** Details [here](https://www.esri.com/library/whitepapers/pdfs/shapefile.pdf) and [here](https://en.wikipedia.org/wiki/Shapefile)
+-->
+
 <h3 id="filters">Filters</h3>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Append Model to UBC Mesh:</strong> This will load a model file and tag it on to vtkStructuredGrid loaded from a UBC Mesh reader. Think of it as appending models as attributes to the 3D mesh.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Append Model to UBC Mesh:</strong> This will load a model file and tag it on to vtkStructuredGrid loaded from a UBC Mesh reader. Think of it as appending models as attributes to the 3D mesh.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Extract Array:</strong> This will allow you to extract any array from any data structure as vtkPolyData.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Transpose Grid:</strong> Transpose or swap axii of grid data sets (vtkImageData and vtkRectilinearGrid)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Reshape Table:</strong> Adding ability to reshape using Fortran ordering on the currently available filter.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Reshape Table:</strong> Adding ability to reshape using Fortran ordering on the currently available filter.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Make Cubes from Point Set:</strong> This will take a point set and generate cube of some specified size at every point</li>
 </ul>
 <!---
@@ -1135,9 +1141,9 @@
 <h3 id="macros-and-scripts">Macros and Scripts</h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to start making your own scripts (tips, tricks, and general advice)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Save screenshots in isometric views, side, top, etc. in an automated fashion</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="PVGPpy/vis/Many-Slices-Along-Points.md">Many Slices Along Points:</a> Export slices of dataset along polyline at every point on that line (normal is the vector from that point to the next)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="PVGPpy/export/exportVTKjs.md">Export a scene</a> to a shareable 3D format</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Save screenshots in isometric views, side, top, etc. in an automated fashion</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="pvmacros/vis/Many-Slices-Along-Points/">Many Slices Along Points:</a> Export slices of dataset along polyline at every point on that line (normal is the vector from that point to the next)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="pvmacros/export/exportVTKjs/">Export a scene</a> to a shareable 3D format</li>
 </ul>
 <h3 id="examples-and-other-docs">Examples and Other Docs</h3>
 <ul class="task-list">
