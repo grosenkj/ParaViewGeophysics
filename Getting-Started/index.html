@@ -37,7 +37,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../img/globe_small.png">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
@@ -68,7 +68,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue-grey">
   
     <svg class="md-svg">
       <defs>
@@ -110,7 +110,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://banesullivan.github.io/ParaViewGeophysics/" title="ParaViewGeophysics" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <img src="../img/globe_small.png" width="24" height="24">
           
         </a>
       </div>
@@ -206,7 +206,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <img src="../img/globe_small.png" width="48" height="48">
       
     </span>
     ParaViewGeophysics
@@ -1179,13 +1179,12 @@ sh ./updatePVGP.sh
 <p>ParaView&rsquo;s Python environment, <code class="codehilite">pvpython</code>, can be a bit tricky to start using outside Python modules like SciPy or SimPEG. On Mac OS X, using Python modules installed via pip or anaconda should work simply with an <code class="codehilite"><span class="kn">import</span> <span class="o">...</span></code> statement if you have your Python paths set up well. (Mac users: if you have trouble importing SciPy or other modules used in this repo let me know and I will develop a solution). Windows users: this should have been resolved if you followed the install instructions outlined <a href="#windows-paths">above</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Required Modules</p>
-<p>These are all of the modules that filters, readers, and macros might use in this repo. We recommend opening the Python Shell from ParaView (Tools-&gt;Python Shell) and testing the import of each of these modules. This list will be regularly updated.</p>
+<p>These are all of the non-standard modules that filters, readers, and macros might use in this repo. We recommend opening the Python Shell from ParaView (Tools-&gt;Python Shell) and testing the import of each of these modules. This list will be regularly updated.</p>
 <ul>
 <li><a href="https://www.scipy.org/install.html">SciPy</a></li>
 <li><a href="http://www.numpy.org">NumPy</a> (you may need to update ParaView&rsquo;s version to the latest version for SciPy to be happy)</li>
-<li><a href="https://www.vtk.org/download/">VTK</a> (included in ParaView)</li>
 </ul>
-</div>
+<details class="info"><summary>List of All Other Required Modules</summary><p>Most of these modules come with standard distributions of Python or they come in the ParaView software platform ready for use. This list is just for completeness.</p><ul><li>paraview and <a href="https://www.vtk.org/download/">vtk</a> (included in ParaView)</li><li>struct</li><li>csv</li><li>ast</li><li>datetime</li><li>util</li><li>os</li><li>json</li><li>zipfile</li><li>re</li><li>time</li><li>errno</li><li>math</li><li>gzip</li><li>shutil</li><li>argparse</li><li>hashlib</li><li>zlib</li><li>pickle</li><li>inspect</li><li>textwrap</li></ul></details></div>
 <hr />
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <p>All documentation for the code produced from this project will be included on this website. The documentation will contain an explanation of all of the produced plugins (filters and readers) and macros. Use the Sidebar to explore the documentation content and to find all documentation for readers, filters, macros, and more as you need. There are also details on how to <a href="../PVGPpy/Build-Your-Own-Plugins/">build your own plugins</a>, how to <a href="../pvmacros/export/exportVTKjs/">export data scenes</a>, and transferring your complex data scenes into <a href="../Virtual-Reality/Entering-Virtual-Reality/">virtual reality</a>.</p>
