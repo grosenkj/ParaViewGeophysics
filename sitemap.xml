@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics//</loc>
+     <loc>http://pvgp.io//</loc>
      <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics//Getting-Started/</loc>
+     <loc>http://pvgp.io//Getting-Started/</loc>
      <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -20,47 +20,25 @@
     
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics//PVGPpy/About-PVGPpy/</loc>
+     <loc>http://pvgp.io//PVGPpy/About-PVGPpy/</loc>
      <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics//PVGPpy/Build-Your-Own-Plugins/</loc>
+     <loc>http://pvgp.io//PVGPpy/Build-Your-Own-Plugins/</loc>
      <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
+     <loc>http://pvgp.io/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics//pvmacros/About-pvmacros/</loc>
-     <lastmod>2018-03-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
+     <loc>http://pvgp.io/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -70,25 +48,47 @@
     
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics//cmaps/</loc>
+     <loc>http://pvgp.io//pvmacros/About-pvmacros/</loc>
      <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
+     <loc>http://pvgp.io/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
+     <loc>http://pvgp.io/</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://pvgp.io//cmaps/</loc>
+     <lastmod>2018-03-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://pvgp.io/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://banesullivan.github.io/ParaViewGeophysics/</loc>
+     <loc>http://pvgp.io/</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://pvgp.io/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
