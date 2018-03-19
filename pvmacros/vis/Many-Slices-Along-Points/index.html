@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#description" tabindex="1" class="md-skip">
+      <a href="#goal" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -631,34 +631,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motivation" title="Motivation" class="md-nav__link">
-    Motivation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#goal" title="Goal" class="md-nav__link">
     Goal
   </a>
@@ -696,6 +668,40 @@
   <a href="#batch-processing" title="Batch Processing" class="md-nav__link">
     Batch Processing
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pvmacrosvismanyslicesalongpoints" title="pvmacros.vis.manySlicesAlongPoints" class="md-nav__link">
+    pvmacros.vis.manySlicesAlongPoints
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" title="Description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" title="Notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -943,34 +949,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motivation" title="Motivation" class="md-nav__link">
-    Motivation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#goal" title="Goal" class="md-nav__link">
     Goal
   </a>
@@ -1011,6 +989,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pvmacrosvismanyslicesalongpoints" title="pvmacros.vis.manySlicesAlongPoints" class="md-nav__link">
+    pvmacros.vis.manySlicesAlongPoints
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" title="Description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" title="Notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1034,32 +1046,60 @@
 <p class="admonition-title">Purpose</p>
 <p>This macro will use a series of points as a path to cut many slices through a given data set.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need the SciPy module in <code class="codehilite">pvpython</code> for this macro to work. <a href="../../../Getting-Started/#using-outside-modules">See details</a>.</p>
+</div>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
+<p>Sometimes we might have a model, some input data, that we would like to have numerous slices of along a series of points, a path of points per say. These points might represent some travel path through the model where we would like to have a slice of the model at each point so that we can make spacial decisions and share this information of flat documents.</p>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<p>Create a macro that uses a series of points to create a path through a dataset that can then be sliced at many points (or customized to select ten or twenty points to slice on). The points will be converted into a sorted polyline using a nearest neighbor approximation so that we can have a coherent travel path through the model. The order in the poly line will be used to determine a normal vector for each slice.</p>
+<h2 id="example-use">Example Use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
+<h3 id="set-the-inputs">Set the inputs<a class="headerlink" href="#set-the-inputs" title="Permanent link">&para;</a></h3>
+<p>This macro takes two data sources, some data containing the points for our travel path and some data that can be sliced. The function calls for the string name of both of those datasets as specified above.</p>
+<p>The <code class="codehilite">pointsNm</code> variable will be the string name of the data source that has the point data you would like to use. Think of these points as a travel path, as we will perform a nearest neighbor route between all of the points to create a polyline. A scattered point dataset will not work well for the macro as the slices will have seemingly random orientations.</p>
+<p>The <code class="codehilite">dataNm</code> variable will be the string name of the data source or model of which you desire to have interior slices. It is important that this data source is &lsquo;slice-able,&rsquo; as some data types in VTK may not be sliceable (such as a point set). If errors arise, make sure this data set is slice-able by applying a simple slice filter from the Filters-&gt;Common-&gt;Slice.</p>
+<!-- TODO provide a pointset and a 3D model for an example -->
+
+<p>If you have a series of points and a data set, go ahead and run this macro in the Python Shell (Tools-&gt;Python Shell):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pvmacros</span> <span class="kn">as</span> <span class="nn">pvm</span>
+<span class="n">pvm</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">manySlicesAlongPoints</span><span class="p">(</span><span class="s1">&#39;Points&#39;</span><span class="p">,</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="saving">Saving<a class="headerlink" href="#saving" title="Permanent link">&para;</a></h3>
+<p>If you desire to save out the slices, you just made with this macro, then set the <code class="codehilite">exportpath</code> optional variable when calling the method. Be sure to give that directory a meaningful name and use that directory only for these slices as the slices will be saved out as &lsquo;slice0.csv&rsquo;, &lsquo;slice1.csv&rsquo;, and so on.</p>
+<h2 id="batch-processing">Batch Processing<a class="headerlink" href="#batch-processing" title="Permanent link">&para;</a></h2>
+<p><!--- TODO --->
+If you want to make tons of slices of a model, the outputs of this macro WILL get messy if used in the ParaView GUI. We recommend using the <code class="codehilite">pvpython</code> module on the command line to perform large batch processing like this. More details to come&hellip; stay tuned.</p>
+<hr />
 <h2 id="pvmacrosvismanyslicesalongpoints">pvmacros.vis.manySlicesAlongPoints<a class="headerlink" href="#pvmacrosvismanyslicesalongpoints" title="Permanent link">&para;</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">pvmacros</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">manySlicesAlongPoints</span><span class="p">(</span><span class="n">pointsNm</span><span class="p">,</span> <span class="n">dataNm</span><span class="p">,</span> <span class="n">numSlices</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">exportpath</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
-<p>This macro takes a series of points and a data source to be sliced. The points are used to construct a path through the data source and a slice is added at intervals of that path along the vector of that path at that point. This constructs <code>numSlices</code> slices through the dataset <code>dataNm</code>.</p>
+<p>This macro takes a series of points and a data source to be sliced. The points are used to construct a path through the data source and a slice is added at intervals of that path along the vector of that path at that point. This constructs <code class="codehilite">numSlices</code> slices through the dataset <code class="codehilite">dataNm</code>.</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<p><code>pointsNm</code> : string</p>
+<p><code class="codehilite">pointsNm</code> : string</p>
 <ul>
 <li>The string name of the points source to construct the path.</li>
 </ul>
-<p><code>dataNm</code> : string</p>
+<p><code class="codehilite">dataNm</code> : string</p>
 <ul>
 <li>The string name of the data source to slice.</li>
 <li>Make sure this data source is slice-able.</li>
 </ul>
-<p><code>numSlices</code> : int, optional</p>
+<p><code class="codehilite">numSlices</code> : int, optional</p>
 <ul>
 <li>The number of slices along the path.</li>
 </ul>
-<p><code>exportpath</code> : string, optional</p>
+<p><code class="codehilite">exportpath</code> : string, optional</p>
 <ul>
 <li>The absolute file path of where to save each slice</li>
 </ul>
-<p><code>ext</code> : string, optional</p>
+<p><code class="codehilite">ext</code> : string, optional</p>
 <ul>
 <li>The file extension for saving out the slices.</li>
 <li>Default to &lsquo;.csv&rsquo;</li>
@@ -1069,31 +1109,6 @@
 <li>Make sure the input data source is slice-able.</li>
 <li>The SciPy module is required for this macro.</li>
 </ul>
-<hr />
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-<p>Sometimes we might have a model, some input data, that we would like to have numerous slices of along a series of points, a path of points per say. These points might represent some travel path through the model where we would like to have a slice of the model at each point so that we can make spacial decisions and share this information of flat documents.</p>
-<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
-<p>Create a macro that uses a series of points to create a path through a dataset that can then be sliced at many points (or customized to select ten or twenty points to slice on). The points will be converted into a sorted polyline using a nearest neighbor approximation so that we can have a coherent travel path through the model. The order in the poly line will be used to determine a normal vector for each slice.</p>
-<h2 id="example-use">Example Use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
-<p><em>Note: You will need the SciPy module in <code>pvpython</code> for this macro to work. <a href="../../../Getting-Started/#using-outside-modules">See details</a>.</em></p>
-<h3 id="set-the-inputs">Set the inputs<a class="headerlink" href="#set-the-inputs" title="Permanent link">&para;</a></h3>
-<p>This macro takes two data sources, some data containing the points for our travel path and some data that can be sliced. The function calls for the string name of both of those datasets as specified above.</p>
-<p>The <code>pointsNm</code> variable will be the string name of the data source that has the point data you would like to use. Think of these points as a travel path, as we will perform a nearest neighbor route between all of the points to create a polyline. A scattered point dataset will not work well for the macro as the slices will have seemingly random orientations.</p>
-<p>The <code>dataNm</code> variable will be the string name of the data source or model of which you desire to have interior slices. It is important that this data source is &lsquo;slice-able,&rsquo; as some data types in VTK may not be sliceable (such as a point set). If errors arise, make sure this data set is slice-able by applying a simple slice filter from the Filters-&gt;Common-&gt;Slice.</p>
-<!-- TODO provide a pointset and a 3D model for an example -->
-
-<p>If you have a series of points and a data set, go ahead and run this macro in the Python Shell (Tools-&gt;Python Shell):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pvmacros</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vis</span><span class="o">.</span><span class="n">manySlicesAlongPoints</span><span class="p">(</span><span class="s1">&#39;Points&#39;</span><span class="p">,</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
-
-<h3 id="saving">Saving<a class="headerlink" href="#saving" title="Permanent link">&para;</a></h3>
-<p>If you desire to save out the slices, you just made with this macro, then set the <code>exportpath</code> optional variable when calling the method. Be sure to give that directory a meaningful name and use that directory only for these slices as the slices will be saved out as &lsquo;slice0.csv&rsquo;, &lsquo;slice1.csv&rsquo;, and so on.</p>
-<h2 id="batch-processing">Batch Processing<a class="headerlink" href="#batch-processing" title="Permanent link">&para;</a></h2>
-<p><!--- TODO --->
-If you want to make tons of slices of a model, the outputs of this macro WILL get messy if used in the ParaView GUI. We recommend using the <code>pvpython</code> module on the command line to perform large batch processing like this. More details to come&hellip; stay tuned.</p>
                 
                   
                 

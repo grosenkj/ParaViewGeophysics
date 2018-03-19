@@ -932,24 +932,24 @@
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>This macro takes a clip source and progresses its location through a set of bounds in the data scene. The macro requires that the clip already exist in the pipeline. This is especially useful if you have many clips linked together as all will move through the seen as a result of this macro.</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<p><code>clip</code> : string</p>
+<p><code class="codehilite">clip</code> : string</p>
 <ul>
 <li>The string name of the clip source to be translated.</li>
 </ul>
-<p><code>ax</code> : int</p>
+<p><code class="codehilite">ax</code> : int</p>
 <ul>
 <li>This is the axis on which to translate (0 for x, 1 for y, 2 for z).</li>
 <li>Think of this as the normal vector for the clip.</li>
 </ul>
-<p><code>bounds</code> : 6-element list or tuple</p>
+<p><code class="codehilite">bounds</code> : 6-element list or tuple</p>
 <ul>
 <li>These are the bounds to constrain the clip translation.</li>
 </ul>
-<p><code>num</code> : int, optional</p>
+<p><code class="codehilite">num</code> : int, optional</p>
 <ul>
 <li>The number of discritizations in the clip translation.</li>
 </ul>
-<p><code>delay</code> : float, optional</p>
+<p><code class="codehilite">delay</code> : float, optional</p>
 <ul>
 <li>Time delay in seconds before conducting each clip translation.</li>
 </ul>

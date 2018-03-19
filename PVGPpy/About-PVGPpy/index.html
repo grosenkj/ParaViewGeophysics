@@ -364,33 +364,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#make-your-own-scripts" title="Make Your Own Scripts" class="md-nav__link">
-    Make Your Own Scripts
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-the-trace-tool" title="Using the Trace Tool" class="md-nav__link">
-    Using the Trace Tool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-pvpython" title="Using PVPython" class="md-nav__link">
-    Using PVPython
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -1008,33 +981,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#make-your-own-scripts" title="Make Your Own Scripts" class="md-nav__link">
-    Make Your Own Scripts
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-the-trace-tool" title="Using the Trace Tool" class="md-nav__link">
-    Using the Trace Tool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-pvpython" title="Using PVPython" class="md-nav__link">
-    Using PVPython
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -1054,7 +1000,11 @@
                 
                   <h1>About PVGPpy</h1>
                 
-                <h2 id="the-argument-for-using-python-programmable-filters">The Argument for Using Python Programmable Filters<a class="headerlink" href="#the-argument-for-using-python-programmable-filters" title="Permanent link">&para;</a></h2>
+                <div class="admonition warning">
+<p class="admonition-title">This page is incomplete</p>
+<p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
+</div>
+<h2 id="the-argument-for-using-python-programmable-filters">The Argument for Using Python Programmable Filters<a class="headerlink" href="#the-argument-for-using-python-programmable-filters" title="Permanent link">&para;</a></h2>
 <p>The development of plugins for the ParaView software platform can seem like a daunting task at first. Creating CMakeLists, writing in C++ again for the first time in years, learning XML to create interactive GUI components, and integrating the plugins into the ParaView build is a major turnoff. To get around all that, we can use something Kitware has put into ParaView for the rapid development of plugins, Python Programmable Filters and Sources! Python is an incredibly easy language to learn and most if not all geoscientists have experience working in Python. In this repo, we aim to produce all plugins in the Python Programmable Filters and Sources format for the following reasons:</p>
 <ul>
 <li>Rapid development: Through the templates, shell scripts, and XML converters provided in this repo, it is easy to prototype and develop a plugin for you needs in a matter of minutes</li>
@@ -1083,18 +1033,23 @@ We will from now on refer to macros as a set of standard codes that can be used 
 <p>Scripts are Python codes we will use for tasks like loading scenes and for applying several macros at once. It is often helpful to set up a script for a project so that you can quickly run all the visualization processing at once each time you update your model files or create new versions of your data.</p>
 <hr />
 <h2 id="how-to-run-scripts">How to Run Scripts<a class="headerlink" href="#how-to-run-scripts" title="Permanent link">&para;</a></h2>
-<p>Use the Python Shell from &lsquo;Tools-&gt;Python Shell&rsquo; in the ParaView GUI. Do not import scripts as macros in ParaView as they become static in the ParaView GUI and make managing/changing quite difficult. To use scripts in the batch processing environment, use the <code>pvpython</code> program delivered in ParaView. On my OS X operating system it is under the <code>Applications/ParaView/Contents/bin/pvpython</code>. More info on all of this to come! <!-- TODO --></p>
-<p>To simply run the scripts in this repo, edit the script files under the <code>scripts/</code> directory for your use, then run them in ParaView by selecting &lsquo;Tools-&gt;Python Shell&rsquo; then click &lsquo;Run Script&rsquo;. Navigate to the <code>scripts/</code> directory in this repo and select the script you desire to use.</p>
+<p>Use the Python Shell from &lsquo;Tools-&gt;Python Shell&rsquo; in the ParaView GUI. Do not import scripts as macros in ParaView as they become static in the ParaView GUI and make managing/changing quite difficult. To use scripts in the batch processing environment, use the <code class="codehilite">pvpython</code> program delivered in ParaView. On my OS X operating system it is under the <code class="codehilite">Applications/ParaView/Contents/bin/pvpython</code>. More info on all of this to come! <!-- TODO --></p>
+<p>To simply run the scripts in this repo, edit the script files under the <code class="codehilite">scripts/</code> directory for your use, then run them in ParaView by selecting &lsquo;Tools-&gt;Python Shell&rsquo; then click &lsquo;Run Script&rsquo;. Navigate to the <code class="codehilite">scripts/</code> directory in this repo and select the script you desire to use.</p>
 <hr />
-<h2 id="make-your-own-scripts">Make Your Own Scripts<a class="headerlink" href="#make-your-own-scripts" title="Permanent link">&para;</a></h2>
-<p>Description to come! There are a lot of pages in the documentation, and we are trying to fill all content as soon as possible. Stay tuned for updates to this page
-<!--- TODO ---></p>
-<h3 id="using-the-trace-tool">Using the Trace Tool<a class="headerlink" href="#using-the-trace-tool" title="Permanent link">&para;</a></h3>
-<p><!--- TODO: how to make meaning of the trace output --->
-Description to come!</p>
-<h3 id="using-pvpython">Using PVPython<a class="headerlink" href="#using-pvpython" title="Permanent link">&para;</a></h3>
-<p><!--- TODO: Batch processing --->
-Description to come!</p>
+<div class="admonition failure">
+<p class="admonition-title">Description to come!</p>
+<p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
+</div>
+<!--- TODO --->
+
+<div class="admonition failure">
+<p class="admonition-title">Description to come!</p>
+<p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Description to come!</p>
+<p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
+</div>
                 
                   
                 

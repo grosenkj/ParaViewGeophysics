@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#file-format" tabindex="1" class="md-skip">
+      <a href="#down-the-pipeline" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -377,13 +377,6 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#file-format" title="File Format" class="md-nav__link">
-    File Format
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#down-the-pipeline" title="Down the Pipeline" class="md-nav__link">
@@ -922,13 +915,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-format" title="File Format" class="md-nav__link">
-    File Format
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#down-the-pipeline" title="Down the Pipeline" class="md-nav__link">
     Down the Pipeline
   </a>
@@ -990,9 +976,7 @@
                 
                 <h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
 <p>The GSLIB file format has headers lines followed by the data as a space delimited ASCI file (this filter is set up to allow you to choose any single character delimiter: default is a space). The first header line contains the title or necessary information and will be printed to the console. This line may have the dimensions for a grid to be made of the data. The second line is the number (n) of columns of data. The next n lines are the variable names for the data in each column. You are allowed up to ten characters for the variable name. The data follow with a space between each field (column). The output of this reader is a vtkTable of the input data. The table will have all the same columns as the input file with the column/data names set to their respective names from the input file.</p>
-<h2 id="file-format">File Format<a class="headerlink" href="#file-format" title="Permanent link">&para;</a></h2>
-<p>Check out <a href="https://cals.arizona.edu/PLP/GIS/Case_Study_Af/GeoEAS/fileformat.html">this site</a> and <a href="http://www.gslib.com/gslib_help/format.html">this site</a> for more information on the specifics of the file format. The general format is as follows:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<details class="note"><summary>The GSLIB File Format</summary><p>Check out <a href="https://cals.arizona.edu/PLP/GIS/Case_Study_Af/GeoEAS/fileformat.html">this site</a> and <a href="http://www.gslib.com/gslib_help/format.html">this site</a> for more information on the specifics of the file format. The general format is as follows:</p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1015,9 +999,7 @@ dataCol1 dataCol2 dataCol3
 ...
 </pre></div>
 </td></tr></table>
-
-<p>An example file might look something like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p>An example file might look something like this:</p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1044,8 +1026,7 @@ Variable3
 ...
 </pre></div>
 </td></tr></table>
-
-<h2 id="down-the-pipeline">Down the Pipeline<a class="headerlink" href="#down-the-pipeline" title="Permanent link">&para;</a></h2>
+</details><h2 id="down-the-pipeline">Down the Pipeline<a class="headerlink" href="#down-the-pipeline" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../filt/Table-to-Uniform-Grid/">Table to Uniform Grid</a></li>
 <li><a href="../../filt/Reshape-Table/">Reshape Table</a></li>
@@ -1061,19 +1042,19 @@ Variable3
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>Reads a GSLIB file format to a vtkTable. The GSLIB file format has headers lines followed by the data as a space delimited ASCI file (this filter is set up to allow you to choose any single character delimiter). The first header line is the title and will be printed to the console. This line may have the dimensions for a grid to be made of the data. The second line is the number (n) of columns of data. The next n lines are the variable names for the data in each column. You are allowed up to ten characters for the variable name. The data follow with a space between each field (column).</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<p><code>FileName</code> : str</p>
+<p><code class="codehilite">FileName</code> : str</p>
 <ul>
 <li>The absolute file name with path to read.</li>
 </ul>
-<p><code>deli</code> : str</p>
+<p><code class="codehilite">deli</code> : str</p>
 <ul>
-<li>The input files delimiter. To use a tab delimiter please set the <code>useTab</code>.</li>
+<li>The input files delimiter. To use a tab delimiter please set the <code class="codehilite">useTab</code>.</li>
 </ul>
-<p><code>useTab</code> : boolean</p>
+<p><code class="codehilite">useTab</code> : boolean</p>
 <ul>
 <li>A boolean that describes whether to use a tab delimiter</li>
 </ul>
-<p><code>numIgLns</code> : int</p>
+<p><code class="codehilite">numIgLns</code> : int</p>
 <ul>
 <li>The integer number of lines to ignore</li>
 </ul>

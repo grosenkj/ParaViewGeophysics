@@ -988,7 +988,11 @@
                 
                   <h1>Binary Packed Data</h1>
                 
-                <h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
+                <div class="admonition info">
+<p class="admonition-title">Purpose</p>
+<p>This file format reader provides a tool read a common data type throughout many software packages like Madagascar or SEPlib which save an array of data (<code class="codehilite">floats</code>, <code class="codehilite">doubles</code>, or <code class="codehilite">ints</code>) in their binary form to a file. This array can be read into a vtkDataArray which we can then work with to reshape into a grid or use for any other reason on the ParaView pipeline.</p>
+</div>
+<h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
 <p>This filter reads in float or double data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. The reader uses big endian and defaults to import as floats. Use the &lsquo;Table to Uniform Grid&rsquo; or the &lsquo;Reshape Table&rsquo; filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.</p>
 <p>There is a checkbox you can use to specify double precision if needed and a text box where you can specify the data variable name. The default for the data variable name is the base name of the file, however you may want something less verbose or more specific.</p>
 <h2 id="down-the-pipeline">Down the Pipeline<a class="headerlink" href="#down-the-pipeline" title="Permanent link">&para;</a></h2>
@@ -1000,8 +1004,8 @@
 <li><a href="../../filt/Normalize-Array/">Normalize Array</a></li>
 </ul>
 <h2 id="example-use">Example Use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
-<p>For an example of how to use this reader, lets make our own test file of packed floats in binary format. Run this script outside of ParaView to create a test file. It will compute a ripple function and write out all the <code>Z</code> data as packed floats.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p>For an example of how to use this reader, lets make our own test file of packed floats in binary format. Run this script outside of ParaView to create a test file. It will compute a ripple function and write out all the <code class="codehilite">Z</code> data as packed floats.</p>
+<details class="note"><summary>Code to create an input file</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1090,14 +1094,17 @@
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
-
-<p>Now select &lsquo;File-&gt;Open&hellip;&rsquo; within ParaView and choose <code>test_file.bin</code> wherever you saved it. This reader will unpack the floats and load them into a table. You can now use this data in many ways. For example, apply a &lsquo;Table to Uniform Grid&rsquo; filter (from this repository) and set the filter parameters to the information in the print out from when you ran the script above. Once you have vtkImageData made of the data, you can apply a &lsquo;Warp by Scalar&rsquo; filter for a fun visualization effect to see 3D ripples like the example below!</p>
+</details><p>Now select &lsquo;File-&gt;Open&hellip;&rsquo; within ParaView and choose <code class="codehilite">test_file.bin</code> wherever you saved it. This reader will unpack the floats and load them into a table. You can now use this data in many ways. For example, apply a &lsquo;Table to Uniform Grid&rsquo; filter (from this repository) and set the filter parameters to the information in the print out from when you ran the script above. Once you have vtkImageData made of the data, you can apply a &lsquo;Warp by Scalar&rsquo; filter for a fun visualization effect to see 3D ripples like the example below!</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe src="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 <hr />
 <h2 id="pvgppyreadpackedbinaries">PVGPpy.read.packedBinaries<a class="headerlink" href="#pvgppyreadpackedbinaries" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This reader documentation is deprecated</p>
+</div>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">packedBinaries</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">dblVals</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
@@ -1105,15 +1112,15 @@
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>This filter reads in float or double data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. The reader uses big endian and defaults to import as floats. Use the Table to Uniform Grid or the Reshape Table filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<p><code>FileName</code> : str</p>
+<p><code class="codehilite">FileName</code> : str</p>
 <ul>
 <li>The absolute file name with path to read.</li>
 </ul>
-<p><code>dblVals</code> : boolean, optional</p>
+<p><code class="codehilite">dblVals</code> : boolean, optional</p>
 <ul>
 <li>A boolean flag to chose to treat the binary packed data as doubles instead of the default floats.</li>
 </ul>
-<p><code>dataNm</code> : str, optional</p>
+<p><code class="codehilite">dataNm</code> : str, optional</p>
 <ul>
 <li>A string name to use for the constructed vtkDataArray</li>
 </ul>
