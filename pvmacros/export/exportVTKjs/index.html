@@ -313,11 +313,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      Read
+      Readers
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
-        Read
+        Readers
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -575,8 +575,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../About-pvmacros/" title="About pvmacors" class="md-nav__link">
-      About pvmacors
+    <a href="../../About-pvmacros/" title="About pvmacros" class="md-nav__link">
+      About pvmacros
     </a>
   </li>
 
@@ -1152,7 +1152,7 @@
 <p>In order to effectively communicate our geoscientific findings, we often need to share our 3D visualizations with interested stakeholders. These interested parties are likely not going to have ParaView or other visualization software at hand. Thus we desire to have a means to export our complex visualizations in ParaView to a simple, shareable format that anyone can view. To accomplish this, we will take advantage of vtk.js and its standalone web viewer for vtk.js formats.</p>
 <p>Would not it be great to send your client or interested parties an interactive 3D scene of your Geophysical findings like the example below?</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/ftcmvc74qsr4hbl/tunnels.vtkjs?dl=0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="http://tunnels.gpvis.org/" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 <hr />
@@ -1160,17 +1160,16 @@
 <p><a href="https://kitware.github.io/vtk-js/">vtk.js</a> is a rendering library made for scientific visualization on the web. This code base brings high performance rendering into anyone&rsquo;s web browser. This library allows us to export complex scenes from ParaView and share them with anyone that has a web browser like Safari or Google Chrome.</p>
 <p>The vtk.js library has an open-source <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html">standalone scene viewer</a> which they have a nice demo for <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader.html">here</a>. The first link can either be downloaded as an HTML file to be ran locally, or you can go to that link and run from the vtk.js server. vtk.js also published a scene export macro for ParaView that compresses a data scene in ParaView to a shareable format for viewing on the web. The macro from the vtk.js library can be found <a href="https://raw.githubusercontent.com/Kitware/vtk-js/master/Utilities/ParaView/export-scene-macro.py">here</a> but we also deploy an updated (we think more robust) version of this export macro in the sub-module <code class="codehilite">export</code> of our Python module <code class="codehilite">pvmacros</code>.</p>
 <h3 id="demo-shareable-format">Demo Shareable Format<a class="headerlink" href="#demo-shareable-format" title="Permanent link">&para;</a></h3>
-<p>Here are some samples to demonstrate the web viewer. We have included a few of our scenes and one of the vtk.js sample scenes for you to demo:</p>
+<p>Here are some samples to demonstrate the web viewer which we host on <a href="http://gpvis.org">gpvis.org</a>. We have included a few of our scenes and one of the vtk.js sample scenes for you to demo:</p>
 <ul>
-<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/6gxax6fp9muk65e/volc.vtkjs?dl=0">Volcano</a></li>
-<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/0xxviidrh66smmg/volc_clip.vtkjs?dl=0">Volcano Clipped</a></li>
-<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/6m5ttdbv5bf4ngj/ripple.vtkjs?dl=0">Ripple</a></li>
-<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://dl.dropbox.com/s/ftcmvc74qsr4hbl/tunnels.vtkjs?dl=0">Tunnels</a></li>
-<li><a href="https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html?fileURL=https://data.kitware.com/api/v1/file/587003c38d777f05f44a5c93/download">vtk.js Sample Scene</a></li>
+<li><a href="http://volcano.gpvis.org">Volcano</a></li>
+<li><a href="http://ripple.gpvis.org">Ripple</a></li>
+<li><a href="http://tunnels.gpvis.org">Tunnels</a></li>
+<li><a href="http://gpvis.org/?fileURL=https://data.kitware.com/api/v1/file/587003c38d777f05f44a5c93/download">vtk.js Sample Scene</a></li>
 </ul>
 <hr />
 <h2 id="example-use">Example Use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
-<p>First, make a complex scene in ParaView that you might like to share with someone. <!--For a simple example, download [this] folder and load the state file *(be sure to use relative file paths)*.--> Now that you have your scene loaded, open the python shell from Tools-&gt;Python Shell within ParaView. From here, import our Python module delivered in the repository called <code class="codehilite"><span class="n">pvmacros</span></code>. From the <code class="codehilite"><span class="n">export</span></code> sub-module, there is a function called <code class="codehilite"><span class="k">def</span> <span class="nf">exportVTKjs</span><span class="p">()</span></code> which takes two optional arguments (<code class="codehilite">FileName</code> string and <code class="codehilite">compress</code> boolean). Execute this function and note the output text as it will describe where the exported scene was saved.</p>
+<p>First, make a complex scene in ParaView that you might like to share with someone. <!--For a simple example, download [this] folder and load the state file *(be sure to use relative file paths)*.--> Now that you have your scene loaded, open the python shell from&rsquo;View-&gt;Python Shell&rsquo; (or &lsquo;Tools-&gt;Python Shell&rsquo; depending on your ParaView version) within ParaView. From here, import our Python module delivered in the repository called <code class="codehilite"><span class="n">pvmacros</span></code>. From the <code class="codehilite"><span class="n">export</span></code> sub-module, there is a function called <code class="codehilite"><span class="k">def</span> <span class="nf">exportVTKjs</span><span class="p">()</span></code> which takes two optional arguments (<code class="codehilite">FileName</code> string and <code class="codehilite">compress</code> boolean). Execute this function and note the output text as it will describe where the exported scene was saved.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1183,8 +1182,12 @@
 </pre></div>
 </td></tr></table>
 
-<details class="help"><summary>Help</summary><p>If you have trouble post on our <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">issues page</a> or read the vtk.js documentation <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader.html">here</a></p></details><p>Now open the standalone web viewer by opening <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html">this link</a>.</p>
+<p>Now open the standalone web viewer by opening <a href="http://gpvis.org">this link</a>.</p>
 <p>Select the exported scene as the input file for the web viewer from where you saved it (should be under <code class="codehilite">~/Dropbox/PVGP_vtkjs/</code>). The export macro should have printed out the location of the saved scene in the Python Shell.</p>
+<div class="admonition help">
+<p class="admonition-title">Help</p>
+<p>If you have trouble post on our <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">issues page</a> or read the vtk.js documentation <a href="https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader.html">here</a></p>
+</div>
 <hr />
 <h2 id="how-to-share">How to Share<a class="headerlink" href="#how-to-share" title="Permanent link">&para;</a></h2>
 <p>To share these exported scenes with non-technical stakeholders, we recommend the following processes:</p>
@@ -1192,21 +1195,17 @@
 <ul>
 <li>Create your scene and export to the vtk.js format (follow process above)</li>
 <li>Quality control your visualization by viewing in web browser yourself (follow process above)</li>
-<li>Send an email with your visualization (<code class="codehilite"><span class="na">.vtkjs</span></code> file) and something along the lines of:</li>
+<li>Send an email with your visualization (<code class="codehilite">*.vtkjs</code> file) and something along the lines of:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Check out the data scene/model by downloading the attached file. Then go to the link below and open that downloaded file.
-
-https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html
-</pre></div>
-</td></tr></table>
-
+<blockquote>
+<p>Check out the data scene/model by downloading the attached file. Then go to the link below and open that downloaded file.</p>
+<p>https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html</p>
+</blockquote>
 <h3 id="a-bit-more-robust">A Bit More Robust<a class="headerlink" href="#a-bit-more-robust" title="Permanent link">&para;</a></h3>
 <p>Sometimes we might want to give someone a direct link to the web visualization so all they have to do is open the link on any device and they can see our visualization. Here is a method to share scenes that have a slightly easier process of viewing the file for the end user and will handle the case for mobile platforms.</p>
-<p>Unfortunately, making the experience for the end user simple means making your experience a bit more complicated. You will need to host your file on a web service like GitHub or Dropbox <em>(we have been unsuccessful in getting Google Drive to work)</em>. Then get a public link to the <code class="codehilite"><span class="na">.vtkjs</span></code> file on that web service and append it to the web viewer URL.</p>
+<p>Unfortunately, making the experience for the end user simple means making your experience a bit more complicated. You will need to host your file on a web service like GitHub or Dropbox <em>(we have been unsuccessful in getting Google Drive to work)</em>. Then get a public link to the <code class="codehilite">*.vtkjs</code> file on that web service and append it to the web viewer URL.</p>
 <p>We have created a Python script to generate these links for you if you are sharing your data file on either Dropbox or GitHub. The script is delivered in the repository and can also be found <a href="https://github.com/banesullivan/ParaViewGeophysics/blob/master/get_vtkjs_url.py">here</a>.</p>
-<p>The easiest way that we have found is to share the files on Dropbox. Use the desktop client for Dropbox and right-click your exported <code class="codehilite"><span class="na">.vtkjs</span></code> file and select &ldquo;Copy Dropbox Link.&rdquo;</p>
+<p>The easiest way that we have found is to share the files on Dropbox. Use the desktop client for Dropbox and right-click your exported <code class="codehilite">*.vtkjs</code> file and select &ldquo;Copy Dropbox Link.&rdquo;</p>
 <p>Once you have that link, use the this script on your URLs in this manner:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1223,21 +1222,21 @@ python get_vtkjs_url.py dropbox <span class="s2">&quot;https://www.dropbox.com/s
 <!-- Hidden
 #### Process to Generate Links on Your Own
 
-- Copy the url to the web browser which we have cloned and host on on of our repos: `https://rawgit.com/banesullivan/PVGPvtk.js/master/StandaloneSceneLoader.html`
+- Copy the url to the web browser which we have cloned and host on on of our repos: `http://gpvis.org/`
 - Now appended `?fileURL=`
 - Then append that with the shareable link to your visualization file from your web file service:
     - For Dropbox, we will follow this method to get direct download file links
     - Shared links for Dropbox files will have this format:
 
-    wzxhzdk:3
+    wzxhzdk:2
 
     - Change the 'www' to 'dl' in the link such that it looks like:
 
-    wzxhzdk:4
+    wzxhzdk:3
 
     - Now append the link for the web viewer hosted on our GitHub repo with the direct download link in the following manner:
 
-    wzxhzdk:5
+    wzxhzdk:4
 
 
 - This link can then be shared with anyone (on a computer, phone, or tablet)
@@ -1289,7 +1288,7 @@ python get_vtkjs_url.py dropbox <span class="s2">&quot;https://www.dropbox.com/s
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../About-pvmacros/" title="About pvmacors" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../About-pvmacros/" title="About pvmacros" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1298,7 +1297,7 @@ python get_vtkjs_url.py dropbox <span class="s2">&quot;https://www.dropbox.com/s
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                About pvmacors
+                About pvmacros
               </span>
             </div>
           </a>

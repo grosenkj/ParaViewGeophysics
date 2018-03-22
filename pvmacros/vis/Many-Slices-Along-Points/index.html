@@ -313,11 +313,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      Read
+      Readers
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
-        Read
+        Readers
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -575,8 +575,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../About-pvmacros/" title="About pvmacors" class="md-nav__link">
-      About pvmacors
+    <a href="../../About-pvmacros/" title="About pvmacros" class="md-nav__link">
+      About pvmacros
     </a>
   </li>
 
@@ -1123,7 +1123,7 @@
 <p>The <code class="codehilite">dataNm</code> variable will be the string name of the data source or model of which you desire to have interior slices. It is important that this data source is &lsquo;slice-able,&rsquo; as some data types in VTK may not be sliceable (such as a point set). If errors arise, make sure this data set is slice-able by applying a simple slice filter from the Filters-&gt;Common-&gt;Slice.</p>
 <!-- TODO provide a pointset and a 3D model for an example -->
 
-<p>If you have a series of points and a data set, go ahead and run this macro in the Python Shell (Tools-&gt;Python Shell):</p>
+<p>If you have a series of points and a data set, go ahead and run this macro in the Python Shell: &lsquo;View-&gt;Python Shell&rsquo; (or &lsquo;Tools-&gt;Python Shell&rsquo; depending on your ParaView version):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pvmacros</span> <span class="kn">as</span> <span class="nn">pvm</span>
 <span class="n">pvm</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">manySlicesAlongPoints</span><span class="p">(</span><span class="s1">&#39;Points&#39;</span><span class="p">,</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>

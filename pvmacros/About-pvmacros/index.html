@@ -42,7 +42,7 @@
     
     
       
-        <title>About pvmacors - ParaViewGeophysics</title>
+        <title>About pvmacros - ParaViewGeophysics</title>
       
     
     
@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#macros-vs-scripts" tabindex="1" class="md-skip">
+      <a href="#about-pvmacros" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
                 ParaViewGeophysics
               </span>
               <span class="md-header-nav__topic">
-                About pvmacors
+                About pvmacros
               </span>
             
           
@@ -313,11 +313,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      Read
+      Readers
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
-        Read
+        Readers
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -580,18 +580,22 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        About pvmacors
+        About pvmacros
       </label>
     
-    <a href="./" title="About pvmacors" class="md-nav__link md-nav__link--active">
-      About pvmacors
+    <a href="./" title="About pvmacros" class="md-nav__link md-nav__link--active">
+      About pvmacros
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
+  
+    
   
   
     <label class="md-nav__title" for="toc">Table of contents</label>
@@ -628,6 +632,33 @@
   <a href="#how-to-run-scripts" title="How to Run Scripts" class="md-nav__link">
     How to Run Scripts
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-your-own-scripts" title="Make Your Own Scripts" class="md-nav__link">
+    Make Your Own Scripts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-trace-tool" title="Using the Trace Tool" class="md-nav__link">
+    Using the Trace Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pvpython" title="Using PVPython" class="md-nav__link">
+    Using PVPython
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -949,6 +980,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -987,6 +1020,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#make-your-own-scripts" title="Make Your Own Scripts" class="md-nav__link">
+    Make Your Own Scripts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-trace-tool" title="Using the Trace Tool" class="md-nav__link">
+    Using the Trace Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pvpython" title="Using PVPython" class="md-nav__link">
+    Using PVPython
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1004,9 +1064,8 @@
               
                 
                 
-                  <h1>About pvmacors</h1>
-                
-                <div class="admonition failure">
+                <h1 id="about-pvmacros">About <code class="codehilite">pvmacros</code><a class="headerlink" href="#about-pvmacros" title="Permanent link">&para;</a></h1>
+<div class="admonition failure">
 <p class="admonition-title">Further description to come!</p>
 <p>Current content is deprecated. There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
 </div>
@@ -1019,19 +1078,26 @@ We will from now on refer to macros as a set of standard codes that can be used 
 <p>Scripts are Python codes we will use for tasks like loading scenes and for applying several macros at once. It is often helpful to set up a script for a project so that you can quickly run all the visualization processing at once each time you update your model files or create new versions of your data.</p>
 <hr />
 <h2 id="how-to-run-scripts">How to Run Scripts<a class="headerlink" href="#how-to-run-scripts" title="Permanent link">&para;</a></h2>
-<p>Use the Python Shell from &lsquo;Tools-&gt;Python Shell&rsquo; in the ParaView GUI. Do not import scripts as macros in ParaView as they become static in the ParaView GUI and make managing/changing quite difficult. To use scripts in the batch processing environment, use the <code class="codehilite">pvpython</code> program delivered in ParaView. On my OS X operating system it is under the <code class="codehilite">Applications/ParaView/Contents/bin/pvpython</code>. More info on all of this to come! <!-- TODO --></p>
-<p>To simply run the scripts in this repo, edit the script files under the <code class="codehilite">scripts/</code> directory for your use, then run them in ParaView by selecting &lsquo;Tools-&gt;Python Shell&rsquo; then click &lsquo;Run Script&rsquo;. Navigate to the <code class="codehilite">scripts/</code> directory in this repo and select the script you desire to use.</p>
+<p>Use the Python Shell from &lsquo;View-&gt;Python Shell&rsquo; (or &lsquo;Tools-&gt;Python Shell&rsquo; depending on your ParaView version) in the ParaView GUI. Do not import scripts as macros in ParaView as they become static in the ParaView GUI and make managing/changing quite difficult. To use scripts in the batch processing environment, use the <code class="codehilite">pvpython</code> program delivered in ParaView. On my OS X operating system it is under the <code class="codehilite">Applications/ParaView/Contents/bin/pvpython</code>. More info on all of this to come! <!-- TODO --></p>
+<p>To simply run the scripts in this repo, edit the script files under the <code class="codehilite">scripts/</code> directory for your use, then run them in ParaView by selecting &lsquo;View-&gt;Python Shell&rsquo; (or &lsquo;Tools-&gt;Python Shell&rsquo; depending on your ParaView version) then click &lsquo;Run Script&rsquo;. Navigate to the <code class="codehilite">scripts/</code> directory in this repo and select the script you desire to use.</p>
 <hr />
+<h2 id="make-your-own-scripts">Make Your Own Scripts<a class="headerlink" href="#make-your-own-scripts" title="Permanent link">&para;</a></h2>
 <div class="admonition failure">
 <p class="admonition-title">Description to come!</p>
 <p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
 </div>
 <!--- TODO --->
 
+<h3 id="using-the-trace-tool">Using the Trace Tool<a class="headerlink" href="#using-the-trace-tool" title="Permanent link">&para;</a></h3>
+<!--- TODO: how to make meaning of the trace output --->
+
 <div class="admonition failure">
 <p class="admonition-title">Description to come!</p>
 <p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
 </div>
+<h3 id="using-pvpython">Using PVPython<a class="headerlink" href="#using-pvpython" title="Permanent link">&para;</a></h3>
+<!--- TODO: Batch processing --->
+
 <div class="admonition failure">
 <p class="admonition-title">Description to come!</p>
 <p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
