@@ -656,6 +656,36 @@
             "title": "Color Maps"
         },
         {
+            "location": "/Scripts/About-Scripts/",
+            "text": "Scripts\n\u00b6\n\n\nScripts are Python codes we will use for tasks like loading scenes and for applying several macros at once for a specific project. It is often helpful to set up a script for a project so that you can quickly run all the visualization processing at once each time you update your model files or create new versions of your data.\n\n\nScripts are used on specific sets of data whereas macros can be used on any set of data.\n For details on macros, please look \nhere\n.\n\n\n\n\nHow to Run Scripts\n\u00b6\n\n\nUse the Python Shell from \u2018View->Python Shell\u2019 (or \u2018Tools->Python Shell\u2019 depending on your ParaView version) in the ParaView GUI. Do not import scripts as macros in ParaView as they become static in the ParaView GUI and make managing/changing quite difficult. To use scripts in the batch processing environment, use the \npvpython\n program delivered in ParaView. On my OS X operating system it is under the \nApplications/ParaView/Contents/bin/pvpython\n. More info on all of this to come! \n\n\nTo simply run the scripts in this repo, edit the script files under the \nscripts/\n directory for your use, then run them in ParaView by selecting \u2018View->Python Shell\u2019 (or \u2018Tools->Python Shell\u2019 depending on your ParaView version) then click \u2018Run Script\u2019. Navigate to the \nscripts/\n directory in this repo and select the script you desire to use.\n\n\n\n\nMake Your Own Scripts\n\u00b6\n\n\n\n\nDescription to come!\n\n\nThere are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page\n\n\n\n\n\n\n\nUsing the Trace Tool\n\u00b6\n\n\n\n\n\n\n\nDescription to come!\n\n\nThere are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page\n\n\n\n\nUsing PVPython\n\u00b6\n\n\n\n\n\n\n\nDescription to come!\n\n\nThere are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page",
+            "title": "About Scripts"
+        },
+        {
+            "location": "/Scripts/About-Scripts/#scripts",
+            "text": "Scripts are Python codes we will use for tasks like loading scenes and for applying several macros at once for a specific project. It is often helpful to set up a script for a project so that you can quickly run all the visualization processing at once each time you update your model files or create new versions of your data.  Scripts are used on specific sets of data whereas macros can be used on any set of data.  For details on macros, please look  here .",
+            "title": "Scripts"
+        },
+        {
+            "location": "/Scripts/About-Scripts/#how-to-run-scripts",
+            "text": "Use the Python Shell from \u2018View->Python Shell\u2019 (or \u2018Tools->Python Shell\u2019 depending on your ParaView version) in the ParaView GUI. Do not import scripts as macros in ParaView as they become static in the ParaView GUI and make managing/changing quite difficult. To use scripts in the batch processing environment, use the  pvpython  program delivered in ParaView. On my OS X operating system it is under the  Applications/ParaView/Contents/bin/pvpython . More info on all of this to come!   To simply run the scripts in this repo, edit the script files under the  scripts/  directory for your use, then run them in ParaView by selecting \u2018View->Python Shell\u2019 (or \u2018Tools->Python Shell\u2019 depending on your ParaView version) then click \u2018Run Script\u2019. Navigate to the  scripts/  directory in this repo and select the script you desire to use.",
+            "title": "How to Run Scripts"
+        },
+        {
+            "location": "/Scripts/About-Scripts/#make-your-own-scripts",
+            "text": "Description to come!  There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page",
+            "title": "Make Your Own Scripts"
+        },
+        {
+            "location": "/Scripts/About-Scripts/#using-the-trace-tool",
+            "text": "Description to come!  There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page",
+            "title": "Using the Trace Tool"
+        },
+        {
+            "location": "/Scripts/About-Scripts/#using-pvpython",
+            "text": "Description to come!  There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page",
+            "title": "Using PVPython"
+        },
+        {
             "location": "/Scripts/Example-Script/",
             "text": "Description to come!\n\n\nThere are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page",
             "title": "Example Script"
