@@ -302,54 +302,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#features-to-come" title="Features to Come" class="md-nav__link">
-    Features to Come
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#readers" title="Readers" class="md-nav__link">
-    Readers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filters" title="Filters" class="md-nav__link">
-    Filters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macros-in-pvmacros" title="Macros in pvmacros" class="md-nav__link">
-    Macros in pvmacros
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scripts" title="Scripts" class="md-nav__link">
-    Scripts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#examples-and-other-docs" title="Examples and Other Docs" class="md-nav__link">
-    Examples and Other Docs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -1003,6 +955,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="Upcoming/" title="Features to Come" class="md-nav__link">
+      Features to Come
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1054,54 +1018,6 @@
   <a href="#outline-of-goals" title="Outline of Goals" class="md-nav__link">
     Outline of Goals
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features-to-come" title="Features to Come" class="md-nav__link">
-    Features to Come
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#readers" title="Readers" class="md-nav__link">
-    Readers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filters" title="Filters" class="md-nav__link">
-    Filters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macros-in-pvmacros" title="Macros in pvmacros" class="md-nav__link">
-    Macros in pvmacros
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scripts" title="Scripts" class="md-nav__link">
-    Scripts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#examples-and-other-docs" title="Examples and Other Docs" class="md-nav__link">
-    Examples and Other Docs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1193,56 +1109,6 @@ This repository was produced from the work of an undergraduate research project 
 <li>
 <p>Develop customizable scripts for the visualization of common data formats. This will include developing scripts on an individual basis to help others quickly visualize their data and models for quality assessment and unique research needs.</p>
 </li>
-</ul>
-<hr />
-<h2 id="features-to-come">Features to Come<a class="headerlink" href="#features-to-come" title="Permanent link">&para;</a></h2>
-<p>Here is a list of features that are shortly coming to this repo. This list will be regularly updated. More documentation is soon to come. We want to do it right: with tutorials, example data, and detailed justification for need and use of each reader, filter, and macro.</p>
-<div class="admonition help">
-<p class="admonition-title">Suggestions?</p>
-<p>We need <strong>your</strong> suggestions for what kinds of file format readers to make as well as ideas for filters to meet your data needs. Post on the <a href="https://github.com/banesullivan/ParaViewGeophysics/issues">Issues page</a> as a feature request.</p>
-</div>
-<h3 id="readers">Readers<a class="headerlink" href="#readers" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Open Mining Format:</strong> All file types and data types found <a href="https://github.com/GMSGDataExchange/omf">here</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>UBC Mesh:</strong> both 2D and 3D. Details <a href="https://www.eoas.ubc.ca/ubcgif/iag/sftwrdocs/technotes/faq.htm#mesh">here</a> and <a href="https://gif.eos.ubc.ca/software/utility_programs#3DmodelsMeshes">here</a>. We&rsquo;re almost done with this!</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Well logs:</strong> Readers for common formats (LAS) and easy ways to project well logs in XYZ space</li>
-</ul>
-<!---
-- [ ] **ESRI Grid:** Details [here](https://en.wikipedia.org/wiki/Esri_grid) and [here](http://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/esri-grid-format.htm)
-- [ ] **ESRI shape files:** Details [here](https://www.esri.com/library/whitepapers/pdfs/shapefile.pdf) and [here](https://en.wikipedia.org/wiki/Shapefile)
--->
-
-<h3 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Append Model to UBC Mesh:</strong> This will load a model file and tag it on to vtkStructuredGrid loaded from a UBC Mesh reader. Think of it as appending models as attributes to the 3D mesh.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Extract Array:</strong> This will allow you to extract any array from any data structure as vtkPolyData.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Transpose Grid:</strong> Transpose or swap axii of grid data sets (vtkImageData and vtkRectilinearGrid)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Reshape Table:</strong> Adding ability to reshape using Fortran ordering on the currently available filter.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Make Cubes from Point Set:</strong> This will take a point set and generate cube of some specified size at every point</li>
-</ul>
-<!---
-**Structure Point Set:** This will take scattered point data and create connectivity/structure either in the form of hexahedrons or quads. More info to come.
--->
-
-<h3 id="macros-in-pvmacros">Macros in <code class="codehilite">pvmacros</code><a class="headerlink" href="#macros-in-pvmacros" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Save screenshots in isometric views, side, top, etc. in an automated fashion</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="pvmacros/vis/Many-Slices-Along-Points/">Many Slices Along Points:</a> Export slices of dataset along polyline at every point on that line (normal is the vector from that point to the next)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="pvmacros/export/exportVTKjs/">Export a scene</a> to a shareable 3D format</li>
-</ul>
-<h3 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to start making your own scripts (tips, tricks, and general advice)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A few sample scripts to set up tutorial environments.</li>
-</ul>
-<h3 id="examples-and-other-docs">Examples and Other Docs<a class="headerlink" href="#examples-and-other-docs" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li>Tutorials for each filter/reader/macro will be in their respective documentation.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to send data scenes made using the Readers, Filters, and Macros in this repository over to the Virtual Reality build of ParaView</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> How to build your own plugins using this project&rsquo;s framework and build scripts</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Importing DEM topography (with/without satellite imagery)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slicing/cropping a data scene through all components/datasets (managing links)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="Examples/Slice-Model-Along-PolyLine/">Slice Model Along PolyLine:</a> How to export a slice of a dataset projected on a vtkPolyLine (capabilities are currently present in ParaView)</li>
 </ul>
                 
                   
