@@ -727,8 +727,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pvmacrosvismanyslicesalongpoints" title="pvmacros.vis.manySlicesAlongPoints" class="md-nav__link">
-    pvmacros.vis.manySlicesAlongPoints
+  <a href="#code-docs" title="Code Docs" class="md-nav__link">
+    Code Docs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manyslicesalongpoints" title="manySlicesAlongPoints" class="md-nav__link">
+    manySlicesAlongPoints
   </a>
   
     <nav class="md-nav">
@@ -752,6 +760,11 @@
   <a href="#notes" title="Notes" class="md-nav__link">
     Notes
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1082,8 +1095,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pvmacrosvismanyslicesalongpoints" title="pvmacros.vis.manySlicesAlongPoints" class="md-nav__link">
-    pvmacros.vis.manySlicesAlongPoints
+  <a href="#code-docs" title="Code Docs" class="md-nav__link">
+    Code Docs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manyslicesalongpoints" title="manySlicesAlongPoints" class="md-nav__link">
+    manySlicesAlongPoints
   </a>
   
     <nav class="md-nav">
@@ -1107,6 +1128,11 @@
   <a href="#notes" title="Notes" class="md-nav__link">
     Notes
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1172,22 +1198,27 @@
 <p><!--- TODO --->
 If you want to make tons of slices of a model, the outputs of this macro WILL get messy if used in the ParaView GUI. We recommend using the <code class="codehilite">pvpython</code> module on the command line to perform large batch processing like this. More details to come&hellip; stay tuned.</p>
 <hr />
-<h2 id="pvmacrosvismanyslicesalongpoints">pvmacros.vis.manySlicesAlongPoints<a class="headerlink" href="#pvmacrosvismanyslicesalongpoints" title="Permanent link">&para;</a></h2>
+<h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
+<h3 id="manyslicesalongpoints"><code class="codehilite">manySlicesAlongPoints</code><a class="headerlink" href="#manyslicesalongpoints" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">pvmacros</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">manySlicesAlongPoints</span><span class="p">(</span><span class="n">pointsNm</span><span class="p">,</span> <span class="n">dataNm</span><span class="p">,</span> <span class="n">numSlices</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">exportpath</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
-<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
 <p>This macro takes a series of points and a data source to be sliced. The points are used to construct a path through the data source and a slice is added at intervals of that path along the vector of that path at that point. This constructs <code class="codehilite">numSlices</code> slices through the dataset <code class="codehilite">dataNm</code>.</p>
-<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <p><code class="codehilite">pointsNm</code> : string</p>
 <ul>
 <li>The string name of the points source to construct the path.</li>
 </ul>
 <p><code class="codehilite">dataNm</code> : string</p>
 <ul>
-<li>The string name of the data source to slice.</li>
-<li>Make sure this data source is slice-able.</li>
+<li>
+<p>The string name of the data source to slice.</p>
+</li>
+<li>
+<p>Make sure this data source is slice-able.</p>
+</li>
 </ul>
 <p><code class="codehilite">numSlices</code> : int, optional</p>
 <ul>
@@ -1199,13 +1230,21 @@ If you want to make tons of slices of a model, the outputs of this macro WILL ge
 </ul>
 <p><code class="codehilite">ext</code> : string, optional</p>
 <ul>
-<li>The file extension for saving out the slices.</li>
-<li>Default to &lsquo;.csv&rsquo;</li>
+<li>
+<p>The file extension for saving out the slices.</p>
+</li>
+<li>
+<p>Default to &lsquo;.csv&rsquo;</p>
+</li>
 </ul>
-<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Make sure the input data source is slice-able.</li>
-<li>The SciPy module is required for this macro.</li>
+<li>
+<p>Make sure the input data source is slice-able.</p>
+</li>
+<li>
+<p>The SciPy module is required for this macro.</p>
+</li>
 </ul>
                 
                   

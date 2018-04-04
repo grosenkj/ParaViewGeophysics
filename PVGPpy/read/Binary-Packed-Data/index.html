@@ -376,8 +376,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pvgppyreadpackedbinaries" title="PVGPpy.read.packedBinaries" class="md-nav__link">
-    PVGPpy.read.packedBinaries
+  <a href="#code-docs" title="Code Docs" class="md-nav__link">
+    Code Docs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packedbinaries" title="packedBinaries" class="md-nav__link">
+    packedBinaries
   </a>
   
     <nav class="md-nav">
@@ -401,6 +409,11 @@
   <a href="#returns" title="Returns" class="md-nav__link">
     Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1028,8 +1041,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pvgppyreadpackedbinaries" title="PVGPpy.read.packedBinaries" class="md-nav__link">
-    PVGPpy.read.packedBinaries
+  <a href="#code-docs" title="Code Docs" class="md-nav__link">
+    Code Docs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packedbinaries" title="packedBinaries" class="md-nav__link">
+    packedBinaries
   </a>
   
     <nav class="md-nav">
@@ -1053,6 +1074,11 @@
   <a href="#returns" title="Returns" class="md-nav__link">
     Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1198,18 +1224,15 @@
 </div>
 
 <hr />
-<h2 id="pvgppyreadpackedbinaries">PVGPpy.read.packedBinaries<a class="headerlink" href="#pvgppyreadpackedbinaries" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This reader documentation is deprecated</p>
-</div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">packedBinaries</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">dblVals</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
+<h3 id="packedbinaries"><code class="codehilite">packedBinaries</code><a class="headerlink" href="#packedbinaries" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">packedBinaries</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">endian</span><span class="o">=</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
-<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
-<p>This filter reads in float or double data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. The reader uses big endian and defaults to import as floats. Use the Table to Uniform Grid or the Reshape Table filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.</p>
-<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>This reads in float or double data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. The reader uses defaults to import as floats with native endianness. Use the Table to Uniform Grid or the Reshape Table filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.</p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <p><code class="codehilite">FileName</code> : str</p>
 <ul>
 <li>The absolute file name with path to read.</li>
@@ -1222,7 +1245,7 @@
 <ul>
 <li>A string name to use for the constructed vtkDataArray</li>
 </ul>
-<h3 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h3>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <p>Returns a vtkTable of the input data file with a single column being the data read.</p>
                 
                   

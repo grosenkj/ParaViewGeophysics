@@ -393,8 +393,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pvgppyreadgslib" title="PVGPpy.read.gslib" class="md-nav__link">
-    PVGPpy.read.gslib
+  <a href="#code-docs" title="Code Docs" class="md-nav__link">
+    Code Docs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gslib" title="gslib" class="md-nav__link">
+    gslib
   </a>
   
     <nav class="md-nav">
@@ -418,6 +426,11 @@
   <a href="#returns" title="Returns" class="md-nav__link">
     Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1014,8 +1027,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pvgppyreadgslib" title="PVGPpy.read.gslib" class="md-nav__link">
-    PVGPpy.read.gslib
+  <a href="#code-docs" title="Code Docs" class="md-nav__link">
+    Code Docs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gslib" title="gslib" class="md-nav__link">
+    gslib
   </a>
   
     <nav class="md-nav">
@@ -1039,6 +1060,11 @@
   <a href="#returns" title="Returns" class="md-nav__link">
     Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1132,14 +1158,16 @@ Variable3
 <li><a href="https://www.paraview.org/Wiki/ParaView/Users_Guide/List_of_filters#Table_To_Structured_Grid">Table to Structured Grid</a></li>
 <li><a href="../../filt/Normalize-Array/">Normalize Array</a></li>
 </ul>
-<h2 id="pvgppyreadgslib">PVGPpy.read.gslib<a class="headerlink" href="#pvgppyreadgslib" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">gslib</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">numIgLns</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<hr />
+<h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
+<h3 id="gslib"><code class="codehilite">gslib</code><a class="headerlink" href="#gslib" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">gslib</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">numIgLns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
-<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
 <p>Reads a GSLIB file format to a vtkTable. The GSLIB file format has headers lines followed by the data as a space delimited ASCI file (this filter is set up to allow you to choose any single character delimiter). The first header line is the title and will be printed to the console. This line may have the dimensions for a grid to be made of the data. The second line is the number (n) of columns of data. The next n lines are the variable names for the data in each column. You are allowed up to ten characters for the variable name. The data follow with a space between each field (column).</p>
-<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <p><code class="codehilite">FileName</code> : str</p>
 <ul>
 <li>The absolute file name with path to read.</li>
@@ -1156,7 +1184,7 @@ Variable3
 <ul>
 <li>The integer number of lines to ignore</li>
 </ul>
-<h3 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h3>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <p>Returns a vtkTable of the input data file.</p>
                 
                   

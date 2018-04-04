@@ -922,6 +922,72 @@
 <p class="admonition-title">Description to come!</p>
 <p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
 </div>
+<hr />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll"><span class="ch">#! pvpython</span>
+</span>
+<span class="c1"># import the simple module from the paraview</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">PVGPpy</span> <span class="kn">import</span> <span class="o">*</span>
+</span>
+
+<span class="c1">#### disable automatic camera reset on &#39;Show&#39;</span>
+<span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">_DisableFirstRenderCameraReset</span><span class="p">()</span>
+
+<span class="c1"># create a new &#39;Cone&#39;</span>
+<span class="n">cone1</span> <span class="o">=</span> <span class="n">Cone</span><span class="p">()</span>
+
+<span class="c1"># get active view</span>
+<span class="n">renderView1</span> <span class="o">=</span> <span class="n">GetActiveViewOrCreate</span><span class="p">(</span><span class="s1">&#39;RenderView&#39;</span><span class="p">)</span>
+
+<span class="c1"># show data in view</span>
+<span class="n">cone1Display</span> <span class="o">=</span> <span class="n">Show</span><span class="p">(</span><span class="n">cone1</span><span class="p">,</span> <span class="n">renderView1</span><span class="p">)</span>
+<span class="c1"># trace defaults for the display properties.</span>
+<span class="n">cone1Display</span><span class="o">.</span><span class="n">Representation</span> <span class="o">=</span> <span class="s1">&#39;Surface&#39;</span>
+
+<span class="c1"># reset view to fit data</span>
+<span class="n">renderView1</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
+
+<span class="c1"># update the view to ensure updated data information</span>
+<span class="n">renderView1</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+<span class="c1">#### uncomment the following to render all views and export</span>
+<span class="n">RenderAllViews</span><span class="p">()</span>
+<span class="n">export</span><span class="o">.</span><span class="n">exportVTKjs</span><span class="p">(</span><span class="n">FileName</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
