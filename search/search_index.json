@@ -596,6 +596,106 @@
             "title": "Notes"
         },
         {
+            "location": "/pvmacros/vis/Camera/",
+            "text": "Class \ncamera\n\u00b6\n\n\n1\npvmacros\n.\nvis\n.\ncamera\n\n\n\n\n\n\n\nAn object to store a single camera location/view. You can make a list/dict of these objects to save interesting views for your project. This object saves just a few parameters about the camera so that it can easily be reconstructed.\n\n\nloadViews\n\u00b6\n\n\n1\ncamera\n.\nloadViews\n(\nfilename\n=\n'views.camera'\n,\n \npath\n=\n'/Users/bane'\n)\n\n\n\n\n\n\n\nDescription\n\u00b6\n\n\nLoad a file containg a serialized camera objects. Dafault loads from home directory if relative path\n\n\nParameters\n\u00b6\n\n\nfilename\n : string, optional\n\n\n\n\nThe file basename for the serialized file (defualt is default for output def)\n\n\n\n\npath\n : string, optional\n\n\n\n\nThe directory from which you wish to load the views. Defaults to user home directory for relative paths.\n\n\n\n\nsaveViews\n\u00b6\n\n\n1\ncamera\n.\nsaveViews\n(\nlib\n,\n \nfilename\n=\n'views'\n,\n \npath\n=\n'/Users/bane'\n)\n\n\n\n\n\n\n\nDescription\n\u00b6\n\n\nSave a serialized dictionaty/list/whatever of views out to a file. Dafault saves to user\u2019s home directory\n\n\nParameters\n\u00b6\n\n\nlib\n : dict or list\n\n\n\n\nsome iterable object containg multiple \ncamera\n objects\n\n\n\n\nfilename\n : string, optional\n\n\n\n\nThe file basename for the serialized file\n\n\n\n\npath\n : string, optional\n\n\n\n\nThe directory you wish to save the views. Defaults to user home directory\n\n\n\n\nscreenShot\n\u00b6\n\n\n1\ncamera\n.\nscreenShot\n(\nself\n,\n \ncam\n=\nNone\n,\n \npath\n=\n'/Users/bane'\n,\n \nbasenm\n=\n'view'\n)\n\n\n\n\n\n\n\nDescription\n\u00b6\n\n\nSave a screenshot of a single camera view\n\n\nParameters\n\u00b6\n\n\ncam\n : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional\n\n\n\n\nThe camera you wish to view then save a screenshot\n\n\n\n\npath\n : string, optional\n\n\n\n\nThe directory you wish to save the screenshot. Defaults to user home directory\n\n\n\n\nbasenm\n : string, optional\n\n\n\n\nThe file basename for the screenshot\n\n\n\n\nscreenShotViews\n\u00b6\n\n\n1\ncamera\n.\nscreenShotViews\n(\nviews\n,\n \ncam\n=\nNone\n,\n \npath\n=\n'/Users/bane'\n,\n \nbasenm\n=\n'view'\n)\n\n\n\n\n\n\n\nDescription\n\u00b6\n\n\nSave screenshots of many views/cameras\n\n\nParameters\n\u00b6\n\n\nview\n : dict or list\n\n\n\n\nsome iterable object containg multiple \ncamera\n objects\n\n\n\n\ncam\n : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional\n\n\n\n\nThe camera you wish to view then save a screenshot\n\n\n\n\npath\n : string, optional\n\n\n\n\nThe directory you wish to save the screenshot. Defaults to user home directory\n\n\n\n\nbasenm\n : string, optional\n\n\n\n\nThe file basename for the screenshot\n\n\n\n\nupdate\n\u00b6\n\n\n1\ncamera\n.\nupdate\n(\nself\n,\n \ncam\n=\nNone\n)\n\n\n\n\n\n\n\nDescription\n\u00b6\n\n\nUpdates the camera location to that which is in the currently activated view unless a vtkOpenGLCamera is specified.\n\n\nParameters\n\u00b6\n\n\ncam\n : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional\n\n\n\n\nThe camera you wish to update this object to. Totally optional\n\n\n\n\nview\n\u00b6\n\n\n1\ncamera\n.\nview\n(\nself\n,\n \ncam\n=\nNone\n)\n\n\n\n\n\n\n\nDescription\n\u00b6\n\n\nUse this method to update the camera to the saved location\n\n\nParameters\n\u00b6\n\n\ncam\n : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional\n\n\n\n\nThe camera you wish to view/update in the current render view",
+            "title": "Camera"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#class-camera",
+            "text": "1 pvmacros . vis . camera    An object to store a single camera location/view. You can make a list/dict of these objects to save interesting views for your project. This object saves just a few parameters about the camera so that it can easily be reconstructed.",
+            "title": "Class camera"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#loadviews",
+            "text": "1 camera . loadViews ( filename = 'views.camera' ,   path = '/Users/bane' )",
+            "title": "loadViews"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#description",
+            "text": "Load a file containg a serialized camera objects. Dafault loads from home directory if relative path",
+            "title": "Description"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#parameters",
+            "text": "filename  : string, optional   The file basename for the serialized file (defualt is default for output def)   path  : string, optional   The directory from which you wish to load the views. Defaults to user home directory for relative paths.",
+            "title": "Parameters"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#saveviews",
+            "text": "1 camera . saveViews ( lib ,   filename = 'views' ,   path = '/Users/bane' )",
+            "title": "saveViews"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#description_1",
+            "text": "Save a serialized dictionaty/list/whatever of views out to a file. Dafault saves to user\u2019s home directory",
+            "title": "Description"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#parameters_1",
+            "text": "lib  : dict or list   some iterable object containg multiple  camera  objects   filename  : string, optional   The file basename for the serialized file   path  : string, optional   The directory you wish to save the views. Defaults to user home directory",
+            "title": "Parameters"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#screenshot",
+            "text": "1 camera . screenShot ( self ,   cam = None ,   path = '/Users/bane' ,   basenm = 'view' )",
+            "title": "screenShot"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#description_2",
+            "text": "Save a screenshot of a single camera view",
+            "title": "Description"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#parameters_2",
+            "text": "cam  : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional   The camera you wish to view then save a screenshot   path  : string, optional   The directory you wish to save the screenshot. Defaults to user home directory   basenm  : string, optional   The file basename for the screenshot",
+            "title": "Parameters"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#screenshotviews",
+            "text": "1 camera . screenShotViews ( views ,   cam = None ,   path = '/Users/bane' ,   basenm = 'view' )",
+            "title": "screenShotViews"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#description_3",
+            "text": "Save screenshots of many views/cameras",
+            "title": "Description"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#parameters_3",
+            "text": "view  : dict or list   some iterable object containg multiple  camera  objects   cam  : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional   The camera you wish to view then save a screenshot   path  : string, optional   The directory you wish to save the screenshot. Defaults to user home directory   basenm  : string, optional   The file basename for the screenshot",
+            "title": "Parameters"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#update",
+            "text": "1 camera . update ( self ,   cam = None )",
+            "title": "update"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#description_4",
+            "text": "Updates the camera location to that which is in the currently activated view unless a vtkOpenGLCamera is specified.",
+            "title": "Description"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#parameters_4",
+            "text": "cam  : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional   The camera you wish to update this object to. Totally optional",
+            "title": "Parameters"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#view",
+            "text": "1 camera . view ( self ,   cam = None )",
+            "title": "view"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#description_5",
+            "text": "Use this method to update the camera to the saved location",
+            "title": "Description"
+        },
+        {
+            "location": "/pvmacros/vis/Camera/#parameters_5",
+            "text": "cam  : vtkRenderingOpenGL2Python.vtkOpenGLCamera, optional   The camera you wish to view/update in the current render view",
+            "title": "Parameters"
+        },
+        {
             "location": "/pvmacros/vis/Clip-Through/",
             "text": "Purpose\n\n\nThis macro will translate a clip through a data scene at a given time interval.\n\n\n\n\nCode Docs\n\u00b6\n\n\nclipThrough\n\u00b6\n\n\n1\npvmacros\n.\nvis\n.\nclipThrough\n(\nclip\n,\n \nax\n,\n \nbounds\n,\n \nnum\n=\n10\n,\n \ndelay\n=\n1.0\n)\n\n\n\n\n\n\n\nDescription\n\u00b6\n\n\nThis macro takes a clip source and progresses its location through a set of bounds in the data scene. The macro requires that the clip already exist in the pipeline. This is especially useful if you have many clips linked together as all will move through the seen as a result of this macro.\n\n\nParameters\n\u00b6\n\n\nclip\n : string\n\n\n\n\nThe string name of the clip source to be translated.\n\n\n\n\nax\n : int\n\n\n\n\n\n\nThis is the axis on which to translate (0 for x, 1 for y, 2 for z).\n\n\n\n\n\n\nThink of this as the normal vector for the clip.\n\n\n\n\n\n\nbounds\n : 6-element list or tuple\n\n\n\n\nThese are the bounds to constrain the clip translation.\n\n\n\n\nnum\n : int, optional\n\n\n\n\nThe number of discritizations in the clip translation.\n\n\n\n\ndelay\n : float, optional\n\n\n\n\nTime delay in seconds before conducting each clip translation.",
             "title": "Clip Through"
