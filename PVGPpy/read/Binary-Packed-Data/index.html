@@ -1126,11 +1126,12 @@
                 
                 <div class="admonition info">
 <p class="admonition-title">Purpose</p>
-<p>This file format reader provides a tool read a common data type throughout many software packages like Madagascar or SEPlib which save an array of data (<code class="codehilite">floats</code>, <code class="codehilite">doubles</code>, or <code class="codehilite">ints</code>) in their binary form to a file. This array can be read into a vtkDataArray which we can then work with to reshape into a grid or use for any other reason on the ParaView pipeline.</p>
+<p>This file format reader provides a tool read a common data type throughout many software packages like Madagascar or SEPlib which save an array of data (<code class="codehilite">float</code>, <code class="codehilite">double</code>, or <code class="codehilite">int</code>) in their binary form to a file. This array can be read into a vtkDataArray which we can then work with to reshape into a grid or use for any other reason on the ParaView pipeline.</p>
 </div>
 <h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
-<p>This filter reads in float or double data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. The reader uses big endian and defaults to import as floats. Use the &lsquo;Table to Uniform Grid&rsquo; or the &lsquo;Reshape Table&rsquo; filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.</p>
-<p>There is a checkbox you can use to specify double precision if needed and a text box where you can specify the data variable name. The default for the data variable name is the base name of the file, however you may want something less verbose or more specific.</p>
+<p>This filter reads in <code class="codehilite">float</code>, <code class="codehilite">double</code>, or <code class="codehilite">int</code> data that is packed into a binary file format. It will treat the data as one long array and make a vtkTable with one column of that data. You can also chose the endianness which defaults to the native system endianness.</p>
+<p>Use the &lsquo;Table to Uniform Grid&rsquo; or the &lsquo;Reshape Table&rsquo; filters to give more meaning to the data. We chose to use a vtkTable object as the output of this reader because it gives us more flexibility in the filters we can apply to this data down the pipeline and keeps thing simple when using filters in this repository.</p>
+<p>The default for the data variable name is the base name of the file, however you may want something less verbose or more specific which can be specified in the <code class="codehilite">Data Name</code> attribute field.</p>
 <h2 id="down-the-pipeline">Down the Pipeline<a class="headerlink" href="#down-the-pipeline" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../filt/Table-to-Uniform-Grid/">Table to Uniform Grid</a></li>
@@ -1187,46 +1188,46 @@
 44</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">struct</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="c1">## The 2D space we are working with</span>
+<span class="c1"># The 2D space we are working with</span>
 <span class="n">step</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">64.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="n">step</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
-<span class="c1">## A cool looking ripple function</span>
+<span class="c1"># A cool looking ripple function</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
-<span class="c1">## Compute the values of the ripple function in our space</span>
+<span class="c1"># Compute the values of the ripple function in our space</span>
 <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
         <span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">],</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
 
-<span class="c1">## Parameters for a &#39;Table to Uniform Grid&#39; filter</span>
+<span class="c1"># Parameters for a &#39;Table to Uniform Grid&#39; filter</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Shape of grid (n1,n2,n3): &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">Z</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Spacing for all axii: &quot;</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Origin (x,y,z): &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="mf">0.0</span><span class="p">))</span>
 
 
 <span class="c1">#---- Export Data ----#</span>
-<span class="c1">## NOTE: Copy and paste the code below for your needs</span>
+<span class="c1"># NOTE: Copy and paste the code below for your needs</span>
 
-<span class="c1">## Flatten the matrix in C-Contiguous manner</span>
+<span class="c1"># Flatten the matrix in C-Contiguous manner</span>
 <span class="hll"><span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 </span>
 <span class="c1">### Choose floats or doubles ##</span>
-<span class="c1">## Pack as FLOATs:</span>
-<span class="hll"><span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Z</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="o">*</span><span class="n">Z</span><span class="p">)</span>
-</span><span class="c1">## Or pack as DOUBLEs:</span>
-<span class="c1">##   (be sure to enable the &#39;Double Values&#39; checkbox</span>
-<span class="c1">##   on the reader when loading into ParaView)</span>
-<span class="c1">#data = struct.pack(&#39;&gt;&#39;+str(len(Z))+&#39;d&#39;,*Z)</span>
+<span class="c1"># Pack as FLOATs in NATIVE `@` endianness:</span>
+<span class="hll"><span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Z</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="o">*</span><span class="n">Z</span><span class="p">)</span>
+</span><span class="c1"># Or pack as DOUBLEs:</span>
+<span class="c1">#   (be sure to enable the &#39;Double Values&#39; checkbox</span>
+<span class="c1">#   on the reader when loading into ParaView)</span>
+<span class="c1">#data = struct.pack(&#39;@&#39;+str(len(Z))+&#39;d&#39;,*Z)</span>
 
-<span class="c1">## Open file to write binary data</span>
+<span class="c1"># Open file to write binary data</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;~/test_file.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
-<span class="c1">## Write out the packed data in binary format</span>
+<span class="c1"># Write out the packed data in binary format</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="c1">## Close the file</span>
+<span class="c1"># Close the file</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
@@ -1238,7 +1239,7 @@
 <hr />
 <h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
 <h3 id="packedbinaries"><code class="codehilite">packedBinaries</code><a class="headerlink" href="#packedbinaries" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">packedBinaries</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">endian</span><span class="o">=</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">packedBinaries</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">endian</span><span class="o">=</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
@@ -1249,13 +1250,21 @@
 <ul>
 <li>The absolute file name with path to read.</li>
 </ul>
-<p><code class="codehilite">dblVals</code> : boolean, optional</p>
-<ul>
-<li>A boolean flag to chose to treat the binary packed data as doubles instead of the default floats.</li>
-</ul>
 <p><code class="codehilite">dataNm</code> : str, optional</p>
 <ul>
-<li>A string name to use for the constructed vtkDataArray</li>
+<li>A string name to use for the constructed vtkDataArray.</li>
+</ul>
+<p><code class="codehilite">endian</code> : char, optional</p>
+<ul>
+<li>The endianness to unpack the values in struct.unpack(). Defaults to Big Endian <code class="codehilite">&gt;</code>.</li>
+</ul>
+<p><code class="codehilite">dtype</code> : char, optional</p>
+<ul>
+<li>A char to chose the data type when unpacking with struct.unpack(). Defaults to float <code class="codehilite">f</code>.</li>
+</ul>
+<p><code class="codehilite">pdo</code> : vtk.vtkTable, optional</p>
+<ul>
+<li>A pointer to the output data object.</li>
 </ul>
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <p>Returns a vtkTable of the input data file with a single column being the data read.</p>
