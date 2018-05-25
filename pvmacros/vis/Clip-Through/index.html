@@ -340,6 +340,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../PVGPpy/read/Madagascar-SSRSF/" title="Madagascar SSRSF" class="md-nav__link">
+      Madagascar SSRSF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../PVGPpy/read/Delimited-Text/" title="Delimited Text" class="md-nav__link">
       Delimited Text
     </a>
@@ -683,39 +695,6 @@
     Code Docs
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#clipthrough" title="clipThrough" class="md-nav__link">
-    clipThrough
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -968,6 +947,54 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Development Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Development Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Dev-Guide/Contributing-to-PVGP/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Dev-Guide/Repo-Structure/" title="Repo Structure" class="md-nav__link">
+      Repo Structure
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1008,39 +1035,6 @@
     Code Docs
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#clipthrough" title="clipThrough" class="md-nav__link">
-    clipThrough
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -1073,39 +1067,7 @@
 <p>This macro will translate a clip through a data scene at a given time interval.</p>
 </div>
 <h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
-<h3 id="clipthrough"><code class="codehilite">clipThrough</code><a class="headerlink" href="#clipthrough" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">pvmacros</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">clipThrough</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
-
-<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
-<p>This macro takes a clip source and progresses its location through a set of bounds in the data scene. The macro requires that the clip already exist in the pipeline. This is especially useful if you have many clips linked together as all will move through the seen as a result of this macro.</p>
-<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
-<p><code class="codehilite">clip</code> : string</p>
-<ul>
-<li>The string name of the clip source to be translated.</li>
-</ul>
-<p><code class="codehilite">ax</code> : int</p>
-<ul>
-<li>
-<p>This is the axis on which to translate (0 for x, 1 for y, 2 for z).</p>
-</li>
-<li>
-<p>Think of this as the normal vector for the clip.</p>
-</li>
-</ul>
-<p><code class="codehilite">bounds</code> : 6-element list or tuple</p>
-<ul>
-<li>These are the bounds to constrain the clip translation.</li>
-</ul>
-<p><code class="codehilite">num</code> : int, optional</p>
-<ul>
-<li>The number of discritizations in the clip translation.</li>
-</ul>
-<p><code class="codehilite">delay</code> : float, optional</p>
-<ul>
-<li>Time delay in seconds before conducting each clip translation.</li>
-</ul>
+<details class="abstract"><summary>pvmacros.vis.clipThrough</summary><p><code class="codehilite"><span class="n">pvmacros</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">clipThrough</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>This macro takes a clip source and progresses its location through a set of bounds in the data scene. The macro requires that the clip already exist in the pipeline. This is especially useful if you have many clips linked together as all will move through the seen as a result of this macro.</p><p><strong>Parameters</strong></p><p><code class="codehilite">clip</code> : string</p><ul><li>The string name of the clip source to be translated.</li></ul><p><code class="codehilite">ax</code> : int</p><ul><li><p>This is the axis on which to translate (0 for x, 1 for y, 2 for z).</p></li><li><p>Think of this as the normal vector for the clip.</p></li></ul><p><code class="codehilite">bounds</code> : 6-element list or tuple</p><ul><li>These are the bounds to constrain the clip translation.</li></ul><p><code class="codehilite">num</code> : int, optional</p><ul><li>The number of discritizations in the clip translation.</li></ul><p><code class="codehilite">delay</code> : float, optional</p><ul><li>Time delay in seconds before conducting each clip translation.</li></ul></details>
                 
                   
                 

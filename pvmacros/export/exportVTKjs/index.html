@@ -340,6 +340,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../PVGPpy/read/Madagascar-SSRSF/" title="Madagascar SSRSF" class="md-nav__link">
+      Madagascar SSRSF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../PVGPpy/read/Delimited-Text/" title="Delimited Text" class="md-nav__link">
       Delimited Text
     </a>
@@ -696,53 +708,6 @@
     Code Docs
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exportvtkjs" title="exportVTKjs" class="md-nav__link">
-    exportVTKjs
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -1043,6 +1008,54 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Development Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Development Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Dev-Guide/Contributing-to-PVGP/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Dev-Guide/Repo-Structure/" title="Repo Structure" class="md-nav__link">
+      Repo Structure
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1143,53 +1156,6 @@
   <a href="#code-docs" title="Code Docs" class="md-nav__link">
     Code Docs
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exportvtkjs" title="exportVTKjs" class="md-nav__link">
-    exportVTKjs
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1320,40 +1286,7 @@ python get_vtkjs_url.py dropbox <span class="s2">&quot;https://www.dropbox.com/s
 
 <hr />
 <h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
-<h3 id="exportvtkjs"><code class="codehilite">exportVTKjs</code><a class="headerlink" href="#exportvtkjs" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">pvmacros</span><span class="o">.</span><span class="n">export</span><span class="o">.</span><span class="n">exportVTKjs</span><span class="p">(</span><span class="n">FileName</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
-
-<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
-<p>This function will execute a script to export the current scene from your rendering into the VTKjs shareable file format.</p>
-<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
-<p><code class="codehilite">FileName</code> : string, optional</p>
-<ul>
-<li>Use to specify the basename of the output file. Extension will always be &lsquo;.vtkjs&rsquo;</li>
-</ul>
-<p><code class="codehilite">compress</code> : boolean, optional</p>
-<ul>
-<li>
-<p>Declares a preference to compress the data arrays.</p>
-</li>
-<li>
-<p>Default False</p>
-</li>
-</ul>
-<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
-<ul>
-<li>No return type, but it will print the path to the saved &lsquo;.vtkjs&rsquo; file.</li>
-</ul>
-<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p>To view, open the file in the VTKjs standalone web viewer found here: https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html</p>
-</li>
-<li>
-<p>Use the get_vtkjs_url.py script in the PVGP repository to get a shareable link for the exported file.</p>
-</li>
-</ul>
+<details class="abstract"><summary>pvmacros.export.exportVTKjs</summary><p><code class="codehilite"><span class="n">pvmacros</span><span class="o">.</span><span class="n">export</span><span class="o">.</span><span class="n">exportVTKjs</span><span class="p">(</span><span class="n">FileName</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>This function will execute a script to export the current scene from your rendering into the VTKjs shareable file format.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : string, optional</p><ul><li>Use to specify the basename of the output file. Extension will always be &lsquo;.vtkjs&rsquo;</li></ul><p><code class="codehilite">compress</code> : boolean, optional</p><ul><li><p>Declares a preference to compress the data arrays.</p></li><li><p>Default False</p></li></ul><p><strong>Returns</strong></p><ul><li>No return type, but it will print the path to the saved &lsquo;.vtkjs&rsquo; file.</li></ul><p><strong>Notes</strong></p><ul><li><p>To view, open the file in the VTKjs standalone web viewer found here: https://kitware.github.io/vtk-js/examples/StandaloneSceneLoader/StandaloneSceneLoader.html</p></li><li><p>Use the get_vtkjs_url.py script in the PVGP repository to get a shareable link for the exported file.</p></li></ul></details>
                 
                   
                 

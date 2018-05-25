@@ -342,6 +342,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../Madagascar-SSRSF/" title="Madagascar SSRSF" class="md-nav__link">
+      Madagascar SSRSF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -384,46 +396,6 @@
   <a href="#code-docs" title="Code Docs" class="md-nav__link">
     Code Docs
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delimitedtext" title="delimitedText" class="md-nav__link">
-    delimitedText
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -989,6 +961,54 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Development Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Development Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Dev-Guide/Contributing-to-PVGP/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Dev-Guide/Repo-Structure/" title="Repo Structure" class="md-nav__link">
+      Repo Structure
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1043,46 +1063,6 @@
     Code Docs
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delimitedtext" title="delimitedText" class="md-nav__link">
-    delimitedText
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -1126,40 +1106,7 @@
 </ul>
 <hr />
 <h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
-<h3 id="delimitedtext"><code class="codehilite">delimitedText</code><a class="headerlink" href="#delimitedtext" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">delimitedText</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">hasTits</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numIgLns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
-
-<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
-<p>This reader will take in any delimited text file and make a vtkTable from it. This is not much different than the default .txt or .csv reader in ParaView, however it gives us room to use our own extensions and a little more flexibility in the structure of the files we import.</p>
-<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
-<p><code class="codehilite">FileName</code> : str</p>
-<ul>
-<li>The absolute file name with path to read.</li>
-</ul>
-<p><code class="codehilite">deli</code> : str</p>
-<ul>
-<li>The input files delimiter. To use a tab delimiter please set the <code class="codehilite">useTab</code>.</li>
-</ul>
-<p><code class="codehilite">useTab</code> : boolean, optional</p>
-<ul>
-<li>A boolean that describes whether to use a tab delimiter</li>
-</ul>
-<p><code class="codehilite">hasTits</code> : boolean, optional</p>
-<ul>
-<li>A boolean for if the delimited file has header titles for the data arrays.</li>
-</ul>
-<p><code class="codehilite">numIgLns</code> : int</p>
-<ul>
-<li>The integer number of lines to ignore</li>
-</ul>
-<p><code class="codehilite">pdo</code> : vtk.vtkTable, optional</p>
-<ul>
-<li>A pointer to the output data object.</li>
-</ul>
-<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
-<p>Returns a vtkTable of the input data file.</p>
+<details class="abstract"><summary>PVGPpy.read.delimitedText</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">delimitedText</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">deli</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">useTab</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">hasTits</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numIgLns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>This reader will take in any delimited text file and make a vtkTable from it. This is not much different than the default .txt or .csv reader in ParaView, however it gives us room to use our own extensions and a little more flexibility in the structure of the files we import.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The absolute file name with path to read.</li></ul><p><code class="codehilite">deli</code> : str</p><ul><li>The input files delimiter. To use a tab delimiter please set the <code class="codehilite">useTab</code>.</li></ul><p><code class="codehilite">useTab</code> : boolean, optional</p><ul><li>A boolean that describes whether to use a tab delimiter</li></ul><p><code class="codehilite">hasTits</code> : boolean, optional</p><ul><li>A boolean for if the delimited file has header titles for the data arrays.</li></ul><p><code class="codehilite">numIgLns</code> : int</p><ul><li>The integer number of lines to ignore</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkTable, optional</p><ul><li>A pointer to the output data object.</li></ul><p><strong>Returns</strong></p><p>Returns a vtkTable of the input data file.</p></details>
                 
                   
                 
@@ -1198,7 +1145,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Binary-Packed-Data/" title="Binary Packed Data" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Madagascar-SSRSF/" title="Madagascar SSRSF" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1207,7 +1154,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Binary Packed Data
+                Madagascar SSRSF
               </span>
             </div>
           </a>
