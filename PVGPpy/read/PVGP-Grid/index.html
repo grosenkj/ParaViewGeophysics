@@ -434,6 +434,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-use" title="Example Use" class="md-nav__link">
+    Example Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-docs" title="Code Docs" class="md-nav__link">
     Code Docs
   </a>
@@ -1045,6 +1052,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-use" title="Example Use" class="md-nav__link">
+    Example Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-docs" title="Code Docs" class="md-nav__link">
     Code Docs
   </a>
@@ -1076,14 +1090,93 @@
                 
                   <h1>PVGP Grid</h1>
                 
-                <div class="admonition failure">
-<p class="admonition-title">Description to come!</p>
-<p>There are a lot of pages in the documentation and we are trying to fill all content as soon as possible. Stay tuned for updates to this page</p>
-</div>
-<h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
-<hr />
+                <h2 id="about-this-reader">About this Reader<a class="headerlink" href="#about-this-reader" title="Permanent link">&para;</a></h2>
+<p>The PVGP Grid Format is a custom format we have developed to easily save out gridded data to a file format that can fully ready by a plugin in ParaView for immediate viewing. This format consists of meta data describing a regularly sampled grid on which data attributes reside. The metadata is fully encompassed in a <code class="codehilite"><span class="na">.pvgp</span></code> file which is in JSON format with sub libraries containing model data attributes for that grid in an encoded format to save memory. A PVGP grid can have infinitely many data attributes.</p>
+<p>We created this format for when we work with 1-3D numpy arrays that describe a regularly sampled model. If we pass that N-dimensional numpy array to the <code class="codehilite"><span class="n">savePVGPGrid</span><span class="p">()</span></code> method with approppriate meta data, it will store a file that the PVGP format reader in ParaView can immediately read and render for easy/fast viewing.</p>
+<h2 id="example-use">Example Use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
+<p>Use the following script to construct to 3D numpy arrays with the same dimensionality that describe a model region. Pass those numpy arrays to the <code class="codehilite"><span class="n">savePVGPGrid</span><span class="p">()</span></code> method and it will save a file that can be immediately read into ParaView for rendering.</p>
+<details class="note"><summary>Code to create an input file</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">py2PVGP</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1">#################</span>
+<span class="c1"># GENERATE DATA #</span>
+<span class="c1">#---------------#</span>
+<span class="c1"># The 3D space we are working with</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">95</span> <span class="o">+</span> <span class="n">step</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">55</span> <span class="o">+</span> <span class="n">step</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span> <span class="o">+</span> <span class="n">step</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">25</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">75</span><span class="p">:</span> <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">z</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Compute the values in our space so we can test that this works</span>
+<span class="n">dd1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dd2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)):</span>
+            <span class="n">dd1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">],</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">])</span>
+            <span class="n">dd2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">],</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">])</span>
+
+<span class="c1">#############</span>
+<span class="c1"># SAVE DATA #</span>
+<span class="c1">#-----------#</span>
+<span class="n">path</span><span class="o">=</span><span class="s1">&#39;/Users/bane/Documents/school/GPVR/data-testing/Readers/PVGP/&#39;</span>
+<span class="n">basename</span> <span class="o">=</span> <span class="s1">&#39;test-data&#39;</span>
+<span class="hll"><span class="n">py2PVGP</span><span class="o">.</span><span class="n">savePVGPGrid</span><span class="p">([</span><span class="n">dd1</span><span class="p">,</span><span class="n">dd2</span><span class="p">],</span> <span class="n">path</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="n">step</span><span class="p">,</span><span class="n">step</span><span class="p">,</span><span class="n">step</span><span class="p">))</span>
+</span></pre></div>
+</td></tr></table>
+</details><hr />
 <h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
-<details class="abstract"><summary>PVGPpy.read.readPVGPGrid</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">readPVGPGrid</span><span class="p">(</span><span class="n">headerfile</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Generates vtkImageData from the uniform grid defined in the inout file in the SGeMS grid format. This format is simply the GSLIB format where the header line defines the dimensions of the uniform grid.</p><p><strong>Parameters</strong></p><p><code class="codehilite">headerfile</code> : str</p><ul><li>The file name / absolute path for the input header file that cotains all parameters and pointers to file locations.</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkImageData, optional</p><ul><li>A pointer to the output data object.</li></ul><p><code class="codehilite">path</code> : str, optional</p><ul><li>The absolute path to the PVGP grid database to override the path in the header file.</li></ul><p><strong>Returns</strong></p><p>Returns vtkImageData</p></details>
+<details class="abstract"><summary>py2PVGP.savePVGPGrid</summary><p><code class="codehilite"><span class="n">py2PVGP</span><span class="o">.</span><span class="n">savePVGPGrid</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">dataNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">endian</span><span class="o">=</span><span class="s1">&#39;@&#39;</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>The method is for use outside of pvpython in Python 2 or 3 to save a regularly sampled grid in the PVGP format. Pass lists of multidimensional numpy arrays of same shape to save out.</p><p><strong>Parameters</strong></p><p><code class="codehilite">data</code> : list of numpy.ndarray</p><ul><li>The attirbutes for a single model in a multidimensional array. Max dimensionality of 3. All arrays in the list must have the same shape.</li></ul><p><code class="codehilite">path</code> : str</p><ul><li>The absolute path to the location to save the file.</li></ul><p><code class="codehilite">basename</code> : str</p><ul><li>The basename of the file to be saved out.</li></ul><p><code class="codehilite">spacing</code> : tuple of ints, optional</p><ul><li>The spacings along each axial dimension</li></ul><p><code class="codehilite">origin</code> : tuple of floats, optional</p><ul><li>The XYZ location of the origin to build the volume out from</li></ul><p><code class="codehilite">order</code> : char, optional</p><ul><li>The order to unpack/pack the data arrays.</li></ul><p><code class="codehilite">dataNames</code> : list of strings, optional</p><ul><li>A list of the data names for each model attribute. Must have same number of names as number of model inputs in the <code class="codehilite">data</code> parameter.</li></ul><p><code class="codehilite">endian</code> : char, optional</p><ul><li>The endianness to pack the data when compressing it. Not necessary anymore.</li></ul><p><strong>Returns</strong></p><p>None. This method saves out a file in the PVGP Grid format.</p></details><details class="abstract"><summary>PVGPpy.read.readPVGPGrid</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">readPVGPGrid</span><span class="p">(</span><span class="n">headerfile</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Generates vtkImageData from the uniform grid defined in the PVGP uniformly gridded data format.</p><p><strong>Parameters</strong></p><p><code class="codehilite">headerfile</code> : str</p><ul><li>The file name / absolute path for the input header file that cotains all parameters and pointers to file locations.</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkImageData, optional</p><ul><li>A pointer to the output data object.</li></ul><p><code class="codehilite">path</code> : str, optional</p><ul><li>The absolute path to the PVGP grid database to override the path in the header file.</li></ul><p><strong>Returns</strong></p><p>Returns vtkImageData</p></details>
                 
                   
                 
