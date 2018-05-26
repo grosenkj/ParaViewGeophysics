@@ -394,6 +394,97 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-1" type="checkbox" id="nav-3-3-1">
+    
+    <label class="md-nav__link" for="nav-3-3-1">
+      Grids
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-1">
+        Grids
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../read/SGeMS-Grid/" title="SGeMS Grid" class="md-nav__link">
+      SGeMS Grid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../read/UBC-Mesh/" title="UBC Mesh Grid" class="md-nav__link">
+      UBC Mesh Grid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../read/UBC-OcTree/" title="UBC OcTree" class="md-nav__link">
+      UBC OcTree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../read/PVGP-Grid/" title="PVGP Grid" class="md-nav__link">
+      PVGP Grid
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2">
+    
+    <label class="md-nav__link" for="nav-3-3-2">
+      Tables
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-2">
+        Tables
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../read/Binary-Packed-Data/" title="Binary Packed Data" class="md-nav__link">
       Binary Packed Data
@@ -437,39 +528,8 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../read/SGeMS-Grid/" title="SGeMS Grid" class="md-nav__link">
-      SGeMS Grid
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../read/UBC-Mesh/" title="UBC Mesh Grid" class="md-nav__link">
-      UBC Mesh Grid
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../read/PVGP-Grid/" title="PVGP Grid" class="md-nav__link">
-      PVGP Grid
-    </a>
+      </ul>
+    </nav>
   </li>
 
         
@@ -1124,7 +1184,7 @@
 <p class="admonition-title">Info</p>
 <p>Explore the different reader plugins by looking under the <strong>Readers</strong> section of the <strong>Plugins &amp; PVGPpy</strong> part of the navigation pane.</p>
 </div>
-<h2 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h2>
+<details class="info"><summary>implemented Formats</summary><ul><li>Grids:<ul><li><a href="../read/UBC-Mesh/">UBC GIF Meshes 2D and 3D</a></li><li><a href="../read/SGeMS-Grid/">SGeMS Uniform Grid</a></li><li><a href="../read/PVGP-Grid/">The PVGP Uniform Grid</a></li></ul></li><li>Tables:<ul><li><a href="../read/Binary-Packed-Data/">Binary Packed Data</a></li><li><a href="../read/Madagascar-SSRSF/">Madagascar Single Stream RSF</a></li><li><a href="../read/Delimited-Text/">Delimited Text</a></li><li><a href="../read/GSLIB/">GSLIB</a></li></ul></li></ul></details><h2 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h2>
 <p>A filter modifies, transforms, combines, analyses, etc. data on the ParaView pipeline. Filters provide a means for changing how we visualize data or create a means of taking some data and generating other data from that. For example we might have a series of scattered points that we know represent the center of a tunnel or tube that represents a well. We can use a filter to transform those points into a connected line that we then construct a cylinder around. This allows us to save out minimal data (just XYZ points as opposed to complex geometries that make up the tunnel) to our hard drive while still having complex visualizations from that data.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>

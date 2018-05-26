@@ -330,49 +330,22 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Binary-Packed-Data/" title="Binary Packed Data" class="md-nav__link">
-      Binary Packed Data
-    </a>
-  </li>
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-1" type="checkbox" id="nav-3-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-3-1">
+      Grids
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-1">
+        Grids
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Madagascar-SSRSF/" title="Madagascar SSRSF" class="md-nav__link">
-      Madagascar SSRSF
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Delimited-Text/" title="Delimited Text" class="md-nav__link">
-      Delimited Text
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../GSLIB/" title="GSLIB" class="md-nav__link">
-      GSLIB
-    </a>
-  </li>
-
         
           
           
@@ -436,13 +409,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#both" title="Both" class="md-nav__link">
-    Both
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -471,9 +437,98 @@
 
 
   <li class="md-nav__item">
+    <a href="../UBC-OcTree/" title="UBC OcTree" class="md-nav__link">
+      UBC OcTree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../PVGP-Grid/" title="PVGP Grid" class="md-nav__link">
       PVGP Grid
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2">
+    
+    <label class="md-nav__link" for="nav-3-3-2">
+      Tables
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-2">
+        Tables
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Binary-Packed-Data/" title="Binary Packed Data" class="md-nav__link">
+      Binary Packed Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Madagascar-SSRSF/" title="Madagascar SSRSF" class="md-nav__link">
+      Madagascar SSRSF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Delimited-Text/" title="Delimited Text" class="md-nav__link">
+      Delimited Text
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSLIB/" title="GSLIB" class="md-nav__link">
+      GSLIB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1079,13 +1134,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#both" title="Both" class="md-nav__link">
-    Both
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1124,10 +1172,9 @@
 
 <p>UBC Mesh 2D/3D models are defined using a 2-file format. The &ldquo;mesh&rdquo; file describes how the data is discretized. The &ldquo;model&rdquo; file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file. Default file delimiter is a space character.</p>
 <h2 id="code-docs">Code Docs<a class="headerlink" href="#code-docs" title="Permanent link">&para;</a></h2>
-<h3 id="3d">3D<a class="headerlink" href="#3d" title="Permanent link">&para;</a></h3>
-<details class="abstract"><summary>PVGPpy.read.ubcMeshData3D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMeshData3D</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">FileName_Model</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>UBC Mesh 3D models are defined using a 2-file format. The &ldquo;mesh&rdquo; file describes how the data is descritized. The &ldquo;model&rdquo; file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName_Mesh</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in UBC 3D Mesh Format</li></ul><p><code class="codehilite">FileName_Model</code> : str</p><ul><li>The model filename as an absolute path for the input model file in UBC 3D Model Format.</li></ul><p><code class="codehilite">dataNm</code> : str, optional</p><ul><li>The name of the model data array once placed on the vtkRectilinearGrid.</li></ul><p><strong>Returns</strong></p><p>Returns a vtkRectilinearGrid generated from the UBC 3D Mesh grid. Mesh is defined by the input mesh file. Cell data is defined by the input model file.</p></details><details class="abstract"><summary>PVGPpy.read.ubcExtent3D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcExtent3D</span><span class="p">(</span><span class="n">FileName</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Reads the mesh file for the UBC 3D Mesh or OcTree format to get output extents. Computationally inexpensive method to discover whole output extent.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in a UBC Format with extents defined on the first line.</li></ul><p><strong>Returns</strong></p><p>This returns a tuple of the whole extent for the grid to be made of the input mesh file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.</p></details><details class="abstract"><summary>PVGPpy.read.ubcMesh3D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMesh3D</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>This method reads a UBC 3D Mesh file and builds an empty vtkRectilinearGrid for data to be inserted into.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in UBC 3D Mesh Format.</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkRectilinearGrid, optional</p><ul><li>The output data object</li></ul><p><strong>Returns</strong></p><p>Returns a vtkRectilinearGrid generated from the UBC 3D Mesh grid. Mesh is defined by the input mesh file. No data attributes here, simply an empty mesh. Use the placeModelOnMesh() method to associate with model data.</p></details><details class="abstract"><summary>PVGPpy.read.ubcModel3D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcModel3D</span><span class="p">(</span><span class="n">FileName</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Reads the 3D model file and returns a 1D NumPy float array. Use the placeModelOnMesh() method to associate with a grid.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The model filename as an absolute path for the input model file in UBC 3D Model Model Format.</li></ul><p><strong>Returns</strong></p><p>Returns a NumPy float array that holds the model data read from the file. Use the placeModelOnMesh() method to associate with a grid.</p></details><h3 id="2d">2D<a class="headerlink" href="#2d" title="Permanent link">&para;</a></h3>
-<details class="abstract"><summary>PVGPpy.read.ubcMeshData2D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMeshData2D</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">FileName_Model</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>UBC Mesh 2D models are defined using a 2-file format. The &ldquo;mesh&rdquo; file describes how the data is descritized. The &ldquo;model&rdquo; file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName_Mesh</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in UBC 2D Mesh Format</li></ul><p><code class="codehilite">FileName_Model</code> : str</p><ul><li>The model filename as an absolute path for the input model file in UBC 2D Model Format.</li></ul><p><code class="codehilite">dataNm</code> : str, optional</p><ul><li>The name of the model data array once placed on the vtkRectilinearGrid.</li></ul><p><strong>Returns</strong></p><p>Returns a vtkRectilinearGrid generated from the UBC 2D Mesh grid. Mesh is defined by the input mesh file. Cell data is defined by the input model file.</p></details><details class="abstract"><summary>PVGPpy.read.ubcExtent2D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcExtent2D</span><span class="p">(</span><span class="n">FileName</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Reads the mesh file for the UBC 2D Mesh format to get output extents.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in a UBC 2D Mesh Format.</li></ul><p><strong>Returns</strong></p><p>This returns a tuple of the whole extent for the grid to be made of the input mesh file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.</p></details><details class="abstract"><summary>PVGPpy.read.ubcMesh2D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMesh2D</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>This method reads a UBC 2D Mesh file and builds an empty vtkRectilinearGrid for data to be inserted into. <a href="http://giftoolscookbook.readthedocs.io/en/latest/content/fileFormats/mesh2Dfile.html">Format Specs</a></p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in UBC 3D Mesh Format.</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkRectilinearGrid, optional</p><ul><li>The output data object</li></ul><p><strong>Returns</strong></p><p>Returns a vtkRectilinearGrid generated from the UBC 3D Mesh grid. Mesh is defined by the input mesh file. No data attributes here, simply an empty mesh. Use the placeModelOnMesh() method to associate with model data.</p></details><details class="abstract"><summary>PVGPpy.read.ubcModel2D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcModel2D</span><span class="p">(</span><span class="n">FileName</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Reads a 2D model file and returns a 1D NumPy float array. Use the placeModelOnMesh() method to associate with a grid.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The model filename as an absolute path for the input model file in UBCMesh Model Format.</li></ul><p><strong>Returns</strong></p><p>Returns a NumPy float array that holds the model data read from the file. Use the placeModelOnMesh() method to associate with a grid.</p></details><h3 id="both">Both<a class="headerlink" href="#both" title="Permanent link">&para;</a></h3>
-<details class="abstract"><summary>PVGPpy.read.placeModelOnMesh</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">placeModelOnMesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Places model data onto a mesh. This is for the UBC Grid data reaers to associate model data with the mesh grid.</p><p><strong>Parameters</strong></p><p><code class="codehilite">mesh</code> : vtkRectilinearGrid</p><ul><li>The vtkRectilinearGrid that is the mesh to place the model data upon.</li></ul><p><code class="codehilite">model</code> : NumPy float array</p><ul><li>A NumPy float array that holds all of the data to place inside of the mesh&rsquo;s cells.</li></ul><p><code class="codehilite">dataNm</code> : str, optional</p><ul><li>The name of the model data array once placed on the vtkRectilinearGrid.</li></ul><p><strong>Returns</strong></p><p>Returns the input vtkRectilinearGrid with model data appended.</p></details>
+<details class="abstract"><summary>PVGPpy.read.ubcExtent</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcExtent</span><span class="p">(</span><span class="n">FileName</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Reads the mesh file for the UBC 2D/3D Mesh or OcTree format to get output extents. Computationally inexpensive method to discover whole output extent.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in a UBC Format with extents defined on the first line.</li></ul><p><strong>Returns</strong></p><p>This returns a tuple of the whole extent for the grid to be made of the input mesh file (0,n1-1, 0,n2-1, 0,n3-1). This output should be directly passed to util.SetOutputWholeExtent() when used in programmable filters or source generation on the pipeline.</p></details><details class="abstract"><summary>PVGPpy.read.readUBCMesh</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">readUBCMesh</span><span class="p">(</span><span class="n">FileName_Mesh</span><span class="p">,</span> <span class="n">FileName_Model</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Wrapper to Read UBC GIF 2D and 3D meshes. UBC Mesh 2D/3D models are defined using a 2-file format. The &ldquo;mesh&rdquo; file describes how the data is descritized. The &ldquo;model&rdquo; file lists the physical property values for all cells in a mesh. A model file is meaningless without an associated mesh file. If the mesh file is 2D, then then model file must also be in the 2D format (same for 3D).</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName_Mesh</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in UBC 2D/3D Mesh Format</li></ul><p><code class="codehilite">FileName_Model</code> : str</p><ul><li>The model filename as an absolute path for the input model file in UBC 2D/3D Model Format.</li></ul><p><code class="codehilite">dataNm</code> : str, optional</p><ul><li>The name of the model data array once placed on the vtkRectilinearGrid.</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkRectilinearGrid, optional</p><ul><li>The output data object</li></ul><p><strong>Returns</strong></p><p>Returns a vtkRectilinearGrid generated from the UBC 2D/3D Mesh grid. Mesh is defined by the input mesh file. Cell data is defined by the input model file.</p></details><details class="abstract"><summary>PVGPpy.read.placeModelOnMesh</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">placeModelOnMesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataNm</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Places model data onto a mesh. This is for the UBC Grid data reaers to associate model data with the mesh grid.</p><p><strong>Parameters</strong></p><p><code class="codehilite">mesh</code> : vtkRectilinearGrid</p><ul><li>The vtkRectilinearGrid that is the mesh to place the model data upon.</li></ul><p><code class="codehilite">model</code> : NumPy float array</p><ul><li>A NumPy float array that holds all of the data to place inside of the mesh&rsquo;s cells.</li></ul><p><code class="codehilite">dataNm</code> : str, optional</p><ul><li>The name of the model data array once placed on the vtkRectilinearGrid.</li></ul><p><strong>Returns</strong></p><p>Returns the input vtkRectilinearGrid with model data appended.</p></details><h3 id="3d">3D<a class="headerlink" href="#3d" title="Permanent link">&para;</a></h3>
+<details class="abstract"><summary>PVGPpy.read.ubcMesh3D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMesh3D</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>This method reads a UBC 3D Mesh file and builds an empty vtkRectilinearGrid for data to be inserted into.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in UBC 3D Mesh Format.</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkRectilinearGrid, optional</p><ul><li>The output data object</li></ul><p><strong>Returns</strong></p><p>Returns a vtkRectilinearGrid generated from the UBC 3D Mesh grid. Mesh is defined by the input mesh file. No data attributes here, simply an empty mesh. Use the placeModelOnMesh() method to associate with model data.</p></details><details class="abstract"><summary>PVGPpy.read.ubcModel3D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcModel3D</span><span class="p">(</span><span class="n">FileName</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Reads the 3D model file and returns a 1D NumPy float array. Use the placeModelOnMesh() method to associate with a grid.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The model filename as an absolute path for the input model file in UBC 3D Model Model Format.</li></ul><p><strong>Returns</strong></p><p>Returns a NumPy float array that holds the model data read from the file. Use the placeModelOnMesh() method to associate with a grid.</p></details><h3 id="2d">2D<a class="headerlink" href="#2d" title="Permanent link">&para;</a></h3>
+<details class="abstract"><summary>PVGPpy.read.ubcMesh2D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcMesh2D</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>This method reads a UBC 2D Mesh file and builds an empty vtkRectilinearGrid for data to be inserted into. <a href="http://giftoolscookbook.readthedocs.io/en/latest/content/fileFormats/mesh2Dfile.html">Format Specs</a></p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The mesh filename as an absolute path for the input mesh file in UBC 3D Mesh Format.</li></ul><p><code class="codehilite">pdo</code> : vtk.vtkRectilinearGrid, optional</p><ul><li>The output data object</li></ul><p><strong>Returns</strong></p><p>Returns a vtkRectilinearGrid generated from the UBC 3D Mesh grid. Mesh is defined by the input mesh file. No data attributes here, simply an empty mesh. Use the placeModelOnMesh() method to associate with model data.</p></details><details class="abstract"><summary>PVGPpy.read.ubcModel2D</summary><p><code class="codehilite"><span class="n">PVGPpy</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">ubcModel2D</span><span class="p">(</span><span class="n">FileName</span><span class="p">)</span></code></p><p><strong>Description</strong></p><p>Reads a 2D model file and returns a 1D NumPy float array. Use the placeModelOnMesh() method to associate with a grid.</p><p><strong>Parameters</strong></p><p><code class="codehilite">FileName</code> : str</p><ul><li>The model filename as an absolute path for the input model file in UBCMesh Model Format.</li></ul><p><strong>Returns</strong></p><p>Returns a NumPy float array that holds the model data read from the file. Use the placeModelOnMesh() method to associate with a grid.</p></details>
                 
                   
                 
@@ -1181,13 +1228,13 @@
           </a>
         
         
-          <a href="../PVGP-Grid/" title="PVGP Grid" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../UBC-OcTree/" title="UBC OcTree" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                PVGP Grid
+                UBC OcTree
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
