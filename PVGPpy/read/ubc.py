@@ -174,6 +174,24 @@ def ubcMesh3D(FileName, pdo=None):
     if pdo is None:
         pdo = vtk.vtkRectilinearGrid() # vtkRectilinearGrid
 
+    # Define a function to parse cell size lines
+    def parse_cell_size_line(line_str):
+        '''
+        Function that parses a UBC cell size line
+
+        returns: Numpy array of the cell sizes
+
+        '''
+        line_list = []
+        for seg in line_str.split():
+            if '*' in seg:
+                sp = seg.split('*')
+                seg_arr = np.ones((int(sp[0]),)) * float(sp[1])
+            else:
+                seg_arr = np.array([float(seg)], float)
+            line_list.append(seg_arr)
+        return np.concatenate(line_list)
+
     #--- Read in the mesh ---#
     fileLines = np.genfromtxt(FileName, dtype=str,
         delimiter='\n', comments='!')
@@ -190,50 +208,33 @@ def ubcMesh3D(FileName, pdo=None):
         fileLines[1].split('!')[0].split(),
         dtype=float
     )
-    oe,on,oz = oo[0],oo[1],oo[2]
 
     vv = [None, None, None]
     # Now extract cell sizes
-    for i in range(3):
-        # i+2 for file lines because we already dealt with first 2 lines
-        spac_str = fileLines[i+2].split('!')[0].split()
+    # Iterating of the lines containing the cell size info
+    for i, cell_line in enumerate(fileLines[2:5]):
+        # Remove the comments (if any) for the end of the line
+        spac_str = cell_line.split('!')[0]
         # Now check if there are any of the repeating spacings
-        #- format example: 5*10.0 for five cells of width 10.0
-        ins_idx = []
-        ins_spac = []
-        for j in range(len(spac_str)):
-            if '*' in spac_str[j]:
-                parsed = spac_str[j].split('*')
-                ins_idx.append(j)
-                num, dist = int(parsed[0]), parsed[1]
-                ins = [dist]*num
-                ins_spac.append(ins)
-        for j in range(len(ins_idx)):
-            del spac_str[ins_idx[j]] # remove the parsed element
-            # Now insert the spacings into the spacing array
-            for k in range(len(ins_spac[j])):
-                spac_str.insert(ins_idx[j]+k,ins_spac[j][k])
-        # Now make a numpy flaot array
-        spac = np.array(spac_str, dtype=float)
+        # Parse the spac_str
+        spac = parse_cell_size_line(spac_str)
+
         # Now check that we have correct number widths for given dimension
-        if len(spac) != dim[i]-1:
+        if len(spac) != dim[i] - 1:
             raise Exception('More spacings specifed than extent defined allows for dimension %d' % i)
         # Now generate the coordinates for this dimension
-        s = np.zeros(dim[i])
-        s[0] = oo[i]
-        for j in range(1, dim[i]):
-            if (i == 2):
-                # Z dimension (down is positive Z!)
-                #  TODO: what is the correct way to do this?
-                s[j] = s[j-1] + spac[j-1]
-            else:
-                # X and Y dimensions
-                s[j] = s[j-1] + spac[j-1]
+        if (i == 2):
+            # Z dimension (down is positive Z!)
+            #  TODO: what is the correct way to do this?
+            s = oo[i] - np.cumsum(np.r_[0, spac])
+        else:
+            # X and Y dimensions
+            s = oo[i] + np.cumsum(np.r_[0, spac])
         # Convert to VTK array for setting coordinates
-        vv[i] = nps.numpy_to_vtk(num_array=s,deep=True)
+        vv[i] = nps.numpy_to_vtk(num_array=s, deep=True)
 
     # Set the dims and coordinates for the output
-    pdo.SetDimensions(dim[0],dim[1],dim[2])
+    pdo.SetDimensions(dim[0], dim[1], dim[2])
     pdo.SetXCoordinates(vv[0])
     pdo.SetYCoordinates(vv[1])
     pdo.SetZCoordinates(vv[2])
