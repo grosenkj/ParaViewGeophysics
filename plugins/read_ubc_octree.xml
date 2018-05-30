@@ -9,7 +9,7 @@
         <ShowInMenu category="PVGP Readers" />
       </Hints>
       <Hints>
-        <ReaderFactory extensions="msh"
+        <ReaderFactory extensions="mesh msh dat txt"
           file_description="PVGP: UBC OcTree Mesh File Format." />
       </Hints>
 
@@ -23,50 +23,36 @@
         for the output of the programmable filter.</Documentation>
       </IntVectorProperty>
 
-
-
-
       <StringVectorProperty
-        name="FileNames"
-        initial_string="FileNames"
-        animateable="0"
-        number_of_elements="0"
-        command="AddParameter"
+        panel_visibility="default"
+        name="FileName_Mesh"
+        label="FileName Mesh"
+        initial_string="FileName_Mesh"
+        command="SetParameter"
+        animateable="1"
         clean_command="ClearParameter"
-        repeat_command="1"
-        panel_visibility="advanced">
+        number_of_elements="1">
         <FileListDomain name="files"/>
-            <Documentation>
-            The list of files to be read by the reader.
-            </Documentation>
+        <Documentation>This is the mesh file for a 2D or 3D UBC Mesh grid. This plugin only allows ONE mesh to be defined.</Documentation>
       </StringVectorProperty>
-
-      <DoubleVectorProperty
-        name="TimestepValues"
-        repeatable="1"
-        information_only="1">
-        <TimeStepsInformationHelper/>
-            <Documentation>
-            Available timestep values.
-            </Documentation>
-        </DoubleVectorProperty>
-        <Hints>
-            <ReaderFactory extensions="msh"
-                    file_description="PVGP: UBC OcTree Mesh File Format." />
-        </Hints>
-
 
       <StringVectorProperty
         panel_visibility="default"
-        name="Data_Name"
-        label="Data Name"
-        initial_string="Data_Name"
-        command="SetParameter"
+        name="FileName_Model"
+        label="FileName Model"
+        initial_string="FileName_Model"
+        command="AddParameter"
         animateable="1"
-        default_values=""
+        repeat_command="1"
+        clean_command="ClearParameter"
         number_of_elements="1">
-        <Documentation></Documentation>
+        <FileListDomain name="files"/>
+        <Documentation>These are the model files to append to the mesh as data attributes. You can chose as many files as you would like for this.</Documentation>
       </StringVectorProperty>
+
+
+
+
 
       <DoubleVectorProperty
         panel_visibility="advanced"
@@ -84,7 +70,7 @@
         name="Script"
         command="SetScript"
         number_of_elements="1"
-        default_values="from PVGPpy.read import getTimeStepFileIndex&#xA;from PVGPpy.read import ubcOcTree&#xA;import os&#xA;# This finds the index for the FileNames for the requested timestep&#xA;i = getTimeStepFileIndex(self, FileNames, dt=Time_Step)&#xA;&#xA;# Get output&#xA;pdo = self.GetOutput()&#xA;# If no name given for data by user, use the basename of the file&#xA;if Data_Name == '':&#xA;    Data_Name = os.path.basename(FileNames[0]) # use first file in series so representation/cmap does not change.&#xA;# Read the UBC OcTree gridded data:&#xA;ubcOcTree(FileNames[i], dataNm=Data_Name, pdo=pdo)&#xA;"
+        default_values="from PVGPpy.read import ubcOcTree&#xA;import os&#xA;# Get output&#xA;pdo = self.GetOutput()&#xA;# Read the UBC OcTree gridded data:&#xA;try:&#xA;    ubcOcTree(FileName_Mesh, FileName_Model, pdo=pdo)&#xA;except NameError:&#xA;    ubcOcTree(FileName_Mesh, None, pdo=pdo)&#xA;"
         panel_visibility="advanced">
         <Hints>
           <Widget type="multi_line" syntax="python"/>
@@ -98,7 +84,7 @@
         label="RequestInformation Script"
         command="SetInformationScript"
         number_of_elements="1"
-        default_values="from paraview import util&#xA;from PVGPpy.read import setOutputTimesteps, getTimeStepFileIndex&#xA;from PVGPpy.read import ubcExtent&#xA;# This is necessary to set time steps&#xA;setOutputTimesteps(self, FileNames, dt=Time_Step)&#xA;i = getTimeStepFileIndex(self, FileNames, dt=Time_Step)&#xA;# Preview the mesh file and get the mesh extents&#xA;ext = ubcExtent(FileNames[i])&#xA;# Set the mesh extents&#xA;util.SetOutputWholeExtent(self, ext)&#xA;"
+        default_values="from paraview import util&#xA;from PVGPpy.read import ubcExtent&#xA;# Preview the mesh file and get the mesh extents&#xA;ext = ubcExtent(FileName_Mesh)&#xA;# Set the mesh extents&#xA;util.SetOutputWholeExtent(self, ext)&#xA;"
         panel_visibility="advanced">
         <Hints>
           <Widget type="multi_line" syntax="python"/>
